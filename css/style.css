@@ -1,0 +1,14 @@
+.header-img {
+  width: 100%;
+  height: auto;
+}
+
+.banner:hover {
+  opacity: 0.7;
+}
+
+img.radius{
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+}

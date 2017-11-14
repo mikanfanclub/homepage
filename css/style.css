@@ -2,12 +2,16 @@
   width: 100%;
   height: auto;
 }
+.banner {
+  padding: auto;
+}
 
 .banner:hover {
   opacity: 0.7;
 }
 
 img.radius{
+  margin: 20px 0px 20px 0px;
   border-radius: 20px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;

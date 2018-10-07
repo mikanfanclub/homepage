@@ -1,3 +1,22 @@
+#header-site {
+  margin-bottom: 30px;
+  border-bottom: 1px solid #fff;
+  background: black url(../img/mv.png) center center no-repeat;
+  background-size: cover;
+}
+
+#header-site #header-site-inner {
+  padding: 40px 30px 60px 30px;
+  position: relative;
+  max-width: 1080px;
+  margin: auto;
+}
+
+#header-site #header-site-inner #header-site-inner-image {
+  margin: 150px auto;
+  width: 100%;
+}
+
 .header-img {
   width: 100%;
   height: auto;
@@ -10,7 +29,7 @@
   opacity: 0.7;
 }
 
-img.radius{
+img.radius {
   margin: 20px 0px 20px 0px;
   border-radius: 20px;
   -webkit-border-radius: 20px;

@@ -17,8 +17,11 @@ body {
 }
 
 p {
-  font-size: 14px;
-  line-height: 1.75;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+  line-height: 200%;
+  -webkit-font-smoothing: antialiased;
 }
 
 p.large {
@@ -86,7 +89,7 @@ h6 {
 // Custom Navigation Bar
 
 .navbar-custom {
-  background-color: @gray-darker;
+  background-color: @gray;
   border-color: transparent;
   .navbar-brand {
     color: @theme-primary;
@@ -163,7 +166,7 @@ h6 {
 
 @media (min-width: 768px) {
   .navbar-custom.affix {
-    background-color: @gray-darker;
+    background-color: @gray;
     padding: 10px 0;
     .navbar-brand {
       font-size: 1.5em;
@@ -225,7 +228,7 @@ header {
 // Global Section Styles
 
 section {
-  padding: 100px 0;
+  padding: 20px 0;
   h2.section-heading {
     font-size: 40px;
     margin-top: 0;
@@ -243,7 +246,7 @@ section {
 
 @media (min-width: 768px) {
   section {
-    padding: 150px 0;
+    padding: 50px 0;
   }
 }
 

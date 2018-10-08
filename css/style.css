@@ -76,3 +76,36 @@ img.radius {
 .nobreak {
   display: inline-block;
 }
+
+.menu {
+  font-size: 1em;
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #ed8600;
+  border-radius: 3px;
+  transition: 0.4s;
+  background: white;
+}
+
+.menu:hover {
+  background: #ed8600;
+  color: white;
+}
+
+.button {
+  font-size: 1em;
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #ed8600;
+  border: solid 2px #ed8600;
+  border-radius: 3px;
+  transition: 0.4s;
+  background: white;
+}
+
+.button:hover {
+  background: #ed8600;
+  color: white;
+}

@@ -1,0 +1,111 @@
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
+    HelveticaNeue, 'Segoe UI', '游ゴシック体', YuGothic, 'Yu Gothic M',
+    '游ゴシック Medium', 'Yu Gothic Medium', 'ヒラギノ角ゴ ProN W3',
+    'Hiragino Kaku Gothic ProN W3', HiraKakuProN-W3, 'ヒラギノ角ゴ ProN',
+    'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ Pro', 'Hiragino Kaku Gothic Pro',
+    'メイリオ', Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #212529;
+  text-align: left;
+  background-color: #fff;
+  font-weight: bold;
+}
+
+p {
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  color: #212529;
+}
+
+.text-container {
+  letter-spacing: 0.1rem;
+  max-width: 800px;
+  width: 80%;
+  margin-bottom: 1.5rem;
+  margin: auto auto;
+  font-size: 2vw;
+}
+
+#header-site {
+  margin-bottom: 30px;
+  border-bottom: 1px solid #fff;
+  background: black url(../img/mv.png) center center no-repeat;
+  background-size: cover;
+}
+
+#header-site #header-site-inner {
+  padding: 40px 30px 60px 30px;
+  position: relative;
+  max-width: 1080px;
+  margin: auto;
+}
+
+#header-site #header-site-inner #header-site-inner-image {
+  margin: 150px auto;
+  width: 100%;
+}
+
+.header-img {
+  width: 100%;
+  height: auto;
+}
+.banner {
+  padding: auto;
+}
+
+.banner:hover {
+  opacity: 0.7;
+}
+
+img.radius {
+  margin: 20px 0px 20px 0px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+}
+
+.nobreak {
+  display: inline-block;
+}
+
+.menu {
+  font-size: 1em;
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #ed8600;
+  border-radius: 3px;
+  transition: 0.4s;
+  background: white;
+}
+
+.menu:hover {
+  background: #ed8600;
+  color: white;
+}
+
+.button {
+  font-size: 1em;
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #ed8600;
+  border: solid 2px #ed8600;
+  border-radius: 3px;
+  transition: 0.4s;
+  background: white;
+}
+
+.button:hover {
+  background: #ed8600;
+  color: white;
+}

@@ -36,22 +36,22 @@ p {
 }
 
 #header-site {
-  margin-bottom: 30px;
+  margin-bottom: 0px;
   border-bottom: 1px solid #fff;
-  background: black url(../img/mv.png) center center no-repeat;
+  background: black url(../img/mv2.png) center center no-repeat;
   background-size: cover;
 }
 
 #header-site #header-site-inner {
-  padding: 40px 30px 60px 30px;
+  padding: 80px 180px 0px 40px;
   position: relative;
   max-width: 1080px;
   margin: auto;
 }
 
 #header-site #header-site-inner #header-site-inner-image {
-  margin: 150px auto;
-  width: 100%;
+  margin: 100px auto;
+  width: 120%;
 }
 
 .header-img {

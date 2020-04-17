@@ -192,7 +192,7 @@ fieldset[disabled] .btn-xl.active {
 }
 .navbar-custom .navbar-nav > .active > a {
   border-radius: 0;
-  color: red;
+  color: white;
   background-color: #ed8600;
 }
 .navbar-custom .navbar-nav > .active > a:hover,

@@ -43,15 +43,15 @@ p {
 }
 
 #header-site #header-site-inner {
-  padding: 80px 180px 0px 40px;
+  padding: 180px 30px 60px 30px;
   position: relative;
   max-width: 1080px;
   margin: auto;
 }
 
 #header-site #header-site-inner #header-site-inner-image {
-  margin: 100px auto;
-  width: 120%;
+  margin: auto;
+  width: 100%;
 }
 
 .header-img {
@@ -108,4 +108,8 @@ img.radius {
 .button:hover {
   background: #ed8600;
   color: white;
+}
+#portfolio #QRcode{
+  margin: auto;
+  width: 100%;
 }

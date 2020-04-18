@@ -36,8 +36,8 @@ p {
 }
 
 #header-site {
-  margin-bottom: 30px;
-  border-bottom: 1px solid #fff;
+  margin-bottom: 0px;
+  border-bottom: 0px solid #fff;
   background: black url(../img/mv.png) center center no-repeat;
   background-size: cover;
 }
@@ -108,4 +108,34 @@ img.radius {
 .button:hover {
   background: #ed8600;
   color: white;
+}
+
+.post-info{
+  background-color:#e2eba3;
+  position:relative;
+  padding-top:0px;
+  margin-bottom:0px;
+}
+.post-date{
+  background: #0bd;
+  border-radius: 50%;
+  color: #fff;
+  width: 70px;
+  height: 70px;
+  font-size: 1.625rem;
+  text-align: center;
+  position:absolute;
+  top:0;
+  padding-top: 3px;
+}
+.post-date span{
+  font-size: 1rem;
+  border-top:1px rgba(255,255,255,.5) solid;
+  padding-top: 6px;
+  display: block;
+  width:60%;
+  margin: 0 auto;
+}
+.post-title{
+  margin-left:120px;
 }

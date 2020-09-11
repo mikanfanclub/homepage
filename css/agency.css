@@ -349,7 +349,8 @@ section h3.section-subheading {
   max-width: 400px;
   margin: 0 auto;
   background-color: white;
-  text-align: center;
+  /**text-align: center;**/テキストのセンタリングの無効化
+
   padding: 25px;
 }
 #portfolio .portfolio-item .portfolio-caption h4 {

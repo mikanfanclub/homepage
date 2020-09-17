@@ -147,8 +147,19 @@ img.radius {
   color: #555555;
   font-weight: normal;
   margin: 0 auto;
-  width: auto;
+  width: auto
 }
+
+@media screen and (max-width: 480px){
+  .table> thead> tr>th,
+  .table> thead> tr>td,
+  .table> tbody> tr>th,
+  .table> tbody> tr>td{
+    font-size: 16px;
+    word-break: break-all;
+  }
+}
+
 
 .dl-horizontal dt {
   float: left;

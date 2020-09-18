@@ -216,3 +216,12 @@ img.radius {
   color: #777777;
   border-bottom: 2px solid #dfdfdf;
 }
+
+.under{
+  border-bottom: 1px solid #dfdfdf;
+  padding-bottom: 15px;
+}
+
+.info_inner p{
+  line-height: 150%;
+}

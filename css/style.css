@@ -158,6 +158,9 @@ img.radius {
     font-size: 16px;
     word-break: break-all;
   }
+  #sns img{
+  max-width:  240px;
+  }
 }
 
 

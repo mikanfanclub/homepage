@@ -7,11 +7,8 @@ body {
   overflow-x: hidden;
   font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-
 .text-muted {
   color: #777777;
-  text-align: left;
-  display: inline-block;
 }
 .text-primary {
   color: #ed8600;
@@ -290,10 +287,6 @@ section h2.section-heading {
   font-size: 40px;
   margin-top: 0;
   margin-bottom: 15px;
-  /*star*/
-  display: inline-block;
-  color: #838383;
-  border-bottom: 4px solid #838383;
 }
 section h3.section-subheading {
   font-size: 16px;
@@ -311,7 +304,6 @@ section h3.section-subheading {
 .service-heading {
   margin: 15px 0;
   text-transform: none;
-  font-size: 26px;
 }
 #portfolio .portfolio-item {
   margin: 0 0 15px;
@@ -357,8 +349,7 @@ section h3.section-subheading {
   max-width: 400px;
   margin: 0 auto;
   background-color: white;
-  /**text-align: center;**/テキストのセンタリングの無効化
-
+  text-align: center;
   padding: 25px;
 }
 #portfolio .portfolio-item .portfolio-caption h4 {

@@ -2271,12 +2271,10 @@ th {
 .table > thead > tr > td,
 .table > tbody > tr > td,
 .table > tfoot > tr > td {
-  /* change */
-  min-width: 150px;
-  padding: 10px;
+  padding: 8px;
   line-height: 1.42857143;
   vertical-align: top;
-  border-top: 1px dotted #838383;
+  border-top: 1px solid #ddd;
 }
 .table > thead > tr > th {
   vertical-align: bottom;

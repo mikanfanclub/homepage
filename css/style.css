@@ -35,7 +35,7 @@ p {
   font-size: 2vw;
 }
 
-/* #header-site {
+#header-site {
   margin-bottom: 0px;
   border-bottom: 0px solid #fff;
   background: black url(../img/mv.png) center center no-repeat;
@@ -57,7 +57,7 @@ p {
 .header-img {
   width: 100%;
   height: auto;
-} */
+}
 .banner {
   padding: auto;
 }
@@ -138,81 +138,4 @@ img.radius {
 }
 .post-title{
   margin-left:120px;
-}
-
-
-.table {
-  max-width: 550px;
-  font-size: 20px;
-  color: #555555;
-  font-weight: normal;
-  margin: 0 auto;
-  width: auto
-}
-
-@media screen and (max-width: 480px){
-  .table> thead> tr>th,
-  .table> thead> tr>td,
-  .table> tbody> tr>th,
-  .table> tbody> tr>td{
-    font-size: 16px;
-    word-break: break-all;
-  }
-  #sns img{
-  max-width:  240px;
-  }
-}
-
-
-.dl-horizontal dt {
-  float: left;
-  max-width: 50px;
-  overflow: hidden;
-  clear: left;
-  text-align: left;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.dl-horizontal dd {
-  margin-left: 0px;
-}
-
-.comming-photo img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  border: 1px solid #dfdfdf;
-}
-
-.info{
-    margin-top: 40px;
-    /* border-top: 1px solid #dfdfdf;
-    padding-top: 10px; */
-    border-bottom: 1px solid #dfdfdf;
-    padding-bottom: 30px;
-}
-.info:after {
-    content: ".";
-    display: block;
-    visibility: hidden;
-    height: 0.1px;
-    font-size: 0.1em;
-    line-height: 0;
-    clear: both;
-}
-.nonecolor {
-  color: #000000
-}
-
-
-.info ul{
-  padding-inline-start: 0px;
-}
-.info  ul> li{
-  color: #777777;
-  list-style: none;
-}
-.info ul> li> a{
-  color: #777777;
-  border-bottom: 2px solid #dfdfdf;
 }

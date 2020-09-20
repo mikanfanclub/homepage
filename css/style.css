@@ -141,6 +141,14 @@ img.radius {
 }
 
 
+@media screen and (max-width: 760px){
+  #top{
+    padding-top: 40px;
+  }
+}
+
+
+
 .table {
   max-width: 550px;
   font-size: 20px;

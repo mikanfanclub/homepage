@@ -186,7 +186,8 @@ fieldset[disabled] .btn-xl.active {
   text-transform: uppercase;
   font-weight: 400;
   letter-spacing: 1px;
-  color: white;
+  color: black;
+  /* color: white */
 }
 .navbar-custom .nav li a:hover,
 .navbar-custom .nav li a:focus {
@@ -357,10 +358,10 @@ section h3.section-subheading {
   max-width: 400px;
   margin: 0 auto;
   background-color: white;
-  /**text-align: center;**/テキストのセンタリングの無効化
-
-  padding: 25px;
+  /* *text-align: center;テキストのセンタリングの無効化 */
+  /* padding: 25px; */
 }
+
 #portfolio .portfolio-item .portfolio-caption h4 {
   text-transform: none;
   margin: 0;

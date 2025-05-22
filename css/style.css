@@ -2,12 +2,12 @@ html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
-  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
-    HelveticaNeue, 'Segoe UI', '游ゴシック体', YuGothic, 'Yu Gothic M',
-    '游ゴシック Medium', 'Yu Gothic Medium', 'ヒラギノ角ゴ ProN W3',
-    'Hiragino Kaku Gothic ProN W3', HiraKakuProN-W3, 'ヒラギノ角ゴ ProN',
-    'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ Pro', 'Hiragino Kaku Gothic Pro',
-    'メイリオ', Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+    HelveticaNeue, "Segoe UI", "游ゴシック体", YuGothic, "Yu Gothic M",
+    "游ゴシック Medium", "Yu Gothic Medium", "ヒラギノ角ゴ ProN W3",
+    "Hiragino Kaku Gothic ProN W3", HiraKakuProN-W3, "ヒラギノ角ゴ ProN",
+    "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro",
+    "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 }
 
 body {
@@ -110,44 +110,43 @@ img.radius {
   color: white;
 }
 
-.post-info{
-  background-color:#e2eba3;
-  position:relative;
-  padding-top:0px;
-  margin-bottom:0px;
+.post-info {
+  /* background-color: #e2eba3; */
+  background: #f4faff;
+  position: relative;
+  padding-top: 0px;
+  margin-bottom: 0px;
 }
-.post-date{
-  background: #0bd;
+.post-date {
+  background: #0068b7;
   border-radius: 50%;
   color: #fff;
   width: 70px;
   height: 70px;
-  font-size: 1.625rem;
+  font-size: 1.4rem;
   text-align: center;
-  position:absolute;
-  top:0;
+  position: absolute;
+  line-height: 30px;
+  top: 0;
   padding-top: 3px;
 }
-.post-date span{
+.post-date span {
   font-size: 1rem;
-  border-top:1px rgba(255,255,255,.5) solid;
+  border-top: 1px rgba(255, 255, 255, 0.5) solid;
   padding-top: 6px;
   display: block;
-  width:60%;
+  width: 60%;
   margin: 0 auto;
 }
-.post-title{
-  margin-left:120px;
+.post-title {
+  margin-left: 80px;
 }
 
-
-@media screen and (max-width: 760px){
-  #top{
+@media screen and (max-width: 760px) {
+  #top {
     padding-top: 40px;
   }
 }
-
-
 
 .table {
   max-width: 550px;
@@ -155,22 +154,21 @@ img.radius {
   color: #555555;
   font-weight: normal;
   margin: 0 auto;
-  width: auto
+  width: auto;
 }
 
-@media screen and (max-width: 480px){
-  .table> thead> tr>th,
-  .table> thead> tr>td,
-  .table> tbody> tr>th,
-  .table> tbody> tr>td{
+@media screen and (max-width: 480px) {
+  .table > thead > tr > th,
+  .table > thead > tr > td,
+  .table > tbody > tr > th,
+  .table > tbody > tr > td {
     font-size: 16px;
     word-break: break-all;
   }
-  #sns img{
-  max-width:  240px;
+  #sns img {
+    max-width: 240px;
   }
 }
-
 
 .dl-horizontal dt {
   float: left;
@@ -192,44 +190,43 @@ img.radius {
   border: 1px solid #dfdfdf;
 }
 
-.info{
-    margin-top: 40px;
-    /* border-top: 1px solid #dfdfdf;
+.info {
+  margin-top: 40px;
+  /* border-top: 1px solid #dfdfdf;
     padding-top: 10px; */
-    border-bottom: 1px solid #dfdfdf;
-    padding-bottom: 30px;
+  border-bottom: 1px solid #dfdfdf;
+  padding-bottom: 30px;
 }
 .info:after {
-    content: ".";
-    display: block;
-    visibility: hidden;
-    height: 0.1px;
-    font-size: 0.1em;
-    line-height: 0;
-    clear: both;
+  content: ".";
+  display: block;
+  visibility: hidden;
+  height: 0.1px;
+  font-size: 0.1em;
+  line-height: 0;
+  clear: both;
 }
 .nonecolor {
-  color: #000000
+  color: #000000;
 }
 
-
-.info ul{
+.info ul {
   padding-inline-start: 0px;
 }
-.info  ul> li{
+.info ul > li {
   color: #777777;
   list-style: none;
 }
-.info ul> li> a{
+.info ul > li > a {
   color: #777777;
   border-bottom: 2px solid #dfdfdf;
 }
 
-.under{
+.under {
   border-bottom: 1px solid #dfdfdf;
   padding-bottom: 15px;
 }
 
-.info_inner p{
+.info_inner p {
   line-height: 150%;
 }

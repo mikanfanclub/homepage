@@ -57,7 +57,7 @@
       rel="stylesheet"
       type="text/css"
     />
-  </head> 
+  </head>
 
   <body id="page-top" class="index">
     <nav
@@ -120,13 +120,7 @@
   </header> -->
 
     <div id="top" class="container">
-
-
-      
-
       <div class="row reveal">
-
-      
         <div id="sampleCarousel" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
             <li
@@ -194,26 +188,25 @@
     </div>
   </article> -->
 
-  
-  <article id="shinkan">
-    <div class="post-info">
-      <h3 class="post-title">
-        今年も五月祭に出店します🍊<br />
-        販売メニューは
-        <span class="text-primary">
-          <a
-            href="https://drive.google.com/file/d/1EzSukJDLqBGbOdC_3XwlDIwGNx_G-u6_/view"
-            >こちら</a
-          >
-        </span>
-        ！
-      </h3>
-      <p class="post-date">
-        05/24<br />
-        05/25
-      </p>
-    </div>
-  </article>
+    <article id="shinkan">
+      <div class="post-info">
+        <h3 class="post-title">
+          今年も五月祭に出店します🍊<br />
+          販売メニューは
+          <span class="text-primary">
+            <a
+              href="https://drive.google.com/file/d/1EzSukJDLqBGbOdC_3XwlDIwGNx_G-u6_/view"
+              >こちら</a
+            >
+          </span>
+          ！
+        </h3>
+        <p class="post-date">
+          05/24<br />
+          05/25
+        </p>
+      </div>
+    </article>
 
     <section id="concept" class="bg-light-gray">
       <div class="container">
@@ -713,6 +706,7 @@
           </div>
         </div>
         <div class="row text-center reveal">
+          <!--
           <a
             href="https://drive.google.com/file/d/1EzSukJDLqBGbOdC_3XwlDIwGNx_G-u6_/view"
             class="banner col-md-6 col-sm-6"
@@ -723,10 +717,29 @@
               class="radius"
             />
           </a>
-          <a href="https://drive.google.com/file/d/1lOE8QPUmaEoDEkANV2R3s-k-lvROG-lQ/view?usp=sharing"
-          class="banner col-md-6 col-sm-6">
-          <img src="img/mayfes25_osake_banner.png" width="345" height="115" alt="五月祭お酒メニュー表" class="radius">
-          </a>  
+          -->
+
+          <!--!20250523 added by Masto-->
+          <pdf-banner data-viewer="gogatusai-menu">
+            <img
+              src="img/mayfes23_banner.PNG"
+              alt="五月祭メニュー表"
+              class="radius"
+            />
+          </pdf-banner>
+
+          <a
+            href="https://drive.google.com/file/d/1lOE8QPUmaEoDEkANV2R3s-k-lvROG-lQ/view?usp=sharing"
+            class="banner col-md-6 col-sm-6"
+          >
+            <img
+              src="img/mayfes25_osake_banner.png"
+              width="345"
+              height="115"
+              alt="五月祭お酒メニュー表"
+              class="radius"
+            />
+          </a>
           <a
             href="http://mikanfanclub.blogspot.jp/"
             class="banner col-md-6 col-sm-6"
@@ -1272,6 +1285,13 @@
       </div>
     </div>
 
+    <!--!20250523 added by Masto-->
+    <pdf-viewer
+      class=""
+      id="gogatusai-menu"
+      data-url="../五月祭2025メニュー表.pdf"
+    ></pdf-viewer>
+
     <div id="root"></div>
 
     <!-- jQuery -->
@@ -1296,5 +1316,8 @@
 
     <!--  react Component-->
     <script src="js/bundle.js"></script>
+
+    <!--pdf viewer-->
+    <script type="module" src="./js/pdf-view.js"></script>
   </body>
 </html>

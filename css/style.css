@@ -187,17 +187,25 @@ img.radius {
 .comming-photo img {
   width: 100%;
   height: auto;
-  object-fit: contain;
+  object-fit: cover;
+  aspect-ratio: 1;
   border: 1px solid #dfdfdf;
 }
 
 .info {
   margin-top: 40px;
+  border-bottom: 1px solid #dfdfdf;
+  padding-bottom: 20px;
+}
+
+.small-info {
+  margin-top: 10px;
   /* border-top: 1px solid #dfdfdf;
     padding-top: 10px; */
   border-bottom: 1px solid #dfdfdf;
-  padding-bottom: 30px;
+  padding-bottom: 10px;
 }
+
 .info:after {
   content: ".";
   display: block;
@@ -228,8 +236,13 @@ img.radius {
   padding-bottom: 15px;
 }
 
-.info_inner p {
+.info-inner p{
   line-height: 150%;
+  font-size: 1.5rem;
+}
+.small-info-inner p{
+  line-height: 120%;
+  font-size: 1.3rem;
 }
 
 .info.coming::before{

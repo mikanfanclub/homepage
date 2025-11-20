@@ -112,13 +112,14 @@ img.radius {
 
 .post-info {
   /* background-color: #e2eba3; */
-  background: #f4faff;
+  background: #fff9f4;
   position: relative;
   padding-top: 0px;
   margin-bottom: 0px;
 }
 .post-date {
-  background: #0068b7;
+  /* background: #0068b7; */
+  background-color: #ff690c;
   border-radius: 50%;
   color: #fff;
   width: 70px;
@@ -211,11 +212,11 @@ img.radius {
 }
 
 .info ul {
-  padding-inline-start: 0px;
+  padding-inline-start: 2em;
 }
 .info ul > li {
   color: #777777;
-  list-style: none;
+  list-style:disc;
 }
 .info ul > li > a {
   color: #777777;
@@ -229,4 +230,22 @@ img.radius {
 
 .info_inner p {
   line-height: 150%;
+}
+
+.info.coming::before{
+  content: "COMING SOON";
+  display: block;
+  position: absolute;
+  z-index: 100;
+  left : -10px;
+  top :-20px;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 300%;
+  padding: 10px;
+  color: white;
+  margin-bottom: 20px;
+  transform: rotateZ(-10deg);
+  background-color: #f69749;
+  border-radius: 50%;
 }

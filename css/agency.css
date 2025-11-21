@@ -159,7 +159,7 @@ fieldset[disabled] .btn-xl.active {
 }
 .navbar-custom {
   /* background-color: #555555; */
-    background-color: #ffba7d;
+    background-color: #ffa75b;
 
   border-color: transparent;
 }
@@ -233,7 +233,7 @@ fieldset[disabled] .btn-xl.active {
 @media (min-width: 768px) {
   .navbar-custom.affix {
     /* background-color: #555555; */
-    background-color: #ffba7d;
+    background-color: #ffa75b;
     padding: 10px 0;
   }
   .navbar-custom.affix .navbar-brand {

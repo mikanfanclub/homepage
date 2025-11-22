@@ -320,13 +320,18 @@ img.radius {
   left: 0;
   top: 100px;
   width: 100%;
-  display: none;
+  /* display: none; */
+  opacity: 0;
+  transition: 0.3s;
+  pointer-events: none;
 }
 
 #concept-tab1:checked ~ #concept1,
 #concept-tab2:checked ~ #concept2,
 #concept-tab3:checked ~ #concept3 {
-  display: block;
+  /* display: block; */
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .concept-tab-label {
@@ -369,27 +374,37 @@ img.radius {
 }
 
 .concept-tab-label .fa-stack {
-  font-size: 3rem; /* デフォルト */
+  font-size: 3.5rem;
   transition: font-size 0.2s;
 }
 
 @media (max-width: 900px) {
   .concept-tab-label .fa-stack {
-    font-size: 2.2rem;
+    font-size: 3rem;
   }
 }
 @media (max-width: 600px) {
   .concept-tab-label .fa-stack {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
   }
 }
 
 .concept-content img {
-  max-width: 50%;
+  max-width: 60%;
   height: auto;
   margin-top: 20px;
   aspect-ratio: 4 / 3;
   object-fit: cover;
   border-radius: 10px;
   box-shadow: #8d8d8d 0px 0px 8px;
+} 
+@media (max-width: 900px) {
+  .concept-content img {
+    max-width: 70%;
+  }
+}
+@media (max-width: 600px) {
+  .concept-content img {
+    max-width: 90%;
+  }
 }

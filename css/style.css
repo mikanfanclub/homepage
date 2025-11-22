@@ -184,7 +184,7 @@ img.radius {
   margin-left: 0px;
 }
 
-.comming-photo img {
+.coming-photo img {
   width: 100%;
   height: auto;
   object-fit: cover;
@@ -199,10 +199,10 @@ img.radius {
 }
 
 .small-info {
-    display: flex;
-    align-items: stretch; /* 列の高さを揃える */
-    flex-wrap: nowrap;    /* 絶対に縦積みにしない */
-    box-sizing: border-box;
+  display: flex;
+  align-items: stretch; /* 列の高さを揃える */
+  flex-wrap: nowrap; /* 絶対に縦積みにしない */
+  box-sizing: border-box;
   margin-top: 10px;
   /* border-top: 1px solid #dfdfdf;
     padding-top: 10px; */
@@ -210,34 +210,48 @@ img.radius {
   padding-bottom: 10px;
 }
 
-.small-info .col-sm-8 > p {
-    display: flex;
-    align-items: center; /* 縦中央揃え */
-    gap: 1rem;           /* 要素間の余白（好みで調整） */
-    flex-wrap: wrap;     /* 幅が足りなくなったら要素ごとに折り返す */
-    margin: 0;
+.small-info-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+.small-info-date {
+  font-size: 1.3rem;
+  font-weight: bold;
 }
 
-.small-info .col-sm-3,
-.small-info .comming-photo {
-    float: none !important;
-    flex: 0 0 30% !important; /* 元の col-sm-3 相当 */
-    width: 30% !important;
-    box-sizing: border-box;
+.small-info-inner p {
+  line-height: 120%;
+  font-size: 1.3rem;
+}
+.small-info .col-sm-8 > p {
+  display: flex;
+  align-items: center; /* 縦中央揃え */
+  gap: 1rem; /* 要素間の余白（好みで調整） */
+  flex-wrap: wrap; /* 幅が足りなくなったら要素ごとに折り返す */
+  margin: 0;
+}
+
+.small-info .coming-photo {
+  float: none !important;
+  flex: 0 0 15% !important; /* 元の col-sm-3 相当 */
+  width: 15% !important;
+  box-sizing: border-box;
 }
 .small-info .col-sm-8 {
-    float: none !important;
-    flex: 1 0 70% !important; /* 元の col-sm-8 相当 */
-    width: 70% !important;
-    box-sizing: border-box;
+  float: none !important;
+  flex: 1 0 70% !important; /* 元の col-sm-8 相当 */
+  width: 70% !important;
+  box-sizing: border-box;
 }
+
 /* 画像の挙動 */
 
-.small-info .comming-photo img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* アスペクト比を保ちつつ領域を埋める */
-    display: block;
+.small-info .coming-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* アスペクト比を保ちつつ領域を埋める */
+  display: block;
+  aspect-ratio: 1; /* 正方形を維持 */
 }
 /* 必要なら右側のテキストに余白を追加 */
 .small-info .col-sm-8 {
@@ -246,6 +260,44 @@ img.radius {
 /* スマホで横幅が狭すぎる場合に文字がはみ出るのを抑える */
 .small-info {
   word-break: break-word;
+}
+
+@media screen and (max-width: 900px) {
+  .small-info-title {
+    font-size: 2rem;
+  }
+  .small-info-date {
+    font-size: 1.3rem;
+  }
+  .small-info .coming-photo {
+    flex: 0 0 20% !important; /* 幅30%に */
+    width: 20% !important;
+  }
+  /* .small-info .col-sm-8 {
+    flex: 1 0 65% !important; 
+    width: 65% !important;
+  } */
+}
+
+@media screen and (max-width: 600px) {
+  .small-info-title {
+    font-size: 1.5rem;
+  }
+  .small-info-date {
+    font-size: 1rem;
+  }
+  .small-info-inner p {
+    font-size: 1.2rem;
+  }
+  .small-info {
+    flex-wrap: wrap; /* スマホでは折り返しを許可 */
+  }
+  .small-info .coming-photo
+  {
+    flex: 0 0 20% !important; /* 幅100%に */
+    width: 20% !important;
+    margin-bottom: 10px; /* 下部に余白を追加 */
+  }
 }
 
 .info:after {
@@ -282,10 +334,6 @@ img.radius {
   line-height: 150%;
   font-size: 1.5rem;
 }
-.small-info-inner p {
-  line-height: 120%;
-  font-size: 1.3rem;
-}
 
 .info.coming::before {
   content: "COMING SOON";
@@ -303,4 +351,9 @@ img.radius {
   transform: rotateZ(-10deg);
   background-color: #f69749;
   border-radius: 50%;
+}
+
+#activities-list li {
+  list-style-type: none;
+  margin-bottom: 20px;
 }

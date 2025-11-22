@@ -89,7 +89,7 @@
               <a class="page-scroll" href="#concept">Concept</a>
             </li>
             <!-- <li>
-            <a class="page-scroll" href="#comming-events">Events</a>
+            <a class="page-scroll" href="#coming-events">Events</a>
           </li> -->
             <!-- <li>
             <a class="page-scroll" href="#project">活動中の企画班</a>
@@ -199,7 +199,7 @@
               href="https://www.komabasai.net/76/visitor/project?q=みかん愛好会"
               >こちら</a
             > -->
-            <a href="#comming-events">こちら</a>
+            <a href="#coming-events">こちら</a>
           </span>
           ！
         </h3>
@@ -283,7 +283,7 @@
       </div>
     </section>
 
-    <section id="comming-events">
+    <section id="coming-events">
       <div class="container">
         <div class="row reveal">
           <div class="col-lg-12 text-center">
@@ -291,8 +291,9 @@
           </div>
         </div>
 
-        <div class="row reveal info coming">
-          <div class="col-sm-4 comming-photo">
+        <!-- <div class="row reveal info coming"> -->
+        <div class="row reveal info">
+          <div class="col-sm-4 coming-photo">
             <img src="./img/event/物販.png" alt="みかん物販の様子" />
           </div>
           <div class="col-sm-8" style="font-size: 18px">
@@ -332,7 +333,7 @@
             </ul>
           </div>
         </div>
-
+        <!-- 
         <h4
           class="reveal section-subheading text-muted"
           style="font-size: 20px; margin-top: 50px; font-style: italic"
@@ -341,7 +342,7 @@
         </h4>
 
         <div class="row reveal small-info">
-          <div class="col-sm-3 comming-photo">
+          <div class="col-sm-3 coming-photo">
             <img
               src="./img/event/25kiinsaiみかん狩り.jpg"
               alt="みかん狩り企画の様子"
@@ -363,7 +364,7 @@
         </div>
 
         <div class="row reveal small-info">
-          <div class="col-sm-3 comming-photo">
+          <div class="col-sm-3 coming-photo">
             <img src="./img/event/25wasesai.jpg" alt="早稲田祭の様子" />
           </div>
           <div class="col-sm-8" style="font-size: 18px">
@@ -383,11 +384,11 @@
                 たくさんのご来場ありがとうございました！
               </p>
             </span>
-          </div>
-        </div>
+          </div> 
+        </div>-->
         <!-- 
       <div class="row reveal info">
-        <div class="col-sm-4 comming-photo">
+        <div class="col-sm-4 coming-photo">
           <img src="./img/event/event.jpg" alt="みかん">
         </div>
         <div class="col-sm-8" style="font-size:18px;">
@@ -404,6 +405,20 @@
           </ul>
         </div>
       </div> -->
+      </div>
+    </section>
+
+    <!--ここに関してはrecent.js参照。spreadsheetから情報持ってきてます-->
+    <section id="coming-events">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center reveal">
+            <h2 class="section-heading">RECENT</h2>
+          </div>
+          <ul id="activities-list">
+            <li>データを読み込み中です...</li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -1346,5 +1361,8 @@
 
     <!--  react Component-->
     <script src="js/bundle.js"></script>
+
+    <!-- Recent Activities Script -->
+    <script src="js/recent.js"></script>
   </body>
 </html>

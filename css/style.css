@@ -35,29 +35,6 @@ p {
   font-size: 2vw;
 }
 
-/* #header-site {
-  margin-bottom: 0px;
-  border-bottom: 0px solid #fff;
-  background: black url(../img/mv.png) center center no-repeat;
-  background-size: cover;
-}
-
-#header-site #header-site-inner {
-  padding: 40px 30px 60px 30px;
-  position: relative;
-  max-width: 1080px;
-  margin: auto;
-}
-
-#header-site #header-site-inner #header-site-inner-image {
-  margin: 150px auto;
-  width: 100%;
-}
-
-.header-img {
-  width: 100%;
-  height: auto;
-} */
 .banner {
   padding: auto;
 }

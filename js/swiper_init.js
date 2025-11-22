@@ -17,11 +17,11 @@ coverflowEffect: {
   slideShadows: false, // 影を有効化
 }
 ,
-    // autoplay: {
-    //     delay: 3000, // 自動再生の遅延時間 (ミリ秒)
-    //     disableOnInteraction: false, // ユーザー操作後も自動再生を継続
-    // },
-    // speed: 800, // スライドの切り替え速度 (ミリ秒)
+    autoplay: {
+        delay: 3000, // 自動再生の遅延時間 (ミリ秒)
+        disableOnInteraction: false, // ユーザー操作後も自動再生を継続
+    },
+    speed: 800, // スライドの切り替え速度 (ミリ秒)
 
     // 3. ナビゲーション要素の関連付け
     // pagination: {

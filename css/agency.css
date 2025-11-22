@@ -5,7 +5,7 @@
  */
 body {
   overflow-x: hidden;
-  font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif; */
   text-transform: none;
 }
 /*!text-trainsformいじった*/
@@ -52,9 +52,9 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif; */
   /*text-transform: uppercase;*/
-  font-weight: 700;
+  font-weight: 600;
   text-transform: none;
 }
 .img-centered {
@@ -70,7 +70,7 @@ h6 {
   color: white;
   background-color: #ed8600;
   border-color: #ed8600;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif; */
   text-transform: uppercase;
   font-weight: 700;
 }

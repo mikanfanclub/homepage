@@ -2,12 +2,16 @@ html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+  /* font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
     HelveticaNeue, "Segoe UI", "游ゴシック体", YuGothic, "Yu Gothic M",
     "游ゴシック Medium", "Yu Gothic Medium", "ヒラギノ角ゴ ProN W3",
     "Hiragino Kaku Gothic ProN W3", HiraKakuProN-W3, "ヒラギノ角ゴ ProN",
     "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro",
     "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+     */
+  font-family: "Hiragino Maru Gothic ProN", "ヒラギノ丸ゴ ProN",
+    "Hiragino Maru Gothic Pro", "ヒラギノ丸ゴ Pro W4", "HG丸ｺﾞｼｯｸM-PRO",
+    "HGMaruGothicMPRO", "游ゴシック", YuGothic, sans-serif !important;
 }
 
 body {

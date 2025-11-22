@@ -16,7 +16,7 @@
 body {
   overflow-x: hidden;
   font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  webkit-tap-highlight-color: #ed8600
+  /* webkit-tap-highlight-color: #ed8600 */
 }
 
 .btn-primary,

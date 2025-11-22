@@ -184,7 +184,7 @@ img.radius {
   margin-left: 0px;
 }
 
-.comming-photo img {
+.coming-photo img {
   width: 100%;
   height: auto;
   object-fit: cover;
@@ -199,10 +199,10 @@ img.radius {
 }
 
 .small-info {
-    display: flex;
-    align-items: stretch; /* 列の高さを揃える */
-    flex-wrap: nowrap;    /* 絶対に縦積みにしない */
-    box-sizing: border-box;
+  display: flex;
+  align-items: stretch; /* 列の高さを揃える */
+  flex-wrap: nowrap; /* 絶対に縦積みにしない */
+  box-sizing: border-box;
   margin-top: 10px;
   /* border-top: 1px solid #dfdfdf;
     padding-top: 10px; */
@@ -210,34 +210,48 @@ img.radius {
   padding-bottom: 10px;
 }
 
-.small-info .col-sm-8 > p {
-    display: flex;
-    align-items: center; /* 縦中央揃え */
-    gap: 1rem;           /* 要素間の余白（好みで調整） */
-    flex-wrap: wrap;     /* 幅が足りなくなったら要素ごとに折り返す */
-    margin: 0;
+.small-info-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+.small-info-date {
+  font-size: 1.3rem;
+  font-weight: bold;
 }
 
-.small-info .col-sm-3,
-.small-info .comming-photo {
-    float: none !important;
-    flex: 0 0 30% !important; /* 元の col-sm-3 相当 */
-    width: 30% !important;
-    box-sizing: border-box;
+.small-info-inner p {
+  line-height: 120%;
+  font-size: 1.3rem;
+}
+.small-info .col-sm-8 > p {
+  display: flex;
+  align-items: center; /* 縦中央揃え */
+  gap: 1rem; /* 要素間の余白（好みで調整） */
+  flex-wrap: wrap; /* 幅が足りなくなったら要素ごとに折り返す */
+  margin: 0;
+}
+
+.small-info .coming-photo {
+  float: none !important;
+  flex: 0 0 15% !important; /* 元の col-sm-3 相当 */
+  width: 15% !important;
+  box-sizing: border-box;
 }
 .small-info .col-sm-8 {
-    float: none !important;
-    flex: 1 0 70% !important; /* 元の col-sm-8 相当 */
-    width: 70% !important;
-    box-sizing: border-box;
+  float: none !important;
+  flex: 1 0 70% !important; /* 元の col-sm-8 相当 */
+  width: 70% !important;
+  box-sizing: border-box;
 }
+
 /* 画像の挙動 */
 
-.small-info .comming-photo img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* アスペクト比を保ちつつ領域を埋める */
-    display: block;
+.small-info .coming-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* アスペクト比を保ちつつ領域を埋める */
+  display: block;
+  aspect-ratio: 1; /* 正方形を維持 */
 }
 /* 必要なら右側のテキストに余白を追加 */
 .small-info .col-sm-8 {
@@ -246,6 +260,43 @@ img.radius {
 /* スマホで横幅が狭すぎる場合に文字がはみ出るのを抑える */
 .small-info {
   word-break: break-word;
+}
+
+@media screen and (max-width: 900px) {
+  .small-info-title {
+    font-size: 2rem;
+  }
+  .small-info-date {
+    font-size: 1.3rem;
+  }
+  .small-info .coming-photo {
+    flex: 0 0 20% !important; /* 幅30%に */
+    width: 20% !important;
+  }
+  /* .small-info .col-sm-8 {
+    flex: 1 0 65% !important; 
+    width: 65% !important;
+  } */
+}
+
+@media screen and (max-width: 600px) {
+  .small-info-title {
+    font-size: 1.5rem;
+  }
+  .small-info-date {
+    font-size: 1rem;
+  }
+  .small-info-inner p {
+    font-size: 1.2rem;
+  }
+  .small-info {
+    flex-wrap: wrap; /* スマホでは折り返しを許可 */
+  }
+  .small-info .coming-photo {
+    flex: 0 0 20% !important; /* 幅100%に */
+    width: 20% !important;
+    margin-bottom: 10px; /* 下部に余白を追加 */
+  }
 }
 
 .info:after {
@@ -282,10 +333,6 @@ img.radius {
   line-height: 150%;
   font-size: 1.5rem;
 }
-.small-info-inner p {
-  line-height: 120%;
-  font-size: 1.3rem;
-}
 
 .info.coming::before {
   content: "COMING SOON";
@@ -303,4 +350,282 @@ img.radius {
   transform: rotateZ(-10deg);
   background-color: #f69749;
   border-radius: 50%;
+}
+
+.swiper {
+  left: 0;
+  width: 100vw; /* 幅を指定 */
+  height: 60vw; /* 高さを指定 */
+  /* background-color: #ffc68d; */
+  background-image: url(../img/header-bg2.jpg);
+  background-size: cover;
+  background-color: rgba(255, 255, 255, 0.2);
+  background-blend-mode: lighten;
+}
+.swiper-slide {
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center;
+  font-size: 2rem;
+  color: aliceblue;
+  font-family: "Yusei Magic", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.swiper-slide img {
+  display: block;
+  /* ブロック要素になった画像を中央揃え */
+  margin: auto auto;
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 768px) {
+  .swiper {
+    left: 0;
+    height: 90vw; /* 高さを指定 */
+  }
+  .swiper-slide > img {
+    display: block;
+    margin: auto auto;
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+  }
+}
+
+/* ボタン全体の設定 */
+.custom-prev-btn,
+.custom-next-btn {
+  /* デフォルトの競合を心配せず、デザインをゼロから定義 */
+  width: 0px;
+  height: 0px;
+  border: none;
+  /* border-radius: 50%; */
+  /* background-color: #ffffff91; */
+  cursor: pointer;
+  padding: 0;
+  /* ボタンの位置決め（FlexboxやAbsolute Positionなどで調整） */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.custom-prev-btn {
+  border-bottom: 30px solid transparent;
+  border-right: 40px solid #ffffffcc;
+  border-top: 30px solid transparent;
+}
+
+.custom-next-btn {
+  border-bottom: 30px solid transparent;
+  border-left: 40px solid #ffffffcc;
+  border-top: 30px solid transparent;
+}
+
+@media screen and (max-width: 768px) {
+  .custom-prev-btn {
+    border-bottom: 20px solid transparent;
+    border-right: 25px solid #ffffffcc;
+    border-top: 20px solid transparent;
+    left: 5px;
+  }
+
+  .custom-next-btn {
+    border-bottom: 20px solid transparent;
+    border-left: 25px solid #ffffffcc;
+    border-top: 20px solid transparent;
+    right: 5px;
+  }
+}
+
+/* 個別の配置 */
+.custom-prev-btn {
+  left: 10px;
+}
+.custom-next-btn {
+  right: 10px;
+}
+
+/* アイコンやSVGのデザイン */
+.custom-prev-btn svg,
+.custom-next-btn svg {
+  /* SVGアイコンの色やサイズを設定 */
+  fill: white;
+  width: 20px;
+  height: 20px;
+  /* ボタンの中央に配置 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.swiper-scrollbar {
+  /* バーの高さを太くする */
+  height: 8px !important;
+  /* 角を丸くする */
+  border-radius: 4px;
+}
+.swiper-scrollbar-drag {
+  /* メインカラーをオレンジに変更 */
+  background-color: #ff7b00 !important;
+  /* 角を丸くする (トラッカーの角と合わせる) */
+  border-radius: 4px;
+}
+
+.mikan-title {
+  text-align: center;
+  font-size: 6rem;
+  color: aliceblue;
+  font-family: "Yusei Magic", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-shadow: 2px 2px 0 #ffc186, -2px 2px 0 #ffc186, -2px -2px 0 #ffc186,
+    2px -2px 0 #ffc186;
+}
+.mikan-subtitle {
+  text-align: center;
+  font-size: 3rem;
+  color: aliceblue;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@media screen and (max-width: 768px) {
+  .mikan-title {
+    font-size: 4rem;
+  }
+
+  .mikan-subtitle {
+    font-size: 2rem;
+  }
+}
+.concepts-sec {
+  text-align: center;
+  margin-bottom: 2rem;
+  height: 900px;
+}
+@media (max-width: 1200px) {
+  .concepts-sec {
+    height: 800px;
+  }
+}
+@media (max-width: 900px) {
+  .concepts-sec {
+    height: 700px;
+  }
+}
+@media (max-width: 600px) {
+  .concepts-sec {
+    height: 700px;
+  }
+}
+
+.concepts-sec > input {
+  display: none;
+  width: 0;
+}
+.concept-content {
+  position: absolute;
+  left: 0;
+  top: 100px;
+  width: 100%;
+  /* display: none; */
+  opacity: 0;
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+#concept-tab1:checked ~ #concept1,
+#concept-tab2:checked ~ #concept2,
+#concept-tab3:checked ~ #concept3 {
+  /* display: block; */
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.concept-tab-label {
+  display: block;
+  float: left;
+  width: 33.3333%;
+  width: 33%;
+  background-color: #ffffff00;
+  margin-bottom: 20px;
+  text-align: center;
+  cursor: pointer;
+  border-bottom: 4px solid #dfdfdf;
+  box-sizing: border-box;
+  transition: 0.3s;
+  height: 80px;
+}
+
+.concept-tab-label > span {
+  align-items: center;
+  margin: 0 auto;
+}
+
+#concept-tab1:checked ~ label[for="concept-tab1"],
+#concept-tab2:checked ~ label[for="concept-tab2"],
+#concept-tab3:checked ~ label[for="concept-tab3"] {
+  border-bottom: #ed8600 4px solid;
+}
+
+#concept-tab1:checked ~ label[for="concept-tab1"] > .fa-stack,
+#concept-tab2:checked ~ label[for="concept-tab2"] > .fa-stack,
+#concept-tab3:checked ~ label[for="concept-tab3"] > .fa-stack {
+  transform: scale(1.3);
+  transition: 0.3s;
+}
+
+.blank {
+  display: block;
+  width: 100%;
+  height: 50px;
+}
+
+.concept-tab-label .fa-stack {
+  font-size: 3.5rem;
+  transition: font-size 0.2s;
+}
+
+@media (max-width: 900px) {
+  .concept-tab-label .fa-stack {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 600px) {
+  .concept-tab-label .fa-stack {
+    font-size: 2.5rem;
+  }
+}
+
+.concept-content img {
+  max-width: 50%;
+  height: auto;
+  margin-top: 20px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: #8d8d8d 0px 0px 8px;
+}
+@media (max-width: 900px) {
+  .concept-content img {
+    max-width: 70%;
+  }
+}
+@media (max-width: 600px) {
+  .concept-content img {
+    max-width: 90%;
+  }
+}
+
+#activities-list li {
+  list-style-type: none;
+  margin-bottom: 20px;
 }

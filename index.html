@@ -18,7 +18,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <meta name="theme-color" content="#ffba7d" />
+    <meta name="theme-color" content="#ffa75b" />
 
     <title>東大みかん愛好会</title>
     <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet" />
@@ -57,6 +57,18 @@
       rel="stylesheet"
       type="text/css"
     />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body id="page-top" class="index">
@@ -89,7 +101,7 @@
               <a class="page-scroll" href="#concept">Concept</a>
             </li>
             <!-- <li>
-            <a class="page-scroll" href="#comming-events">Events</a>
+            <a class="page-scroll" href="#coming-events">Events</a>
           </li> -->
             <!-- <li>
             <a class="page-scroll" href="#project">活動中の企画班</a>
@@ -119,59 +131,63 @@
     </div>
   </header> -->
 
-    <div id="top" class="container">
-      <div class="row reveal">
-        <div id="sampleCarousel" class="carousel slide" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li
-              class="active"
-              data-target="#sampleCarousel"
-              data-slide-to="0"
-            ></li>
-            <li data-target="#sampleCarousel" data-slide-to="1"></li>
-            <li data-target="#sampleCarousel" data-slide-to="2"></li>
-            <!--<li data-target="#sampleCarousel" data-slide-to="3"></li> -->
-          </ol>
-          <div class="carousel-inner" role="listbox">
-            <!--ページ先頭でくるくるしているやつ-->
+    <div id="top">
+      <div class="reveal">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div style="display: block; height: 60%; align-items: center">
+                <img src="./img/carousel/mikan.PNG" />
+                <div class="mikan-title">東大みかん愛好会</div>
+                <div class="mikan-subtitle">Mikan Fun Club</div>
+              </div>
+            </div>
 
-            <div class="item active">
-              <img src="./img/carousel/mv3.jpg" alt="First slide" />
+            
+            <div class="swiper-slide">
+              <div style="display: block; height: 90%; align-items: center">
+                <div style="height: 10%"></div>
+                <img style="height: 60%" src="./img/event/物販.png" />
+                <div style="font-size:xx-large">
+                  駒場祭11/22~24で出展中!<br />詳しくは<a
+                    style="
+                      font-weight: 600;
+                      text-shadow: 2px 2px 0 #fff, -2px 2px 0 #fff,
+                        -2px -2px 0 #fff, 2px -2px 0 #fff;
+                    "
+                    href="#comming-events"
+                    >こちら</a
+                  >！
+                </div>
+              </div>
             </div>
-            <div class="item">
-              <img src="./img/carousel/mv6.jpg" alt="Second slide" />
+
+            
+            <div class="swiper-slide">
+              <div style="display: block; height: 90%; align-items: center">
+                <div style="height: 10%"></div>
+                <img src="./img/carousel/mv6.jpg" />
+                <div>みかんボードゲーム</div>
+              </div>
             </div>
-            <div class="item">
-              <img src="./img/carousel/mv7.jpg" alt="Third slide" />
+
+            <div class="swiper-slide">
+              <div style="display: block; height: 90%; align-items: center">
+                <div style="height: 10%"></div>
+                <img src="./img/carousel/mv7.jpg" />
+                <div>愛好会キャラクター『柑吉』</div>
+              </div>
             </div>
-            <!-- <div class="item">
-            <img src="./img/carousel/mv7.jpg" alt="Fourth slide">
-          </div> -->
+
           </div>
-          <a
-            class="left carousel-control"
-            href="#sampleCarousel"
-            role="button"
-            data-slide="prev"
-          >
-            <span
-              class="glyphicon glyphicon-chevron-left"
-              aria-hidden="true"
-            ></span>
-            <span class="sr-only">前へ</span>
-          </a>
-          <a
-            class="right carousel-control"
-            href="#sampleCarousel"
-            role="button"
-            data-slide="next"
-          >
-            <span
-              class="glyphicon glyphicon-chevron-right"
-              aria-hidden="true"
-            ></span>
-            <span class="sr-only">次へ</span>
-          </a>
+
+          <!-- <div class="swiper-pagination"></div> -->
+          <div class="swiper-scrollbar"></div>
+
+          <div class="custom-prev-btn"></div>
+          <div class="custom-next-btn"></div>
+
+          <div class="swiper-scrollbar"></div>
         </div>
       </div>
     </div>
@@ -199,7 +215,7 @@
               href="https://www.komabasai.net/76/visitor/project?q=みかん愛好会"
               >こちら</a
             > -->
-            <a href="#comming-events">こちら</a>
+            <a href="#coming-events">こちら</a>
           </span>
           ！
         </h3>
@@ -237,53 +253,78 @@
               </span>
               <span class="nobreak"> あなたに</span>
             </h1>
-            <h3>
-              東大みかん愛好会は日本初の「みかん」に特化したサークルです。<br />みかんの消費量が全盛期の
-              5 分の 1 まで減少している状況を受け、<br /><span
-                class="text-primary"
-                >みかんの消費量を増やす</span
-              >を理念に掲げて活動しています。
-            </h3>
+            <br />
+            <h4 style="text-align: center">
+              『東大みかん愛好会』は日本初の「みかん」に特化したサークル
+              <br /><br />
+              みかんの消費量が全盛期の<span style="font-weight: bolder">
+                ５ 分の １ </span
+              >まで減少している状況を受け、<br /><span class="text-primary"
+                >みかんの消費量を増やすこと</span
+              >を理念に日々活動しています。
+            </h4>
           </div>
         </div>
-        <div class="row text-center reveal" style="margin-top: 100px">
-          <div class="col-md-4">
+        <div class="blank"></div>
+
+        <div class="reveal concepts-sec">
+          <input type="radio" name="concept-tab" id="concept-tab1" checked />
+          <label for="concept-tab1" class="concept-tab-label">
             <span class="fa-stack fa-4x">
               <i class="fa fa-circle fa-stack-2x text-primary"></i>
               <i class="fa fa-thumbs-up fa-stack-1x fa-inverse"></i>
             </span>
-            <h4 class="service-heading">話題を巻き起こす</h4>
-            <p class="text-muted" style="font-size: 20px">
-              みかんに興味がない人すら思わず振り返ってしまうような、話題性のある企画を実行する
-            </p>
-          </div>
-          <div class="col-md-4">
+          </label>
+          <input type="radio" name="concept-tab" id="concept-tab2" />
+          <label for="concept-tab2" class="concept-tab-label">
             <span class="fa-stack fa-4x">
               <i class="fa fa-circle fa-stack-2x text-primary"></i>
               <i class="fa fa-heartbeat fa-stack-1x fa-inverse"></i>
             </span>
-            <h4 class="service-heading">楽しみながら学ぶ</h4>
-            <p class="text-muted" style="font-size: 20px">
-              楽しみながら自然にみかんの魅力を学べる企画を実施する
-            </p>
-          </div>
-          <div class="col-md-4">
+          </label>
+          <input type="radio" name="concept-tab" id="concept-tab3" />
+          <label for="concept-tab3" class="concept-tab-label">
             <span class="fa-stack fa-4x">
               <i class="fa fa-circle fa-stack-2x text-primary"></i>
               <i class="fa fa-globe fa-stack-1x fa-inverse"></i>
             </span>
-            <h4 class="service-heading" style="font-size: 26px">
-              全ての産地を応援する
+          </label>
+
+          <div class="concept-content" id="concept1">
+            <div style="font-size: 1.5em;">&lt&lt Concept 1 &gt&gt</div>
+            <h4 class="service-heading"># 話題を巻き起こす</h4>
+            <img src="./img/concept/concept1.jpg" alt="話題を巻き起こす" />
+            <div class="blank"></div>
+            <p class="text-muted" style="font-size: 20px; text-align: center">
+              みかんに興味がない人すら振り返ってしまう、<br />話題性のある企画を実行する!
+            </p>
+          </div>
+          <div class="concept-content" id="concept2">
+            <div style="font-size: 1.5em;">&lt&lt Concept 2 &gt&gt</div>
+            <h4 class="service-heading"># 楽しみながら学ぶ</h4>
+            <img src="./img/concept/concept2.jpg" alt="話題を巻き起こす" />
+
+            <div class="blank"></div>
+            <p class="text-muted" style="font-size: 20px; text-align: center">
+              楽しみながら自然にみかんの魅力を学べる企画を実施する!
+            </p>
+          </div>
+          <div class="concept-content" id="concept3">
+            <div style="font-size: 1.5em;">&lt&lt Concept 3 &gt&gt</div>
+            <h4 class="service-heading">
+              # 全ての産地を応援する
             </h4>
-            <p class="text-muted" style="font-size: 20px">
-              日本全国津々浦々に各地のみかんを盛り上げる!
+            <img src="./img/concept/concept3.jpg" alt="話題を巻き起こす" />
+            <div class="blank"></div>
+            <p class="text-muted" style="font-size: 20px; text-align: center">
+              日本全国津々浦々、各地のみかんを知りそして盛り上げる!
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="comming-events">
+    <section id="coming-events">
       <div class="container">
         <div class="row reveal">
           <div class="col-lg-12 text-center">
@@ -291,8 +332,9 @@
           </div>
         </div>
 
-        <div class="row reveal info coming">
-          <div class="col-sm-4 comming-photo">
+        <!-- <div class="row reveal info coming"> -->
+        <div class="row reveal info">
+          <div class="col-sm-4 coming-photo">
             <img src="./img/event/物販.png" alt="みかん物販の様子" />
           </div>
           <div class="col-sm-8" style="font-size: 18px">
@@ -332,7 +374,7 @@
             </ul>
           </div>
         </div>
-
+        <!-- 
         <h4
           class="reveal section-subheading text-muted"
           style="font-size: 20px; margin-top: 50px; font-style: italic"
@@ -341,7 +383,7 @@
         </h4>
 
         <div class="row reveal small-info">
-          <div class="col-sm-3 comming-photo">
+          <div class="col-sm-3 coming-photo">
             <img
               src="./img/event/25kiinsaiみかん狩り.jpg"
               alt="みかん狩り企画の様子"
@@ -363,7 +405,7 @@
         </div>
 
         <div class="row reveal small-info">
-          <div class="col-sm-3 comming-photo">
+          <div class="col-sm-3 coming-photo">
             <img src="./img/event/25wasesai.jpg" alt="早稲田祭の様子" />
           </div>
           <div class="col-sm-8" style="font-size: 18px">
@@ -383,11 +425,11 @@
                 たくさんのご来場ありがとうございました！
               </p>
             </span>
-          </div>
-        </div>
+          </div> 
+        </div>-->
         <!-- 
       <div class="row reveal info">
-        <div class="col-sm-4 comming-photo">
+        <div class="col-sm-4 coming-photo">
           <img src="./img/event/event.jpg" alt="みかん">
         </div>
         <div class="col-sm-8" style="font-size:18px;">
@@ -404,6 +446,20 @@
           </ul>
         </div>
       </div> -->
+      </div>
+    </section>
+
+    <!--ここに関してはrecent.js参照。spreadsheetから情報持ってきてます-->
+    <section id="coming-events">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center reveal">
+            <h2 class="section-heading">RECENT</h2>
+          </div>
+          <ul id="activities-list">
+            <li>データを読み込み中です...</li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -1346,5 +1402,15 @@
 
     <!--  react Component-->
     <script src="js/bundle.js"></script>
+
+<<<<<<< HEAD
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="js/swiper_init.js"></script>
+=======
+    <!-- Recent Activities Script -->
+    <script src="js/recent.js"></script>
+>>>>>>> add-recent
   </body>
 </html>

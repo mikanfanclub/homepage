@@ -308,7 +308,17 @@ img.radius {
 .concepts-sec {
   text-align: center;
   margin-bottom: 2rem;
-  height: 600px;
+  height: 900px;
+}
+@media (max-width: 900px) {
+  .concepts-sec {
+    height: 800px;
+  }
+}
+@media (max-width: 600px) {
+  .concepts-sec {
+    height: 700px;
+  }
 }
 
 .concepts-sec > input {

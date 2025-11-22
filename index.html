@@ -18,7 +18,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <meta name="theme-color" content="#ffba7d" />
+    <meta name="theme-color" content="#ffa75b" />
 
     <title>東大みかん愛好会</title>
     <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet" />
@@ -56,6 +56,18 @@
       href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700"
       rel="stylesheet"
       type="text/css"
+    />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap"
+      rel="stylesheet"
     />
   </head>
 
@@ -119,59 +131,63 @@
     </div>
   </header> -->
 
-    <div id="top" class="container">
-      <div class="row reveal">
-        <div id="sampleCarousel" class="carousel slide" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li
-              class="active"
-              data-target="#sampleCarousel"
-              data-slide-to="0"
-            ></li>
-            <li data-target="#sampleCarousel" data-slide-to="1"></li>
-            <li data-target="#sampleCarousel" data-slide-to="2"></li>
-            <!--<li data-target="#sampleCarousel" data-slide-to="3"></li> -->
-          </ol>
-          <div class="carousel-inner" role="listbox">
-            <!--ページ先頭でくるくるしているやつ-->
+    <div id="top">
+      <div class="reveal">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div style="display: block; height: 60%; align-items: center">
+                <img src="./img/carousel/mikan.PNG" />
+                <div class="mikan-title">東大みかん愛好会</div>
+                <div class="mikan-subtitle">Mikan Fun Club</div>
+              </div>
+            </div>
 
-            <div class="item active">
-              <img src="./img/carousel/mv3.jpg" alt="First slide" />
+            
+            <div class="swiper-slide">
+              <div style="display: block; height: 90%; align-items: center">
+                <div style="height: 10%"></div>
+                <img style="height: 60%" src="./img/event/物販.png" />
+                <div style="font-size:xx-large">
+                  駒場祭11/22~24で出展中!<br />詳しくは<a
+                    style="
+                      font-weight: 600;
+                      text-shadow: 2px 2px 0 #fff, -2px 2px 0 #fff,
+                        -2px -2px 0 #fff, 2px -2px 0 #fff;
+                    "
+                    href="#comming-events"
+                    >こちら</a
+                  >！
+                </div>
+              </div>
             </div>
-            <div class="item">
-              <img src="./img/carousel/mv6.jpg" alt="Second slide" />
+
+            
+            <div class="swiper-slide">
+              <div style="display: block; height: 90%; align-items: center">
+                <div style="height: 10%"></div>
+                <img src="./img/carousel/mv6.jpg" />
+                <div>みかんボードゲーム</div>
+              </div>
             </div>
-            <div class="item">
-              <img src="./img/carousel/mv7.jpg" alt="Third slide" />
+
+            <div class="swiper-slide">
+              <div style="display: block; height: 90%; align-items: center">
+                <div style="height: 10%"></div>
+                <img src="./img/carousel/mv7.jpg" />
+                <div>愛好会キャラクター『柑吉』</div>
+              </div>
             </div>
-            <!-- <div class="item">
-            <img src="./img/carousel/mv7.jpg" alt="Fourth slide">
-          </div> -->
+
           </div>
-          <a
-            class="left carousel-control"
-            href="#sampleCarousel"
-            role="button"
-            data-slide="prev"
-          >
-            <span
-              class="glyphicon glyphicon-chevron-left"
-              aria-hidden="true"
-            ></span>
-            <span class="sr-only">前へ</span>
-          </a>
-          <a
-            class="right carousel-control"
-            href="#sampleCarousel"
-            role="button"
-            data-slide="next"
-          >
-            <span
-              class="glyphicon glyphicon-chevron-right"
-              aria-hidden="true"
-            ></span>
-            <span class="sr-only">次へ</span>
-          </a>
+
+          <!-- <div class="swiper-pagination"></div> -->
+          <div class="swiper-scrollbar"></div>
+
+          <div class="custom-prev-btn"></div>
+          <div class="custom-next-btn"></div>
+
+          <div class="swiper-scrollbar"></div>
         </div>
       </div>
     </div>
@@ -1346,5 +1362,10 @@
 
     <!--  react Component-->
     <script src="js/bundle.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="js/swiper_init.js"></script>
   </body>
 </html>

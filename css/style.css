@@ -308,17 +308,24 @@ img.radius {
 .swiper {
   left: 0;
   width: 100vw; /* 幅を指定 */
-  height: 100vh; /* 高さを指定 */
+  height: 60vw; /* 高さを指定 */
   /* background-color: #ffc68d; */
   background-image: url(../img/header-bg2.jpg);
-  background-color: rgba(255, 255, 255, 0.5);
+  background-size: cover;
+  background-color: rgba(255, 255, 255, 0.2);
   background-blend-mode: lighten;
 }
 .swiper-slide {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center;
+  font-size: 2rem;
+  color: aliceblue;
+  font-family: "Yusei Magic", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .swiper-slide img {
@@ -326,20 +333,21 @@ img.radius {
   /* ブロック要素になった画像を中央揃え */
   margin: auto auto;
   width: 80%;
-  height: 100%;
+  height: 80%;
   object-fit: contain;
 }
 
 @media screen and (max-width: 768px) {
-  .swiper-slide img {
+  .swiper {
+    left: 0;
+    height: 90vw; /* 高さを指定 */
+  }
+  .swiper-slide > img {
     display: block;
     margin: auto auto;
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
     object-fit: contain;
-  }
-  .swiper-slide img {
-    transform: translateY(-50px);
   }
 }
 
@@ -362,15 +370,32 @@ img.radius {
 }
 
 .custom-prev-btn {
-  border-bottom: 20px solid transparent;
-  border-right: 30px solid #ffffffcc;
-  border-top: 20px solid transparent;
+  border-bottom: 30px solid transparent;
+  border-right: 40px solid #ffffffcc;
+  border-top: 30px solid transparent;
 }
 
 .custom-next-btn {
-  border-bottom: 20px solid transparent;
-  border-left: 30px solid #ffffffcc;
-  border-top: 20px solid transparent;
+  border-bottom: 30px solid transparent;
+  border-left: 40px solid #ffffffcc;
+  border-top: 30px solid transparent;
+}
+
+
+@media screen and (max-width: 768px) {
+  .custom-prev-btn {
+    border-bottom: 20px solid transparent;
+    border-right: 25px solid #ffffffcc;
+    border-top: 20px solid transparent;
+    left: 5px;
+  }
+
+  .custom-next-btn {
+    border-bottom: 20px solid transparent;
+    border-left: 25px solid #ffffffcc;
+    border-top: 20px solid transparent;
+    right: 5px;
+  }
 }
 
 /* 個別の配置 */
@@ -405,4 +430,33 @@ img.radius {
   background-color: #ff7b00 !important;
   /* 角を丸くする (トラッカーの角と合わせる) */
   border-radius: 4px;
+}
+
+.mikan-title {
+  text-align: center;
+  font-size: 6rem;
+  color: aliceblue;
+  font-family: "Yusei Magic", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+                      text-shadow: 2px 2px 0 #ffc186, -2px 2px 0 #ffc186,
+                        -2px -2px 0 #ffc186, 2px -2px 0 #ffc186;
+}
+.mikan-subtitle {
+  text-align: center;
+  font-size: 3rem;
+  color: aliceblue;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@media screen and (max-width: 768px) {
+  .mikan-title {
+    font-size: 4rem;
+  }
+
+  .mikan-subtitle {
+    font-size: 2rem;
+  }
 }

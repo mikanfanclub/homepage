@@ -93,18 +93,19 @@ img.radius {
   position: relative;
   padding-top: 0px;
   margin-bottom: 0px;
+  display: flex;
 }
 .post-date {
   /* background: #0068b7; */
   background-color: #ff690c;
   border-radius: 50%;
   color: #fff;
-  width: 70px;
-  height: 70px;
-  font-size: 1.4rem;
+  width: 60px;
+  height: 60px;
+  font-size: 1.3rem;
   text-align: center;
   position: absolute;
-  line-height: 30px;
+  line-height: 25px;
   top: 0;
   padding-top: 3px;
 }
@@ -116,13 +117,31 @@ img.radius {
   width: 60%;
   margin: 0 auto;
 }
-.post-title {
+
+.post-content {
   margin-left: 80px;
+  font-size: 2rem;
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 900px) {
   #top {
     padding-top: 40px;
+  }
+
+  .post-content {
+    margin-left: 80px;
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #top {
+    padding-top: 40px;
+  }
+
+  .post-content {
+    margin-left: 80px;
+    font-size: 1.6rem;
   }
 }
 

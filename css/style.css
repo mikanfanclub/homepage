@@ -184,7 +184,7 @@ img.radius {
   margin-left: 0px;
 }
 
-.comming-photo img {
+.coming-photo img {
   width: 100%;
   height: auto;
   object-fit: cover;
@@ -210,6 +210,19 @@ img.radius {
   padding-bottom: 10px;
 }
 
+.small-info-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+.small-info-date {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.small-info-inner p {
+  line-height: 120%;
+  font-size: 1.3rem;
+}
 .small-info .col-sm-8 > p {
   display: flex;
   align-items: center; /* 縦中央揃え */
@@ -218,11 +231,10 @@ img.radius {
   margin: 0;
 }
 
-.small-info .col-sm-3,
-.small-info .comming-photo {
+.small-info .coming-photo {
   float: none !important;
-  flex: 0 0 30% !important; /* 元の col-sm-3 相当 */
-  width: 30% !important;
+  flex: 0 0 15% !important; /* 元の col-sm-3 相当 */
+  width: 15% !important;
   box-sizing: border-box;
 }
 .small-info .col-sm-8 {
@@ -231,13 +243,15 @@ img.radius {
   width: 70% !important;
   box-sizing: border-box;
 }
+
 /* 画像の挙動 */
 
-.small-info .comming-photo img {
+.small-info .coming-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover; /* アスペクト比を保ちつつ領域を埋める */
   display: block;
+  aspect-ratio: 1; /* 正方形を維持 */
 }
 /* 必要なら右側のテキストに余白を追加 */
 .small-info .col-sm-8 {
@@ -246,6 +260,43 @@ img.radius {
 /* スマホで横幅が狭すぎる場合に文字がはみ出るのを抑える */
 .small-info {
   word-break: break-word;
+}
+
+@media screen and (max-width: 900px) {
+  .small-info-title {
+    font-size: 2rem;
+  }
+  .small-info-date {
+    font-size: 1.3rem;
+  }
+  .small-info .coming-photo {
+    flex: 0 0 20% !important; /* 幅30%に */
+    width: 20% !important;
+  }
+  /* .small-info .col-sm-8 {
+    flex: 1 0 65% !important; 
+    width: 65% !important;
+  } */
+}
+
+@media screen and (max-width: 600px) {
+  .small-info-title {
+    font-size: 1.5rem;
+  }
+  .small-info-date {
+    font-size: 1rem;
+  }
+  .small-info-inner p {
+    font-size: 1.2rem;
+  }
+  .small-info {
+    flex-wrap: wrap; /* スマホでは折り返しを許可 */
+  }
+  .small-info .coming-photo {
+    flex: 0 0 20% !important; /* 幅100%に */
+    width: 20% !important;
+    margin-bottom: 10px; /* 下部に余白を追加 */
+  }
 }
 
 .info:after {
@@ -281,10 +332,6 @@ img.radius {
 .info-inner p {
   line-height: 150%;
   font-size: 1.5rem;
-}
-.small-info-inner p {
-  line-height: 120%;
-  font-size: 1.3rem;
 }
 
 .info.coming::before {
@@ -464,9 +511,14 @@ img.radius {
   margin-bottom: 2rem;
   height: 900px;
 }
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
   .concepts-sec {
     height: 800px;
+  }
+}
+@media (max-width: 900px) {
+  .concepts-sec {
+    height: 700px;
   }
 }
 @media (max-width: 600px) {
@@ -554,7 +606,7 @@ img.radius {
 }
 
 .concept-content img {
-  max-width: 60%;
+  max-width: 50%;
   height: auto;
   margin-top: 20px;
   aspect-ratio: 4 / 3;
@@ -571,4 +623,9 @@ img.radius {
   .concept-content img {
     max-width: 90%;
   }
+}
+
+#activities-list li {
+  list-style-type: none;
+  margin-bottom: 20px;
 }

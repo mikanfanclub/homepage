@@ -334,7 +334,7 @@ img.radius {
   width: 100vw; /* 幅を指定 */
   height: 60vw; /* 高さを指定 */
   /* background-color: #ffc68d; */
-  background-image: url(../img/header-bg2.JPG);
+  background-image: url(../img/header-bg.jpg);
   background-size: cover;
   background-color: rgba(255, 255, 255, 0.2);
   background-blend-mode: lighten;

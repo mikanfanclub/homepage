@@ -12,6 +12,8 @@ html {
   font-family: "Hiragino Maru Gothic ProN", "ヒラギノ丸ゴ ProN",
     "Hiragino Maru Gothic Pro", "ヒラギノ丸ゴ Pro W4", "HG丸ｺﾞｼｯｸM-PRO",
     "HGMaruGothicMPRO", "游ゴシック", YuGothic, sans-serif !important;
+    overscroll-behavior-x: none;
+    touch-action: pan-y;
 }
 
 body {

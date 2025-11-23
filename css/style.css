@@ -235,8 +235,20 @@ img.radius {
   float: none !important;
   flex: 0 0 15% !important; /* 元の col-sm-3 相当 */
   width: 15% !important;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 }
+.small-info .coming-photo > img {
+  border-radius: 10px !important;
+  box-shadow: #8d8d8d 0px 0px 4px !important;
+  transition: 0.5s;
+}
+
+.small-info .coming-photo > img:hover {
+  border-radius: 10px !important;
+  transform: scale(1.2);
+  box-shadow: #8d8d8d 0px 0px 8px !important;
+}
+
 .small-info .col-sm-8 {
   float: none !important;
   flex: 1 0 70% !important; /* 元の col-sm-8 相当 */

@@ -426,6 +426,7 @@ img.radius {
   left: 0;
   width: 100vw; /* 幅を指定 */
   height: 60vw; /* 高さを指定 */
+  max-height: 100vh;
   /* background-color: #ffc68d; */
   background-image: url(../img/header-bg.jpg);
   background-size: cover;

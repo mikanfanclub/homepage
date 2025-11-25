@@ -27,6 +27,38 @@ function checkImage(src) {
 
 
 /**
+ * 限定的なMarkdown記法をHTMLに変換する関数
+ * @param {string} markdownText - Markdown形式のテキスト
+ * @returns {string} HTML形式のテキスト
+ */
+function markdownToHtml(markdownText,variable) {
+    if (!markdownText) return '';
+
+    let html = markdownText;
+
+    // 1. **太字** または __太字__ を <strong>タグに変換
+    html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    html = html.replace(/__(.*?)__/g, '<strong>$1</strong>');
+
+    // 2. *斜体* または _斜体_ を <em>タグに変換
+    html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
+    html = html.replace(/_(.*?)_/g, '<em>$1</em>');
+
+    // 3. 2つ以上のスペース＋改行、または単純な改行を <br> タグに変換
+    html = html.replace(/ {2,}\n/g, '<br>'); // 行末スペース2つ以上
+    html = html.replace(/\n/g, '<br>');      // 単純な改行（これは好みに応じて削除しても良い）
+
+    // 4. +オレンジ文字+
+    html = html.replace(/\+(.*?)\+/g, '<span style="color:#f69749;">$1</span>');
+
+
+    // 4. ^リンク^
+    html = html.replace(/\^(.*?)\^/g, `<a href=${variable}>$1</a>`);
+
+    return html;
+}
+
+/**
  * Google Sheetsのデータを取得し、HTMLに表示する関数
  */
 async function fetchAndDisplayActivities() {
@@ -58,10 +90,12 @@ async function fetchAndDisplayActivities() {
             const date = row.c[1] && row.c[1].f ? row.c[1].f : '日付なし';
             const description = row.c[2] && row.c[2].v !== null ? row.c[2].v : '説明なし';
             let photofile = row.c[3] && row.c[3].v !== null ? row.c[3].v : 'no-image.png';
+            let variable = row.c[4] && row.c[4].v !== null ? row.c[4].v : '';
 
             const imagePath = `img/recent/${photofile}`;
 
-            // ⭐ await で画像の存在確認が完了するのを待つ
+            const htmlDescription = markdownToHtml(description,variable);
+
             const exists = await checkImage(imagePath);
 
             // 存在しなかった場合のみ、no-image.pngに更新
@@ -81,7 +115,7 @@ async function fetchAndDisplayActivities() {
                         <span class="small-info-date">${date}</span>
                         </p>
                         <span class="small-info-inner">
-                        <p>${description}
+                        <p>${htmlDescription}
                         </p>
                         </span>
                     </div> 

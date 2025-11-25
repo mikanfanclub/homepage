@@ -12,8 +12,8 @@ html {
   font-family: "Hiragino Maru Gothic ProN", "ヒラギノ丸ゴ ProN",
     "Hiragino Maru Gothic Pro", "ヒラギノ丸ゴ Pro W4", "HG丸ｺﾞｼｯｸM-PRO",
     "HGMaruGothicMPRO", "游ゴシック", YuGothic, sans-serif !important;
-    overscroll-behavior-x: none;
-    touch-action: pan-y;
+  overscroll-behavior-x: none;
+  touch-action: pan-y;
 }
 
 body {
@@ -625,7 +625,6 @@ img.radius {
   display: block;
   float: left;
   width: 33.3333%;
-  width: 33%;
   background-color: #ffffff00;
   margin-bottom: 20px;
   text-align: center;
@@ -695,7 +694,7 @@ img.radius {
     max-width: 90%;
   }
 }
-#activities-list{
+#activities-list {
   width: 100%;
   padding: 40px;
   align-content: center;

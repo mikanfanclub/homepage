@@ -1,6 +1,5 @@
 //https://docs.google.com/spreadsheets/d/1uzGrDO4oCOyuPEFkTdzgRzZtf3ZAZngqgIHJu7l32Sw/edit#gid=0
 
-
 // 【要変更】Google SpreadsheetのIDに置き換えてください
 const SPREADSHEET_ID = '1uzGrDO4oCOyuPEFkTdzgRzZtf3ZAZngqgIHJu7l32Sw';
 
@@ -8,7 +7,6 @@ const SPREADSHEET_ID = '1uzGrDO4oCOyuPEFkTdzgRzZtf3ZAZngqgIHJu7l32Sw';
 const SHEET_GID = '0';
 
 // Google Visualization APIのURLを構築
-// tqx=out:json は、JSONP形式の応答を確実に受け取るために重要です
 const API_URL = `https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}/gviz/tq?gid=${SHEET_GID}&tqx=out:json`;
 
 // 表示する行数（最後から数える）
@@ -16,6 +14,17 @@ const MAX_ROWS = 5;
 
 // HTMLの要素
 const listElement = document.getElementById('activities-list');
+
+// --- checkImage 関数はそのまま利用 ---
+function checkImage(src) {
+    return new Promise((resolve) => {
+        const img = document.createElement('img');
+        img.onload = () => resolve(true); // 読み込み成功
+        img.onerror = () => resolve(false); // 読み込み失敗（404など）
+        img.src = src;
+    });
+}
+
 
 /**
  * Google Sheetsのデータを取得し、HTMLに表示する関数
@@ -27,23 +36,12 @@ async function fetchAndDisplayActivities() {
         const response = await fetch(API_URL);
         const text = await response.text();
 
-        // ----------------------------------------------------
-        // ★ 修正箇所：JSONP Paddingの除去をより汎用的に行う
-        // ----------------------------------------------------
-
-        // 正規表現で、先頭のコメントとJSONP関数コール、末尾のカッコを削除
-        // \s*は改行や空白に対応。.*?は非貪欲マッチでコメント全体に対応。
+        // JSONP Paddingの除去
         const jsonText = text
-            // 1. 先頭の /*O_o*/ や google.visualization.Query.setResponse( を削除
             .replace(/^\s*\/\*.*?\*\/\s*google\.visualization\.Query\.setResponse\s*\(/, '')
-            // 2. 末尾の ); とそれに続く空白、改行を削除
             .replace(/\);\s*$/, '');
 
-        // 念のため、エラー時にjsonTextを確認できるようにconsole.logを残しておくとデバッグに役立ちます
-        // console.log("Parsed JSON Text:", jsonText); 
-
         const data = JSON.parse(jsonText);
-
         const rows = data.table.rows;
 
         if (!rows || rows.length <= 1) { // ヘッダー行のみの場合も考慮
@@ -51,58 +49,57 @@ async function fetchAndDisplayActivities() {
             return;
         }
 
-        // 📝 最新の5行を取得するロジック
-        // .slice(1)でヘッダー行（1行目）を除去
-        // .slice(-MAX_ROWS)でリストの最後から5要素を取得（最新の5件）
-        const recentRows = rows.slice(0).slice(-MAX_ROWS);
+        // 最新の5行を取得し、逆順にする（最新が上）
+        const recentRows = rows.slice(1).slice(-MAX_ROWS).reverse();
+
+        const htmlPromises = recentRows.map(async (row) => {
+            // データ取得
+            const title = row.c[0] && row.c[0].v !== null ? row.c[0].v : 'タイトルなし';
+            const date = row.c[1] && row.c[1].f ? row.c[1].f : '日付なし';
+            const description = row.c[2] && row.c[2].v !== null ? row.c[2].v : '説明なし';
+            let photofile = row.c[3] && row.c[3].v !== null ? row.c[3].v : 'no-image.png';
+
+            const imagePath = `img/recent/${photofile}`;
+
+            // ⭐ await で画像の存在確認が完了するのを待つ
+            const exists = await checkImage(imagePath);
+
+            // 存在しなかった場合のみ、no-image.pngに更新
+            if (!exists) {
+                photofile = 'no-image.png';
+            }
+
+            // HTML文字列を返す
+            return `
+                <div class="row reveal small-info">
+                    <div class="coming-photo">
+                        <img src="img/recent/${photofile}" alt="${title}" />
+                    </div>
+                    <div class="col-sm-8" style="font-size: 18px">
+                        <p>
+                        <span class="small-info-title"> ${title} </span>
+                        <span class="small-info-date">${date}</span>
+                        </p>
+                        <span class="small-info-inner">
+                        <p>${description}
+                        </p>
+                        </span>
+                    </div> 
+                </div>`;
+        });
+
+        // ⭐ Promise.all で全ての画像確認（とHTML生成）が完了するのを待つ
+        const htmlContents = await Promise.all(htmlPromises);
 
         // リスト要素をクリア
         listElement.innerHTML = '';
 
-        // 抽出した行を逆順（最新が上）にして表示する
-        recentRows.reverse().forEach(row => {
-            // ----------------------------------------------------
-            // ★ 修正箇所：日付データは 'f' (formatted value) から取得する
-            // ----------------------------------------------------
-
-            // データはc[0] (A列), c[1] (B列:日付), c[2] (C列) に対応
-            const title = row.c[0] && row.c[0].v !== null ? row.c[0].v : 'タイトルなし';
-
-            // 日付は 'f' (フォーマット済みの値) を利用
-            const date = row.c[1] && row.c[1].f ? row.c[1].f : '日付なし';
-
-            const description = row.c[2] && row.c[2].v !== null ? row.c[2].v : '説明なし';
-
-            const photofile = row.c[3] && row.c[3].v !== null ? row.c[3].v : 'no-image.png';
-
+        // 全てのHTMLをDOMに追加
+        htmlContents.forEach(html => {
             const listItem = document.createElement('li');
-
-            // 表示形式: 【年月日】タイトル: 短文紹介
-            // listItem.innerHTML = `
-            //     <strong>【${date}】${title}</strong>: 
-            //     <span class="description">${description}</span>
-            // `;
-
-            listItem.innerHTML = `
-                    <div class="row reveal small-info">
-                        <div class="coming-photo">
-                            <img src="img/recent/${photofile}" alt="${title}" />
-                        </div>
-                        <div class="col-sm-8" style="font-size: 18px">
-                            <p>
-                            <span class="small-info-title"> ${title} </span>
-                            <span class="small-info-date">${date}</span>
-                            </p>
-                            <span class="small-info-inner">
-                            <p>${description}
-                            </p>
-                            </span>
-                        </div> 
-                    </div>`;
+            listItem.innerHTML = html;
             listElement.appendChild(listItem);
         });
-
-
         const listItem = document.createElement('li');
         listItem.innerHTML = `
                 <div 
@@ -120,7 +117,8 @@ async function fetchAndDisplayActivities() {
                 <a href="https://www.instagram.com/mikanfanclub/">Instagram</a>
                 もご覧ください！&lt&lt
                 </div>`;
-            listElement.appendChild(listItem);
+        listElement.appendChild(listItem);
+
     } catch (error) {
         console.error('データの取得中にエラーが発生しました:', error);
         listElement.innerHTML = `<li>データの読み込みに失敗しました。詳細: ${error.message}</li>`;

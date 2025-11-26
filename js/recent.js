@@ -31,7 +31,7 @@ function checkImage(src) {
  * @param {string} markdownText - Markdown形式のテキスト
  * @returns {string} HTML形式のテキスト
  */
-function markdownToHtml(markdownText,variable) {
+function markdownToHtml(markdownText, variable) {
     if (!markdownText) return '';
 
     let html = markdownText;
@@ -94,7 +94,7 @@ async function fetchAndDisplayActivities() {
 
             const imagePath = `img/recent/${photofile}`;
 
-            const htmlDescription = markdownToHtml(description,variable);
+            const htmlDescription = markdownToHtml(description, variable);
 
             const exists = await checkImage(imagePath);
 
@@ -139,9 +139,11 @@ async function fetchAndDisplayActivities() {
                 <div 
                     class="row reveal" 
                     style="
-                        font-size:larger;
+                        font-size: clamp(1.2rem, 2vw, 3rem);
                         text-align:center;
                         color:#838383;"
+                        white-space: nowrap;
+                        overflow: hidden;
                 >
                 &gt&gtこの他にも多くの活動を実施しています🍊&lt&lt
                 <br>

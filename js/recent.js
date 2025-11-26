@@ -1,7 +1,8 @@
-//https://docs.google.com/spreadsheets/d/1uzGrDO4oCOyuPEFkTdzgRzZtf3ZAZngqgIHJu7l32Sw/edit#gid=0
+//https://docs.google.com/spreadsheets/d/18TiiB6T8RIK0w4xrXWO7v_pQJeVhmuzOqYELstQDZ1k/edit?gid=0#gid=0
+
 
 // 【要変更】Google SpreadsheetのIDに置き換えてください
-const SPREADSHEET_ID = '1uzGrDO4oCOyuPEFkTdzgRzZtf3ZAZngqgIHJu7l32Sw';
+const SPREADSHEET_ID = '18TiiB6T8RIK0w4xrXWO7v_pQJeVhmuzOqYELstQDZ1k';
 
 // 【要変更】シートのGID（通常は0、URLの#gid=XXの部分）に置き換えてください
 const SHEET_GID = '0';

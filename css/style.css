@@ -26,6 +26,10 @@ body {
   font-weight: bold;
 }
 
+a {
+  text-decoration: underline;
+}
+
 /* スプラッシュウィンドウの基本スタイル */
 #splash-window {
   position: fixed; /* 画面に固定 */

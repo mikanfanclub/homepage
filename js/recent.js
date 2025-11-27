@@ -1,5 +1,4 @@
-//https://docs.google.com/spreadsheets/d/18TiiB6T8RIK0w4xrXWO7v_pQJeVhmuzOqYELstQDZ1k/edit?gid=0#gid=0
-
+//https://docs.google.com/spreadsheets/d/18TiiB6T8RIK0w4xrXWO7v_pQJeVhmuzOqYELstQDZ1k/edit?usp=sharing
 
 // 【要変更】Google SpreadsheetのIDに置き換えてください
 const SPREADSHEET_ID = '18TiiB6T8RIK0w4xrXWO7v_pQJeVhmuzOqYELstQDZ1k';

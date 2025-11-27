@@ -644,15 +644,15 @@ img.radius {
   margin: 0 auto;
 }
 
-#concept-tab1:checked ~ label[for="concept-tab1"],
-#concept-tab2:checked ~ label[for="concept-tab2"],
-#concept-tab3:checked ~ label[for="concept-tab3"] {
+#concept-tab1:hover ~ label[for="concept-tab1"],
+#concept-tab2:hover ~ label[for="concept-tab2"],
+#concept-tab3:hover ~ label[for="concept-tab3"] {
   border-bottom: #ed8600 4px solid;
 }
 
-#concept-tab1:checked ~ label[for="concept-tab1"] > .fa-stack,
-#concept-tab2:checked ~ label[for="concept-tab2"] > .fa-stack,
-#concept-tab3:checked ~ label[for="concept-tab3"] > .fa-stack {
+#concept-tab1:hover ~ label[for="concept-tab1"] > .fa-stack,
+#concept-tab2:hover ~ label[for="concept-tab2"] > .fa-stack,
+#concept-tab3:hover ~ label[for="concept-tab3"] > .fa-stack {
   transform: scale(1.3);
   transition: 0.3s;
 }

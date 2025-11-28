@@ -163,26 +163,29 @@
     </div>
   </header> -->
 
-    <div id="top" style="width: 100vw; height: 80vw; max-height: 60vh">
-      <div class="reveal">
-        <div
-          style="
-            display: flex;
-            flex-direction: column;
-            padding-top: 10%;
-            align-items: center;
-            justify-content: center;
-          "
-        >
-          <img
-            style="display: block; width: 20%"
-            src="./img/carousel/mikan.PNG"
-          />
-          <div class="mikan-title">東大みかん愛好会</div>
-          <div class="mikan-subtitle">Mikan Fun Club</div>
-        </div>
+    <div
+      id="top"
+      class="reveal"
+      style="width: 100vw; height: 80vw; max-height: 80vh"
+    >
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+        "
+      >
+        <img
+          style="display: block; width: 20%"
+          src="./img/carousel/mikan.PNG"
+        />
+        <div class="mikan-title">東大みかん愛好会</div>
+        <div class="mikan-subtitle">Mikan Fun Club</div>
       </div>
     </div>
+
     <div class="reveal">
       <div id="swiper2" class="swiper">
         <div class="swiper-wrapper">
@@ -282,7 +285,7 @@
               <span class="nobreak"> あなたに</span>
             </h1>
             <br />
-            <h4 style="text-align: center">
+            <h4 style="margin: auto; text-align: center">
               『東大みかん愛好会』は日本初の「みかん」に特化したサークル
               <br /><br />
               みかんの消費量が全盛期の<span style="font-weight: bolder">
@@ -296,6 +299,7 @@
         <div class="blank"></div>
 
         <div class="reveal concepts-sec">
+          <span class="tab-space"></span>
           <input type="radio" name="concept-tab" id="concept-tab1" checked />
           <label for="concept-tab1" class="concept-tab-label">
             <span class="fa-stack fa-4x">
@@ -315,48 +319,67 @@
             <span class="fa-stack fa-4x">
               <i class="fa fa-circle fa-stack-2x text-primary"></i>
               <i class="fa fa-globe fa-stack-1x fa-inverse"></i>
-            </span>
-          </label>
+            </span> </label
+          ><span class="tab-space"></span>
 
           <div class="concept-content" id="concept1">
-            <div style="font-size: 1.5em; color: #838383">
-              &lt&lt Concept 1 &gt&gt
-            </div>
+            <div style="font-size: 1.5em; color: #838383">Concept 1</div>
             <h4 class="service-heading" style="color: #838383">
               # 話題を巻き起こす
             </h4>
-            <img src="./img/concept/concept1.jpg" alt="話題を巻き起こす" />
-            <div class="blank"></div>
-            <p class="" style="font-size: 20px; text-align: center">
-              みかんに興味がない人すら振り返ってしまう、<br />話題性のある企画を実行する!
-            </p>
+            <div class="concept-body-wrapper">
+              <img src="./img/concept/concept1.jpg" alt="話題を巻き起こす" />
+              <p
+                class=""
+                style="
+                  font-size: clamp(20px, 3vw, 24px);
+                  text-align: center;
+                  overflow-wrap: break-word;
+                "
+              >
+                みかんに興味がない人すら振り返ってしまう、
+                話題性のある企画を実行する!<br />
+              </p>
+            </div>
           </div>
           <div class="concept-content" id="concept2">
-            <div style="font-size: 1.5em; color: #838383">
-              &lt&lt Concept 2 &gt&gt
-            </div>
+            <div style="font-size: 1.5em; color: #838383">Concept 2</div>
             <h4 class="service-heading" style="color: #838383">
               # 楽しみながら学ぶ
             </h4>
-            <img src="./img/concept/concept2.jpg" alt="話題を巻き起こす" />
-
-            <div class="blank"></div>
-            <p class="" style="font-size: 20px; text-align: center">
-              楽しみながら自然にみかんの魅力を学べる企画を実施する!
-            </p>
+            <div class="concept-body-wrapper">
+              <img src="./img/concept/concept2.jpg" alt="話題を巻き起こす" />
+              <p
+                class=""
+                style="
+                  font-size: clamp(20px, 3vw, 24px);
+                  text-align: center;
+                  overflow-wrap: break-word;
+                "
+              >
+                楽しみながら自然にみかんの魅力を学べる、
+                伝えられるような企画を実施する!
+              </p>
+            </div>
           </div>
           <div class="concept-content" id="concept3">
-            <div style="font-size: 1.5em; color: #838383">
-              &lt&lt Concept 3 &gt&gt
-            </div>
+            <div style="font-size: 1.5em; color: #838383">Concept 3</div>
             <h4 class="service-heading" style="color: #838383">
               # 全ての産地を応援する
             </h4>
-            <img src="./img/concept/concept3.jpg" alt="話題を巻き起こす" />
-            <div class="blank"></div>
-            <p class="" style="font-size: 20px; text-align: center">
-              日本全国津々浦々、各地のみかんを知りそして盛り上げる!
-            </p>
+            <div class="concept-body-wrapper">
+              <img src="./img/concept/concept3.jpg" alt="話題を巻き起こす" />
+              <p
+                class=""
+                style="
+                  font-size: clamp(20px, 3vw, 24px);
+                  text-align: center;
+                  overflow-wrap: break-word;
+                "
+              >
+                日本全国津々浦々、各地のみかんを知りそして盛り上げる!
+              </p>
+            </div>
           </div>
         </div>
       </div>

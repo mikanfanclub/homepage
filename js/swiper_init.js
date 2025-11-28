@@ -65,7 +65,7 @@ const mySwiper2 = new Swiper("#swiper2", {
     // オプション例:
     direction: "horizontal", // スライドの方向: 'horizontal' または 'vertical'
     loop: true, // ループ再生を有効にする
-    slidesPerView: 2.5, // 一度に表示するスライドの枚数
+    slidesPerView: 1.7, // 一度に表示するスライドの枚数
     spaceBetween: 0, // スライド間のスペース (px)
     centeredSlides: true,
 
@@ -99,7 +99,7 @@ const mySwiper2 = new Swiper("#swiper2", {
         },
         // 1024px以上の画面幅で適用される設定
         1024: {
-            slidesPerView: 5,
+            slidesPerView: 3,
             // spaceBetween: 50,
         },
     },

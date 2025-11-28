@@ -192,6 +192,15 @@ img.radius {
   margin-left: 80px;
   font-size: 2rem;
 }
+#top {
+  display: block;
+  width: 100vw;
+  height: calc(80vh - max(15vw, 20vh));
+  background-image: url(../img/header-bg.jpg);
+  background-size: cover;
+  background-color: rgba(255, 255, 255, 0.2);
+  background-blend-mode: lighten;
+}
 
 @media screen and (max-width: 900px) {
   #top {
@@ -644,9 +653,9 @@ img.radius {
   margin: 0 auto;
 }
 
-#concept-tab1:hover ~ label[for="concept-tab1"],
-#concept-tab2:hover ~ label[for="concept-tab2"],
-#concept-tab3:hover ~ label[for="concept-tab3"] {
+#concept-tab1:checked ~ label[for="concept-tab1"],
+#concept-tab2:checked ~ label[for="concept-tab2"],
+#concept-tab3:checked ~ label[for="concept-tab3"] {
   border-bottom: #ed8600 4px solid;
 }
 
@@ -708,4 +717,38 @@ img.radius {
   width: 100%;
   list-style-type: none;
   margin-bottom: 20px;
+}
+
+#swiper2 {
+  height: 18vw;
+  min-height: 13vh;
+}
+
+#swiper2 img {
+  margin: none;
+  height: inherit;
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+
+#swiper2 .swiper-slide {
+  transition: transform 1s, background-color 0.3s;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+#swiper2 .swiper-slide img {
+  mix-blend-mode: lighten;
+}
+
+/* 中央のアクティブなスライドの設定 */
+#swiper2 .swiper-slide-active {
+  /* 拡大（例: 15%大きくする） */
+  transform: scale(1.15);
+  background-color: rgba(255, 255, 255, 0);
+  /* 重なり順を高くして手前に表示 */
+  z-index: 10;
+  opacity: 1;
+}
+#concept {
+  background-image: url(../img/bg_paper.jpg);
 }

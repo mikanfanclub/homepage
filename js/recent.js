@@ -17,12 +17,12 @@ const listElement = document.getElementById('activities-list');
 
 // --- checkImage 関数はそのまま利用 ---
 function checkImage(src) {
-    return new Promise((resolve) => {
-        const img = document.createElement('img');
-        img.onload = () => resolve(true); // 読み込み成功
-        img.onerror = () => resolve(false); // 読み込み失敗（404など）
-        img.src = src;
-    });
+  return new Promise((resolve) => {
+    const img = document.createElement('img');
+    img.onload = () => resolve(true); // 読み込み成功
+    img.onerror = () => resolve(false); // 読み込み失敗（404など）
+    img.src = src;
+  });
 }
 
 
@@ -32,79 +32,79 @@ function checkImage(src) {
  * @returns {string} HTML形式のテキスト
  */
 function markdownToHtml(markdownText, variable) {
-    if (!markdownText) return '';
+  if (!markdownText) return '';
 
-    let html = markdownText;
+  let html = markdownText;
 
-    // 1. **太字** または __太字__ を <strong>タグに変換
-    html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-    html = html.replace(/__(.*?)__/g, '<strong>$1</strong>');
+  // 1. **太字** または __太字__ を <strong>タグに変換
+  html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+  html = html.replace(/__(.*?)__/g, '<strong>$1</strong>');
 
-    // 2. *斜体* または _斜体_ を <em>タグに変換
-    html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
-    html = html.replace(/_(.*?)_/g, '<em>$1</em>');
+  // 2. *斜体* または _斜体_ を <em>タグに変換
+  html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
+  html = html.replace(/_(.*?)_/g, '<em>$1</em>');
 
-    // 3. 2つ以上のスペース＋改行、または単純な改行を <br> タグに変換
-    html = html.replace(/ {2,}\n/g, '<br>'); // 行末スペース2つ以上
-    html = html.replace(/\n/g, '<br>');      // 単純な改行（これは好みに応じて削除しても良い）
+  // 3. 2つ以上のスペース＋改行、または単純な改行を <br> タグに変換
+  html = html.replace(/ {2,}\n/g, '<br>'); // 行末スペース2つ以上
+  html = html.replace(/\n/g, '<br>');      // 単純な改行（これは好みに応じて削除しても良い）
 
-    // 4. +オレンジ文字+
-    html = html.replace(/\+(.*?)\+/g, '<span style="color:#f69749;">$1</span>');
+  // 4. +オレンジ文字+
+  html = html.replace(/\+(.*?)\+/g, '<span style="color:#f69749;">$1</span>');
 
 
-    // 4. ^リンク^
-    html = html.replace(/\^(.*?)\^/g, `<a href=${variable}>$1</a>`);
+  // 4. ^リンク^
+  html = html.replace(/\^(.*?)\^/g, `<a href=${variable}>$1</a>`);
 
-    return html;
+  return html;
 }
 
 /**
  * Google Sheetsのデータを取得し、HTMLに表示する関数
  */
 async function fetchAndDisplayActivities() {
-    listElement.innerHTML = '<li>データを取得中です...</li>'; // ロード中のメッセージ更新
+  listElement.innerHTML = '<li>データを取得中です...</li>'; // ロード中のメッセージ更新
 
-    try {
-        const response = await fetch(API_URL);
-        const text = await response.text();
+  try {
+    const response = await fetch(API_URL);
+    const text = await response.text();
 
-        // JSONP Paddingの除去
-        const jsonText = text
-            .replace(/^\s*\/\*.*?\*\/\s*google\.visualization\.Query\.setResponse\s*\(/, '')
-            .replace(/\);\s*$/, '');
+    // JSONP Paddingの除去
+    const jsonText = text
+      .replace(/^\s*\/\*.*?\*\/\s*google\.visualization\.Query\.setResponse\s*\(/, '')
+      .replace(/\);\s*$/, '');
 
-        const data = JSON.parse(jsonText);
-        const rows = data.table.rows;
+    const data = JSON.parse(jsonText);
+    const rows = data.table.rows;
 
-        if (!rows || rows.length <= 1) { // ヘッダー行のみの場合も考慮
-            listElement.innerHTML = '<li>活動データがありません。</li>';
-            return;
-        }
+    if (!rows || rows.length <= 1) { // ヘッダー行のみの場合も考慮
+      listElement.innerHTML = '<li>活動データがありません。</li>';
+      return;
+    }
 
-        // 最新の5行を取得し、逆順にする（最新が上）
-        const recentRows = rows.slice(1).slice(-MAX_ROWS).reverse();
+    // 最新の5行を取得し、逆順にする（最新が上）
+    const recentRows = rows.slice(1).slice(-MAX_ROWS).reverse();
 
-        const htmlPromises = recentRows.map(async (row) => {
-            // データ取得
-            const title = row.c[0] && row.c[0].v !== null ? row.c[0].v : 'タイトルなし';
-            const date = row.c[1] && row.c[1].f ? row.c[1].f : '日付なし';
-            const description = row.c[2] && row.c[2].v !== null ? row.c[2].v : '説明なし';
-            let photofile = row.c[3] && row.c[3].v !== null ? row.c[3].v : 'no-image.png';
-            let variable = row.c[4] && row.c[4].v !== null ? row.c[4].v : '';
+    const htmlPromises = recentRows.map(async (row) => {
+      // データ取得
+      const title = row.c[0] && row.c[0].v !== null ? row.c[0].v : 'タイトルなし';
+      const date = row.c[1] && row.c[1].f ? row.c[1].f : '日付なし';
+      const description = row.c[2] && row.c[2].v !== null ? row.c[2].v : '説明なし';
+      let photofile = row.c[3] && row.c[3].v !== null ? row.c[3].v : 'no-image.png';
+      let variable = row.c[4] && row.c[4].v !== null ? row.c[4].v : '';
 
-            const imagePath = `img/recent/${photofile}`;
+      const imagePath = `img/recent/${photofile}`;
 
-            const htmlDescription = markdownToHtml(description, variable);
+      const htmlDescription = markdownToHtml(description, variable);
 
-            const exists = await checkImage(imagePath);
+      const exists = await checkImage(imagePath);
 
-            // 存在しなかった場合のみ、no-image.pngに更新
-            if (!exists) {
-                photofile = 'no-image.png';
-            }
+      // 存在しなかった場合のみ、no-image.pngに更新
+      if (!exists) {
+        photofile = 'no-image.png';
+      }
 
-            // HTML文字列を返す
-            return `
+      // HTML文字列を返す
+      return `
                 <div class="row reveal small-info">
                     <div class="coming-photo">
                         <img src="img/recent/${photofile}" alt="${title}" />
@@ -120,22 +120,22 @@ async function fetchAndDisplayActivities() {
                         </span>
                     </div> 
                 </div>`;
-        });
+    });
 
-        // ⭐ Promise.all で全ての画像確認（とHTML生成）が完了するのを待つ
-        const htmlContents = await Promise.all(htmlPromises);
+    // ⭐ Promise.all で全ての画像確認（とHTML生成）が完了するのを待つ
+    const htmlContents = await Promise.all(htmlPromises);
 
-        // リスト要素をクリア
-        listElement.innerHTML = '';
+    // リスト要素をクリア
+    listElement.innerHTML = '';
 
-        // 全てのHTMLをDOMに追加
-        htmlContents.forEach(html => {
-            const listItem = document.createElement('li');
-            listItem.innerHTML = html;
-            listElement.appendChild(listItem);
-        });
-        const listItem = document.createElement('li');
-        listItem.innerHTML = `
+    // 全てのHTMLをDOMに追加
+    htmlContents.forEach(html => {
+      const listItem = document.createElement('li');
+      listItem.innerHTML = html;
+      listElement.appendChild(listItem);
+    });
+    const listItem = document.createElement('li');
+    listItem.innerHTML = `
                 <div 
                     class="row reveal" 
                     style="
@@ -153,12 +153,12 @@ async function fetchAndDisplayActivities() {
                 <a href="https://www.instagram.com/mikanfanclub/">Instagram</a>
                 もご覧ください！&lt&lt
                 </div>`;
-        listElement.appendChild(listItem);
+    listElement.appendChild(listItem);
 
-    } catch (error) {
-        console.error('データの取得中にエラーが発生しました:', error);
-        listElement.innerHTML = `<li>データの読み込みに失敗しました。詳細: ${error.message}</li>`;
-    }
+  } catch (error) {
+    console.error('データの取得中にエラーが発生しました:', error);
+    listElement.innerHTML = `<li>データの読み込みに失敗しました。詳細: ${error.message}</li>`;
+  }
 }
 
 fetchAndDisplayActivities();

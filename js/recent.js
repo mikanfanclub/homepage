@@ -89,7 +89,7 @@ async function fetchAndDisplayActivities() {
       const title = row.c[0] && row.c[0].v !== null ? row.c[0].v : 'タイトルなし';
       const date = row.c[1] && row.c[1].f ? row.c[1].f : '日付なし';
       const description = row.c[2] && row.c[2].v !== null ? row.c[2].v : '説明なし';
-      let photofile = row.c[3] && row.c[3].v !== null ? row.c[3].v : 'no-image.png';
+      let photofile = row.c[3] && row.c[3].v !== null ? row.c[3].v : 'no-image.webp';
       let variable = row.c[4] && row.c[4].v !== null ? row.c[4].v : '';
 
       const imagePath = `img/recent/${photofile}`;
@@ -100,7 +100,7 @@ async function fetchAndDisplayActivities() {
 
       // 存在しなかった場合のみ、no-image.pngに更新
       if (!exists) {
-        photofile = 'no-image.png';
+        photofile = 'no-image.webp';
       }
 
       // HTML文字列を返す

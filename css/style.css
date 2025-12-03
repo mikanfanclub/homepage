@@ -993,3 +993,7 @@ img.radius {
   max-height: 50vh;
   box-shadow: #8d8d8d 0px 0px 4px !important;
 }
+
+.fes-list {
+  list-style: none;
+}

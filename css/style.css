@@ -251,6 +251,12 @@ img.radius {
   width: auto;
 }
 
+#aboutus {
+  padding-top: 8vw;
+  clip-path: polygon(0 0, 100% 5vw, 100% 100%, 0 100%);
+}
+
+
 @media screen and (max-width: 480px) {
 
   .table>thead>tr>th,
@@ -261,7 +267,7 @@ img.radius {
     word-break: break-all;
   }
 
-  #sns img {
+  #aboutus img {
     max-width: 240px;
   }
 }

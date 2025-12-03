@@ -314,7 +314,19 @@ img.radius {
   padding-bottom: 10px;
 }
 
+.small-info-tag {
+  top: 0;
+  display: inline-block;
+  font-size: 1rem;
+  padding: 5px;
+  color: white;
+  font-weight: 400;
+  background-color: #55ffff;
+  border-radius: 100vmax;
+}
+
 .small-info-title {
+  display: inline;
   font-size: 2.2rem;
   font-weight: bold;
 }

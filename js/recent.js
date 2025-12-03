@@ -91,29 +91,55 @@ async function fetchAndDisplayActivities() {
       const description = row.c[2] && row.c[2].v !== null ? row.c[2].v : '説明なし';
       let photofile = row.c[3] && row.c[3].v !== null ? row.c[3].v : 'no-image.webp';
       let variable = row.c[4] && row.c[4].v !== null ? row.c[4].v : '';
+      let tag = row.c[5] && row.c[5].v !== null ? row.c[5].v : 'その他';
+      let tagBcColor = '#838383';
+
+      switch (tag) {
+        case '交流':
+          tagBcColor = '#4473b7';//青
+          break;
+        case '企画':
+          tagBcColor = '#57b774';//緑
+          break;
+        case '産地訪問':
+          tagBcColor = '#ffb42b';//黄色
+          break;
+        case '柑橘会':
+          tagBcColor = '#c65b30';//オレンジ
+          break;
+        case '学園祭':
+          tagBcColor = '#ff5144';//赤
+          break;
+      }
+
 
       const imagePath = `img/recent/${photofile}`;
 
       const htmlDescription = markdownToHtml(description, variable);
 
-      const exists = await checkImage(imagePath);
-
+      //画像が存在するか？->onerror処理を入れるのでいらなくなりました
+      //const exists = await checkImage(imagePath);
       // 存在しなかった場合のみ、no-image.pngに更新
-      if (!exists) {
-        photofile = 'no-image.webp';
-      }
+      //if (!exists) {
+      //  photofile = 'no-image.webp';
+      //}
 
       // HTML文字列を返す
       return `
                 <div class="row reveal small-info">
                     <div class="coming-photo">
-                        <img src="img/recent/${photofile}" alt="${title}" />
+                        <img
+                          src="img/recent/${photofile}"
+                          alt
+                          onerror="this.onerror = null; this.src='img/recent/no-image';"
+                        />
                     </div>
                     <div class="col-sm-8" style="font-size: 18px">
-                        <p>
-                        <span class="small-info-title"> ${title} </span>
-                        <span class="small-info-date">${date}</span>
-                        </p>
+                        <span class="small-info-tag" style="background-color:${tagBcColor};">${tag}</span>
+                        <div style="padding-top:5px;padding-bottom:5px;">
+                          <h2 class="small-info-title"> ${title} </h2>
+                          <span class="small-info-date">${date}</span>
+                        </div>
                         <span class="small-info-inner">
                         <p>${htmlDescription}
                         </p>

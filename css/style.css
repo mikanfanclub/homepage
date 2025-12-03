@@ -321,8 +321,8 @@ img.radius {
 .small-info-tag {
   top: 0;
   display: inline-block;
-  font-size: 1rem;
-  padding: 5px;
+  font-size: 0.8rem;
+  padding: 3px;
   color: white;
   font-weight: 400;
   background-color: #55ffff;

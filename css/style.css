@@ -922,7 +922,6 @@ img.radius {
   opacity: 1.0;
 }
 
-
 .portfolio-item a::after {
   content: "READ";
   z-index: 100;
@@ -935,15 +934,40 @@ img.radius {
   border-radius: 0px;
   transition: 0.3s linear;
   pointer-events: none;
-  opacity: 0;
+  clip-path: circle(0% at 0% 0%);
   border: black 1px solid;
 }
 
 .portfolio-item a:hover::after {
   pointer-events: auto;
-  opacity: 1.0;
+  clip-path: circle(200% at 0% 0%);
 }
 
 .portfolio-caption {
   padding-top: 20px;
+}
+
+.portfolio-modal .modal-content h2 {
+  font-size: 2em;
+}
+
+.portfolio-modal .modal-content p {
+  font-size: 1.3em;
+}
+
+.portfolio-modal .modal-content .modal-body {
+  width: 90%;
+  margin-left: 5%;
+}
+
+.portfolio-modal {
+  top: 5%;
+  left: 5%;
+  width: 90%
+}
+
+.modal-body img {
+  border-radius: 20px;
+  max-height: 50vh;
+  box-shadow: #8d8d8d 0px 0px 4px !important;
 }

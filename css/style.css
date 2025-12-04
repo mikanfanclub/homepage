@@ -1032,3 +1032,9 @@ img.radius {
 .fes-list {
   list-style: none;
 }
+
+
+#aboutus table>thead>tr>th,
+#aboutus table>tbody>tr>th {
+  min-width: 110px;
+}

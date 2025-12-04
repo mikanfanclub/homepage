@@ -988,6 +988,41 @@ img.radius {
   width: 90%
 }
 
+@media (max-width: 1200px) {
+  .portfolio-modal {
+    top: 5%;
+    left: 5%;
+    width: 90%
+  }
+}
+
+@media (max-width: 992px) {
+  .portfolio-modal {
+    top: 5%;
+    left: 5%;
+    width: 90%
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-modal {
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-modal {
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    font-size: 1rem;
+  }
+}
+
+
 .modal-body img {
   border-radius: 20px;
   max-height: 50vh;

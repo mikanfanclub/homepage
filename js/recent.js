@@ -165,7 +165,7 @@ async function fetchAndDisplayActivities() {
                 <div 
                     class="row reveal" 
                     style="
-                        font-size: clamp(1.2rem, 2vw, 3rem);
+                        font-size: clamp(1.2rem, 2vw, 2rem);
                         text-align:center;
                         color:#838383;"
                         white-space: nowrap;

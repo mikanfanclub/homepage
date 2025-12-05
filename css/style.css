@@ -1038,3 +1038,40 @@ img.radius {
 #aboutus table>tbody>tr>th {
   min-width: 110px;
 }
+
+
+
+/* 過去の活動実績のテーブルスタイル */
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  font-size: 0.95em;
+}
+
+.history-table thead>tr>th,
+.history-table thead>tr>td {
+  background-color: #ffc186;
+}
+
+.history-table th,
+.history-table td {
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.history-table tbody>tr>th {
+  background-color: #FFFACD;
+  /* 薄い黄色 */
+  width: 30%;
+  min-width: 120px;
+}
+
+.history-table tbody>tr:nth-child(even)>th {
+  background-color: #fffabd;
+}
+
+.history-table tbody>tr:nth-child(even)>td {
+  background-color: #f9f9f9;
+}

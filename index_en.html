@@ -3,8 +3,8 @@
 
 <head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-71009709-2"></script>
-  <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'UA-71009709-2');</script>
+  <!--<script async src="https://www.googletagmanager.com/gtag/js?id=UA-71009709-2"></script>
+  <script>window.dataLayer = window.dataLayer || []; function gtag() {dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-71009709-2');</script>-->
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,21 +13,37 @@
   <link href="css/agency.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 
-  <link rel="shortcut icon" href="img/mikanfanclub-logo.png" />
+  <link rel="shortcut icon" href="img/mikanfanclub-logo.webp" />
   <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
     type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!--Google Fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet" />
 </head>
 
 <body id="page-top" class="index">
+  <div id="splash-window">
+    <img style="width: 10%" src="img/apple-touch-icon.webp" alt="Loading Logo" />
+    <p>
+      Now Loading<span class="dot dot1">.</span>
+      <span class="dot dot2">.</span>
+      <span class="dot dot3">.</span>
+    </p>
+  </div>
+
   <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
     <div class="container">
       <div class="navbar-header page-scroll">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">navigation</span> menu
+          <span class="sr-only">ナビゲーション</span> menu
           <i class="fa fa-bars"></i>
         </button>
       </div>
@@ -53,16 +69,16 @@
             <a class="page-scroll" href="#portfolio">History</a>
           </li>
           <li>
-            <a class="page-scroll" href="#sns">About us</a>
+            <a class="page-scroll" href="#aboutus">About us</a>
           </li>
           <!-- <li>
             <a class="page-scroll" href="#sns">SNS&Contact</a>
           </li> -->
           <li>
-            <a href="http://mikanfanclub.blogspot.jp/">Blog (JPN)</a>
-          </li> 
-          <li><a href="./mikan_welcome.html">Join us (JPN)</a></li>
-          <li><a href="./index.html">Japanese</a></li>
+            <a href="http://mikanfanclub.blogspot.jp/">Blog</a>
+          </li>
+          <li><a href="./mikan_welcome.html">Join us</a></li>
+          <li><a href="./index_en.html"> English</a></li>
         </ul>
       </div>
     </div>
@@ -70,40 +86,55 @@
 
   <!-- <header id="header-site">
     <div id="header-site-inner">
-      <img id='header-site-inner-image' src='./img/mv_text.png' alt='東大みかん愛好会'>
+      <img id='header-site-inner-image' src='./img/mv_text.webp' alt='東大みかん愛好会'>
     </div>
   </header> -->
 
-  <div id="top" class="container">
-    <div class="row reveal">
-      <div id="sampleCarousel" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li class="active" data-target="#sampleCarousel" data-slide-to="0"></li>
-          <li data-target="#sampleCarousel" data-slide-to="1"></li>
-          <li data-target="#sampleCarousel" data-slide-to="2"></li>
-          <!--<li data-target="#sampleCarousel" data-slide-to="3"></li>-->
-        </ol>
-        <div class="carousel-inner" role="listbox"><!--ページ先頭でくるくるしているやつ-->
-          
-          <div class="item active">
-            <img src="./img/carousel/mv7.jpg" alt="First slide">
-          </div>
-          <div class="item">
-            <img src="./img/carousel/mv6.jpg" alt="Second slide">
-          </div>
-          <div class="item">
-            <img src="./img/carousel/mv3.jpg" alt="Third slide">
-          </div>
+  <div id="top" class="reveal" style="width: 100vw; height: 80vw; max-height: 80vh">
+    <div style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+        ">
+      <img style="display: block; width: 20%" src="./img/top/mikan.webp" />
+      <div class="mikan-title">Mikan Fun Club</div>
+      <div class="mikan-subtitle">~in U-Tokyo~</div>
+    </div>
+  </div>
+
+  <!--swiper-->
+  <div class="reveal">
+    <div id="swiper2" class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="./img/carousel/slide1.webp" />
         </div>
-        <a class="left carousel-control" href="#sampleCarousel" role="button" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-          <span class="sr-only">前へ</span>
-        </a>
-        <a class="right carousel-control" href="#sampleCarousel" role="button" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-          <span class="sr-only">次へ</span>
-        </a>
+        <div class="swiper-slide">
+          <img src="./img/carousel/slide2.webp" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./img/carousel/slide3.webp" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./img/carousel/slide4.webp" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./img/carousel/slide5.webp" />
+        </div>
+        <div class="swiper-slide">
+          <img src="./img/carousel/slide6.webp" />
+        </div>
       </div>
+
+      <!-- <div class="swiper-pagination"></div> -->
+      <div class="swiper-scrollbar"></div>
+
+      <div class="custom-prev-btn"></div>
+      <div class="custom-next-btn"></div>
+
+      <div class="swiper-scrollbar"></div>
     </div>
   </div>
 
@@ -132,14 +163,16 @@
               <span class="text-primary">
                 mikan
               </span>
-              
+
             </span>
             <span class="nobreak">
               experience for you.</span>
           </h1>
           <h3>The University of Tokyo Mikan Fan Club is Japan's first circle dedicated to mandarin oranges(mikan).
-            <br>In response to the situation where the consumption of mikan has decreased to one-fifth of its peak level, we are working to 
-            <span class="text-primary">increase the consumption of mikan.</span></h3>
+            <br>In response to the situation where the consumption of mikan has decreased to one-fifth of its peak
+            level, we are working to
+            <span class="text-primary">increase the consumption of mikan.</span>
+          </h3>
         </div>
       </div>
       <div class="row text-center reveal" style="margin-top:100px">
@@ -150,7 +183,8 @@
           </span>
           <h4 class="service-heading">CREATE TOPICS</h4>
           <p class="text-muted" style="font-size:20px;">
-            We execute topical projects that will make even people who are not interested in mandarin oranges look back.</p>
+            We execute topical projects that will make even people who are not interested in mandarin oranges look back.
+          </p>
         </div>
         <div class="col-md-4">
           <span class="fa-stack fa-4x">
@@ -167,7 +201,8 @@
             <i class="fa fa-globe fa-stack-1x fa-inverse"></i>
           </span>
           <h4 class="service-heading" style="font-size:26px;">SUPPORT ALL AREAS</h4>
-          <p class="text-muted" style="font-size:20px;">We bring mikan of various regions to life in every corner of Japan.</p>
+          <p class="text-muted" style="font-size:20px;">We bring mikan of various regions to life in every corner of
+            Japan.</p>
         </div>
       </div>
     </div>
@@ -185,7 +220,7 @@
        五月祭の宣伝 
       <div class="row reveal info">
         <div class="col-sm-4 coming-photo">
-          <img src="./img/event/gogatusai.jpg" alt="みかん">
+          <img src="./img/event/gogatusai.webp" alt="みかん">
         </div>
         <div class="col-sm-8" style="font-size:18px;">
           <p>開催日:2020/9/20(日)、21(月)</p>
@@ -220,7 +255,7 @@
        秋新歓 
       <div class="row reveal info">
         <div class="col-sm-4 coming-photo">
-          <img src="./img/event/event.jpg" alt="みかん">
+          <img src="./img/event/event.webp" alt="みかん">
         </div>
         <div class="col-sm-8" style="font-size:18px;">
           <p>開催日:2020/10/10(土)、18(日)</p>
@@ -240,7 +275,7 @@
       ボードゲーム
       <div class="row reveal info">
         <div class="col-sm-4 coming-photo">
-          <img src="./img/event/boaed_game.jpg" alt="ボードゲーム">
+          <img src="./img/event/boaed_game.webp" alt="ボードゲーム">
         </div>
         <div class="col-sm-8" style="font-size:18px;">
           <p>開催日:2020/11/14(土)、15(日)</p>
@@ -265,7 +300,8 @@
         <div class="col-lg-12 text-center">
           <h2 class="section-heading">HISTORY</h2>
           <h3 class="section-subheading text-muted" style="font-size:20px;">
-            To achieve the goal of "increasing the consumption of mikan," we are planning and executing various projects related to mikan.
+            To achieve the goal of "increasing the consumption of mikan," we are planning and executing various projects
+            related to mikan.
             Here are some of them.</h3>
         </div>
       </div>
@@ -278,7 +314,7 @@
                 <i class="fa fa-search-plus fa-3x"></i>
               </div>
             </div>
-            <img src="img/portfolio/ボードゲーム.jpg" class="img-responsive" alt="">
+            <img src="img/portfolio/ボードゲーム.webp" class="img-responsive" alt="">
           </a>
           <div class="portfolio-caption">
             <h4>
@@ -297,23 +333,27 @@
                 <i class="fa fa-search-plus fa-3x"></i>
               </div>
             </div>
-            <img src="img/portfolio/学園祭.jpg" class="img-responsive" alt="">
+            <img src="img/portfolio/学園祭.webp" class="img-responsive" alt="">
           </a>
           <div class="portfolio-caption">
             <h4>School Festival with Mikan</h4>
             <p class="text-muted">
-              Stalls at May Festival, Komaba Festival, and ICU Festival<!DOCTYPE html>
-            <html lang="en">
-            <head>
-              <meta charset="UTF-8">
-              <meta http-equiv="X-UA-Compatible" content="IE=edge">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <title>Document</title>
-            </head>
-            <body>
-              
-            </body>
-            </html><!--五月祭、駒場祭、ICU祭で出店-->
+              Stalls at May Festival, Komaba Festival, and ICU Festival
+              <!DOCTYPE html>
+              <html lang="en">
+
+              <head>
+                <meta charset="UTF-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Document</title>
+              </head>
+
+              <body>
+
+              </body>
+
+              </html><!--五月祭、駒場祭、ICU祭で出店-->
               <br>
               <br>
             </p>
@@ -327,12 +367,12 @@
                 <i class="fa fa-search-plus fa-3x"></i>
               </div>
             </div>
-            <img src="img/portfolio/みかん蛇口2017.jpg" class="img-responsive" alt="">
+            <img src="img/portfolio/みかん蛇口2017.webp" class="img-responsive" alt="">
           </a>
           <div class="portfolio-caption">
             <h4>Mikan Juice from The Taps</h4>
             <p class="text-muted">
-              Recreating The Legend of "Mikan-Prefecture" 
+              Recreating The Legend of "Mikan-Prefecture"
               in Cooperation with Matsuyama City, Ehime Pref.
             </p>
           </div>
@@ -345,7 +385,7 @@
                 <i class="fa fa-search-plus fa-3x"></i>
               </div>
             </div>
-            <img src="img/portfolio/taramikan-logo.jpg" class="img-responsive" alt="">
+            <img src="img/portfolio/taramikan-logo.webp" class="img-responsive" alt="">
           </a>
           <div class="portfolio-caption">
             <h4>Tara-Mikan Symbol Mark</h4>
@@ -361,7 +401,7 @@
                 <i class="fa fa-search-plus fa-3x"></i>
               </div>
             </div>
-            <img src="img/portfolio/産地訪問.png" class="img-responsive" alt="">
+            <img src="img/portfolio/産地訪問.webp" class="img-responsive" alt="">
           </a>
           <div class="portfolio-caption">
             <h4>Visiting Mikan Orchards</h4>
@@ -380,7 +420,7 @@
                 <i class="fa fa-search-plus fa-3x"></i>
               </div>
             </div>
-            <img src="img/portfolio/みかん列車.png" class="img-responsive" alt="">
+            <img src="img/portfolio/みかん列車.webp" class="img-responsive" alt="">
           </a>
           <div class="portfolio-caption">
             <h4>小田原みかん列車</h4>
@@ -395,7 +435,7 @@
                 <i class="fa fa-search-plus fa-3x"></i>
               </div>
             </div>
-            <img src="img/portfolio/みかん大配布2022.jpg" class="img-responsive" alt="">
+            <img src="img/portfolio/みかん大配布2022.webp" class="img-responsive" alt="">
           </a>
           <div class="portfolio-caption">
             <h4>Mikan Mega-Distribute</h4>
@@ -427,12 +467,12 @@
             <tbody>
               <tr>
                 <th scope="row">Address</th>
-                <td>3-8-1 Komaba, Meguro-ku, Tokyo 〒153-8902</td>
+                <td>B305, Campus Plaza, The University of Tokyo 3-8-1 Komaba, Meguro-ku, Tokyo 〒153-8902</td>
               </tr>
               <tr>
                 <th scope="row">Contact</th>
                 <td><a href="mailto:mikanclub.uticu@gmail.com"> mikanclub.uticu@gmail.com </a>
-                  <br>Please Contact Us Via SNS or Email Address 
+                  <br>Please Contact Us Via SNS or Email Address
                   for Any Interview Requests or Collaboration with UTokyo Mikan Fan Club.
                 </td>
               </tr>
@@ -444,8 +484,10 @@
                 <th scope="row">Overview</th>
                 <td>
                   <dl>
-                    <dd>We Are Founded Mainly by Mikan-Lovers from The University of Tokyo and International Christian University (ICU)
-                      , and As of 2025 Has About 290 Students Mainly from Universities Around The Greater Tokyo Area.</dd>
+                    <dd>We Are Founded Mainly by Mikan-Lovers from The University of Tokyo and International Christian
+                      University (ICU)
+                      , and As of 2025 Has About 290 Students Mainly from Universities Around The Greater Tokyo Area.
+                    </dd>
                   </dl>
                 </td>
               </tr>
@@ -513,11 +555,11 @@
       </div>
       <div class="row text-center reveal">
         <a href="http://mikanfanclub.blogspot.jp/" class="banner col-md-6 col-sm-6">
-          <img src="img/blog-banner.png" alt="" class="radius">
+          <img src="img/blog-banner.webp" alt="" class="radius">
         </a>
         <a href="https://drive.google.com/file/d/1nFgcGGSF9mBvhSWR1HfdINOCEDZQf25g/view?usp=sharing"
           class="banner col-md-6 col-sm-6">
-          <img src="img/kaisetu-banner.png" alt="みかん愛好会団体概評書" class="radius">
+          <img src="img/kaisetu-banner.webp" alt="みかん愛好会団体概評書" class="radius">
         </a>
       </div>
 
@@ -610,13 +652,15 @@
                 <!-- Project Details Go Here -->
                 <h2>Tara Mikan</h2>
                 <p class="item-intro text-muted">Operation of symbol mark contest</p>
-                <img class="img-responsive img-centered" src="img/portfolio/taramikan-logo.jpg" alt="">
+                <img class="img-responsive img-centered" src="img/portfolio/taramikan-logo.webp" alt="">
                 <p>
-                  The "Tara Mikan" brand grown in Tara Town, Saga Prefecture, is in danger of disappearing, 
+                  The "Tara Mikan" brand grown in Tara Town, Saga Prefecture, is in danger of disappearing,
                   The Tara Citrus Association, a group of passionate citrus farmers
-                   and the University of Tokyo Mikan Fan Club have joined forces to create a new symbol mark for the Tara Mikan brand.
-                   The Grand Prize was selected after collecting
-                  <strong>876</strong>entries.</p>
+                  and the University of Tokyo Mikan Fan Club have joined forces to create a new symbol mark for the Tara
+                  Mikan brand.
+                  The Grand Prize was selected after collecting
+                  <strong>876</strong>entries.
+                </p>
                 <p>
                   <strong>References</strong>
                   <!-- <br>
@@ -658,14 +702,17 @@
               <div class="modal-body">
                 <!-- Project Details Go Here -->
                 <h2>Mikan Juice from The Taps</h2>
-                <p class="item-intro text-muted">Recreating the urban legend of "Mikan-Prefecture" in cooperation with Matsuyama City </p>
-                <img class="img-responsive img-centered" widht="400px" src="img/portfolio/みかん蛇口2017.jpg" alt="">
-                <img class="img-responsive img-centered" src="img/portfolio/みきゃん五月祭.jpg" alt="">
+                <p class="item-intro text-muted">Recreating the urban legend of "Mikan-Prefecture" in cooperation with
+                  Matsuyama City </p>
+                <img class="img-responsive img-centered" widht="400px" src="img/portfolio/みかん蛇口2017.webp" alt="">
+                <img class="img-responsive img-centered" src="img/portfolio/みきゃん五月祭.webp" alt="">
                 <p>
-                  Every year at the University of Tokyo's May Festival, 
-                  we collaborate with Matsuyama City to install taps that recreate the urban legend of "Mikan-Prefecture".
-                  The event is a great success, with so many visitors that there is a long line of people waiting to try it. 
-                  Mican, the character that promotes the image of Ehime Prefecture, has also visited the festival, 
+                  Every year at the University of Tokyo's May Festival,
+                  we collaborate with Matsuyama City to install taps that recreate the urban legend of
+                  "Mikan-Prefecture".
+                  The event is a great success, with so many visitors that there is a long line of people waiting to try
+                  it.
+                  Mican, the character that promotes the image of Ehime Prefecture, has also visited the festival,
                   and children enjoy taking commemorative photos with Mican.
                 </p>
                 <p>
@@ -700,13 +747,16 @@
             <div class="col-lg-8 col-lg-offset-2">
               <div class="modal-body">
                 <h2>Visiting Mikan Orchards</h2>
-                <p class="item-intro text-muted">Visit Production Areas in Japan for Farming Experience, Exchange, etc.</p>
-                <img class="img-responsive img-centered" src="img/portfolio/産地訪問.png" alt="">
+                <p class="item-intro text-muted">Visit Production Areas in Japan for Farming Experience, Exchange, etc.
+                </p>
+                <img class="img-responsive img-centered" src="img/portfolio/産地訪問.webp" alt="">
                 <p>
-                  <a
-                    href="http://designmodo.com/startup/?u=787"></a>We have visited production areas all over Japan for training camps and other events.
-                     We have learned a lot by helping with picking and harvesting, and listening to the tips of producing delicious oranges 
-                     in various production areas such as Ehime, Wakayama, Shizuoka, Saga, and Shonan district in Kanagawa Pref.
+                  <a href="http://designmodo.com/startup/?u=787"></a>We have visited production areas all over Japan for
+                  training camps and other events.
+                  We have learned a lot by helping with picking and harvesting, and listening to the tips of producing
+                  delicious oranges
+                  in various production areas such as Ehime, Wakayama, Shizuoka, Saga, and Shonan district in Kanagawa
+                  Pref.
                 </p>
                 <!-- <strong>参照リンク等</strong><br>
                   <h3>愛媛</h3>
@@ -743,15 +793,14 @@
               <div class="modal-body">
                 <h2>School Festival with Mikan</h2>
                 <p class="item-intro text-muted">Stalls at May Festival, Komaba Festival, and ICU Festival</p>
-                <img class="img-responsive img-centered" src="img/portfolio/学園祭.jpg" alt="">
+                <img class="img-responsive img-centered" src="img/portfolio/学園祭.webp" alt="">
                 <p>
-                  <a
-                    href="http://designmodo.com/startup/?u=787"></a>We hold annual Mikan-related stalls at 
-                    the University of Tokyo and International Christian University, 
-                    as well as Mikan activities in the classroom! We are looking forward to seeing you at our events!
-                  
+                  <a href="http://designmodo.com/startup/?u=787"></a>We hold annual Mikan-related stalls at
+                  the University of Tokyo and International Christian University,
+                  as well as Mikan activities in the classroom! We are looking forward to seeing you at our events!
 
-                <!-- <ul lass="list-inline">
+
+                  <!-- <ul lass="list-inline">
                   <br>[2023] 
                   <br>[2022] ハイブリッドでみかん授業、冊子の販売、協賛企画
                   <br>[2021] オンラインでみかん授業、クイズ、インスタライブ
@@ -799,7 +848,7 @@
               <div class="modal-body">
                 <h2>小田原みかん列車</h2>
                 <p class="item-intro text-muted">列車貸切のみかんツアーをNPO法人湘南スタイル・JTBと協力し、企画・運営</p>
-                <img class="img-responsive img-centered" src="img/portfolio/みかん列車.png" alt="">
+                <img class="img-responsive img-centered" src="img/portfolio/みかん列車.webp" alt="">
                 <p>
                   実は知られていない、小田原みかん。実は神奈川県で一番作られている果物は「みかん」なのです。
                   地域資源への関心向上、農家支援を目的に、
@@ -844,11 +893,13 @@
               <div class="modal-body">
                 <h2>Mikan Mega-Distribution
                 </h2>
-                <p class="item-intro text-muted">Distributing Large Quantities of Mikan at The University of Tokyo Campus</p>
-                <img class="img-responsive img-centered" src="img/portfolio/みかん大配布.jpg" alt="">
+                <p class="item-intro text-muted">Distributing Large Quantities of Mikan at The University of Tokyo
+                  Campus</p>
+                <img class="img-responsive img-centered" src="img/portfolio/みかん大配布.webp" alt="">
                 <p>
-                  </a>The purpose of this event was to create opportunities for students to come into contact with mikan, 
-                  and to make them aware of the appeal of mikan, thereby leading to an increase in consumption of mikan 
+                  </a>The purpose of this event was to create opportunities for students to come into contact with
+                  mikan,
+                  and to make them aware of the appeal of mikan, thereby leading to an increase in consumption of mikan
                   by young people, which is currently declining significantly.
                   <br>In 2022, we could distribute mikan at the following universities;
                   <br>The University of Tokyo Hongo Section (600)
@@ -885,11 +936,13 @@
                 <!-- Project Details Go Here -->
                 <h2>Mikan Board Game Sales</h2>
                 <p class="item-intro text-muted">Created a game to play and learn knowledge about mandarin oranges! </p>
-                <img class="img-responsive img-centered" widht="400px" src="img/portfolio/みかんウォーズ.jpg" alt="">
+                <img class="img-responsive img-centered" widht="400px" src="img/portfolio/みかんウォーズ.webp" alt="">
 
                 <p>
-                  We participated in Board Game Market Fall 2020 and sold two games, "Mikan Draft Conference" and "Mikan Wars".
-                  Mikan Draft Conference is a game where players can learn about the characteristics of mikans such as taste, 
+                  We participated in Board Game Market Fall 2020 and sold two games, "Mikan Draft Conference" and "Mikan
+                  Wars".
+                  Mikan Draft Conference is a game where players can learn about the characteristics of mikans such as
+                  taste,
                   acidity, and production area as they compete for 30 different types of mikans.
                   Mikan Wars is a head-to-head game in which players compete for territory over mikan farmland.
                 <p>
@@ -936,6 +989,15 @@
   <!--  react Component-->
   <script src='js/bundle.js'></script>
 
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script src="js/swiper_init.js"></script>
+
+  <!-- Recent Activities Script -->
+  <script src="js/recent.js"></script>
+  <!--splash window-->
+  <script src="js/splash.js"></script>
 
 </body>
 

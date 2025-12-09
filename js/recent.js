@@ -91,27 +91,30 @@ async function fetchAndDisplayActivities() {
       const description = row.c[2] && row.c[2].v !== null ? row.c[2].v : '説明なし';
       let photofile = row.c[3] && row.c[3].v !== null ? row.c[3].v : 'no-image.webp';
       let variable = row.c[4] && row.c[4].v !== null ? row.c[4].v : '';
-      let tag = row.c[5] && row.c[5].v !== null ? row.c[5].v : 'その他';
-      let tagBcColor = '#838383';
+      let raw_tag = row.c[5] && row.c[5].v !== null ? row.c[5].v : 'その他';
+      let tag = raw_tag.split(',');
 
-      switch (tag) {
-        case '交流':
-          tagBcColor = '#4473b7';//青
-          break;
-        case '企画':
-          tagBcColor = '#57b774';//緑
-          break;
-        case '産地訪問':
-          tagBcColor = '#ffb42b';//黄色
-          break;
-        case '柑橘会':
-          tagBcColor = '#c65b30';//オレンジ
-          break;
-        case '学園祭':
-          tagBcColor = '#ff5144';//赤
-          break;
-      }
-
+      let taghtml = tag.map((t) => {
+        let tagBcColor = '#838383'; //デフォルト灰色
+        switch (t) {
+          case '交流':
+            tagBcColor = '#4473b7';//青
+            break;
+          case '企画':
+            tagBcColor = '#57b774';//緑
+            break;
+          case '産地訪問':
+            tagBcColor = '#ffb42b';//黄色
+            break;
+          case '柑橘会':
+            tagBcColor = '#c65b30';//オレンジ
+            break;
+          case '学園祭':
+            tagBcColor = '#ff5144';//赤
+            break;
+        }
+        return `<span class="small-info-tag" style="background-color:${tagBcColor};margin-right:5px;">${t}</span>`;
+      }).join('');
 
       const imagePath = `img/recent/${photofile}`;
 
@@ -135,7 +138,7 @@ async function fetchAndDisplayActivities() {
                         />
                     </div>
                     <div class="col-sm-8" style="font-size: 18px">
-                        <span class="small-info-tag" style="background-color:${tagBcColor};">${tag}</span>
+                        ${taghtml}
                         <div style="padding-top:5px;padding-bottom:5px;">
                           <h2 class="small-info-title"> ${title} </h2>
                           <span class="small-info-date">${date}</span>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <title>みかん</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.26.0/cytoscape.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+<header>
+  <div class="controls">
+    <strong>🍊 みかん家系図検索</strong>
+
+    <input type="text" id="mikanSearch" list="mikanList" placeholder="品種名を入力（例: せとか）">
+    <input type="hidden" id="targetId" value="1">
+    <datalist id="mikanList"></datalist>
+
+    <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+      <label>表示範囲: 
+        <input type="number" id="hops" value="3" min="1" max="5" style="width: 45px; padding: 5px;"> 世代
+      </label>
+      <button onclick="drawGraph()">再描画</button>
+    </div>
+    
+    <span id="label-info"></span>
+  </div>
+</header>
+
+  <div id="cy"></div>
+  <div id="info-panel" class="info-panel">品種をクリックすると詳細が表示されます</div>
+
+  <!--
+      --- citation ---
+      ・国立遺伝学研究所 https://www.nig.ac.jp/nig/images/research_highlights/PR20170106.pdf
+      ・のま果樹園 https://www.kajuen.co.jps
+
+
+
+    -->
+
+  <script src="script.js">
+  </script>
+</body>
+
+</html>

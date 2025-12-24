@@ -1,0 +1,172 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  background-color: #fffaf0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+/*
+header {
+  padding: 15px;
+  background: #ff8c00;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+input,
+button {
+  padding: 8px;
+  border-radius: 4px;
+  border: none;
+}
+
+button {
+  background: #d2691e;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #a0522d;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    max-width: 60vw;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header {
+    max-width: 80vw;
+  }
+}*/ 
+
+header {
+  background-color: #FFA75B; /* みかん色に合う薄い黄色 */
+  padding: 10px 15px;
+  border-bottom: 2px solid #ffb300;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap; /* 画面が狭くなったら自動で折り返す */
+  align-items: center;
+  gap: 10px; /* 要素間の隙間 */
+}
+
+.controls strong {
+  white-space: nowrap; /* 「みかん家系図検索」が途中で改行されないように */
+}
+
+/* 検索窓を使いやすく */
+#mikanSearch {
+  flex-grow: 1; /* 空きスペースに合わせて伸びる */ 
+  min-width: 200px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* 世代数入力とラベル */
+.controls label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+/* ボタンの装飾 */
+.controls button {
+  background-color: #ED8001;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  margin-left: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.controls button:hover {
+  background-color: #d97500;
+}
+
+/* スマホ向けの調整 */
+@media (max-width: 600px) {
+  .controls {
+    flex-direction: column; /* 縦に並べる */
+    align-items: center;
+  }
+  
+  .controls strong {
+    text-align: center;
+    margin-bottom: 5px;
+  }
+
+  #mikanSearch {
+    width: 80%;
+    margin:auto;
+  }
+}
+
+#cy {
+  flex-grow: 1;
+  width: 100%;
+  background: #fffaf0;
+}
+
+
+
+.info-panel {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  max-width: 35vw;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #ff8c00;
+  pointer-events: none;
+}
+
+@media screen and (max-width: 850px) {
+  .info-panel {
+    max-width: 60vw;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .info-panel {
+    max-width: 80vw;
+  }
+}
+
+.info-panel h3 {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.info-panel .origin {
+  color: grey;
+}
+
+.info-panel .other-names {
+  font-size: smaller;
+  color: grey
+}

@@ -152,7 +152,7 @@ function setupCytoscape() {
           },
           'background-fit': 'contain',
           'background-clip': 'none',
-          'overlay-opacity':0,
+          'overlay-opacity': 0,
         }
       },
       // 中心ノード（自分）だけ少し大きくする
@@ -227,7 +227,7 @@ function setupCytoscape() {
           'target-endpoint': 'inside-to-node',
           'source-distance-from-node': 30,
           'target-distance-from-node': 30,
-          'overlay-opacity':0,
+          'overlay-opacity': 0,
         }
       },
       // --- 4. エッジのスタイル分け ---
@@ -433,18 +433,18 @@ function drawGraph() {
     animationDuration: 800,
     fit: true
   });
+  // レイアウトが終わったら、中心ノードにズームインする
   layout.promiseOn('layoutstop').then(() => {
-    // 画面全体を中央に収める
-    cy.fit(undefined, 50); // 50pxのパディング
-
-    // 画面幅が600px未満（スマホ）の場合、少しズームアウトして全体を見やすくする
-    if (window.innerWidth < 600) {
-      const currentZoom = cy.zoom();
-      cy.zoom(currentZoom * 1.5); // 現在の倍率から20%引く
-      cy.center(); // 中央揃え
+    const centerNode = cy.getElementById(centerId);
+    if (centerNode.length > 0) {
+      cy.animate({
+        center: { eles: centerNode },
+        zoom: window.innerWidth < 600 ? 0.8 : 0.8, // スマホは1.2倍(拡大)、PCは0.8倍(少し引く)
+        duration: 800,
+        easing: 'ease-out-quint'
+      });
     }
-  });
-  layout.run();
+  }); layout.run();
   addedEles.filter('.new-node, .new-edge').animate({
     style: { 'opacity': 1 },
     duration: 500
@@ -453,10 +453,10 @@ function drawGraph() {
 }
 
 let resizeTimer;
-window.addEventListener('resize', function() {
+window.addEventListener('resize', function () {
   // リサイズ中に何度も実行されると重いので、少し待ってから実行（デバウンス）
   clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(function() {
+  resizeTimer = setTimeout(function () {
     cy.fit(undefined, 50);
     if (window.innerWidth < 600) {
       cy.zoom(cy.zoom() * 0.8);

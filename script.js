@@ -60,9 +60,9 @@ function setupCytoscape() {
         style: {
           'label': 'data(label)',
           'text-valign': 'bottom',
-          'text-margin-y': '0px',
+          'text-margin-y': '-5px',
           'color': '#5a3e1b',
-          'font-size': '10px',
+          'font-size': '13px',
 
           // --- 枠組みだけ大きく、中身は透明にする ---
           'width': '80px',  // 葉っぱ分を見越して大きめに確保
@@ -275,9 +275,9 @@ function setupCytoscape() {
     const info = document.getElementById('info-panel');
     if (info) {
       info.innerHTML = `
-        <h3>${m.names[0]}</h3>${m.names.length > 1 ? `<span class="other-names">(${m.names.slice(1).join(',')})</span>` : ""}<br>
+        <h3 style="border-bottom: 3px solid ${m.color};">${m.names[0]}</h3>${m.names.length > 1 ? `<span class="other-names">(${m.names.slice(1).join(',')})</span>` : ""}<br>
         <div class="origin">${p1 ? (p2 ? ` 親 :${p1.names[0]}×${p2.names[0]}` : `親:${p1.names[0]}`) : ''}</div>
-        <div>${m.note}</div>
+        <div class="note">${m.note}</div>
       `;
     }
   });
@@ -285,7 +285,7 @@ function setupCytoscape() {
   cy.on('mouseover', 'node', function (e) {
     const sel = e.target;
     // つながっているエッジと隣接ノードだけ光らせる
-    sel.outgoers('edge').animate({ style: { 'width': 3, 'opacity': 1, 'line-color': '#f40', 'target-arrow-color': '#f40' } });
+    sel.outgoers('edge').animate({ style: { 'width': 3, 'opacity': 1, 'line-color': '#f40', 'target-arrow-color': '#f4a0' } });
     sel.incomers('edge').animate({ style: { 'width': 3, 'opacity': 1, 'line-color': '#146836', 'target-arrow-color': '#146836' } });
   });
 

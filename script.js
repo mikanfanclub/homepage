@@ -285,7 +285,7 @@ function setupCytoscape() {
   cy.on('mouseover', 'node', function (e) {
     const sel = e.target;
     // つながっているエッジと隣接ノードだけ光らせる
-    sel.outgoers('edge').animate({ style: { 'width': 3, 'opacity': 1, 'line-color': '#d80', 'target-arrow-color': '#d80' } });
+    sel.outgoers('edge').animate({ style: { 'width': 3, 'opacity': 1, 'line-color': '#f40', 'target-arrow-color': '#f40' } });
     sel.incomers('edge').animate({ style: { 'width': 3, 'opacity': 1, 'line-color': '#146836', 'target-arrow-color': '#146836' } });
   });
 

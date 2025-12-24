@@ -151,7 +151,8 @@ function setupCytoscape() {
 
           },
           'background-fit': 'contain',
-          'background-clip': 'none'
+          'background-clip': 'none',
+          'overlay-opacity':0,
         }
       },
       // 中心ノード（自分）だけ少し大きくする
@@ -226,6 +227,7 @@ function setupCytoscape() {
           'target-endpoint': 'inside-to-node',
           'source-distance-from-node': 30,
           'target-distance-from-node': 30,
+          'overlay-opacity':0,
         }
       },
       // --- 4. エッジのスタイル分け ---

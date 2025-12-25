@@ -1,5 +1,25 @@
+
+document.addEventListener('DOMContentLoaded', () => {
+  const filterBtn = document.getElementById('filter-list-button');
+  const drawer = document.getElementById('filter-drawer');
+  const overlay = document.getElementById('drawer-overlay');
+  const closeBtn = document.getElementById('close-drawer');
+
+  // 開閉の切り替え
+  const toggleDrawer = () => {
+    drawer.classList.toggle('active');
+    overlay.classList.toggle('active');
+  };
+
+  filterBtn.addEventListener('click', toggleDrawer);
+  overlay.addEventListener('click', toggleDrawer);
+  closeBtn.addEventListener('click', toggleDrawer);
+});
+
 let MIKAN;
 let cy;
+
+let isAnimate = false;
 
 function getUniqueStr(myStrong) {
   var strong = 1000;
@@ -41,7 +61,7 @@ async function init() {
 
     const info = document.getElementById('info-panel');
     //if (info) info.innerText = `${MIKAN.length} 件読み込み完了`;
-    if (info) info.innerText = `🍊柑橘をクリックすると詳細が見れます🍊`;
+    if (info) { info.style = 'font-size:clamp(15px,2vw, 1rem)'; info.innerText = `柑橘をクリックすると詳細が見れます♪`; }
 
     drawGraph();
   } catch (e) {
@@ -118,16 +138,16 @@ function setupCytoscape() {
                   <ellipse cx="30" cy="35" rx="20" ry="17" fill="${color}"/>
                   <path d="M30 21 Q35 13 45 18 Q38 23 30 21" fill="green" />
                   <path d="M30 23 L30 17" stroke="green" stroke-width="1" />
-<text 
-    x="30" 
-    y="45" 
-    font-family="Arial, sans-serif" 
-    font-size="22" 
-    font-weight="bold" 
-    fill="white" 
-    text-anchor="middle"
-    style="pointer-events: none; drop-shadow: 0px 0px 2px rgba(0,0,0,0.5);"
-  >?</text>
+                  <text 
+                    x="30" 
+                    y="45" 
+                    font-family="Arial, sans-serif" 
+                    font-size="22" 
+                    font-weight="bold" 
+                    fill="white" 
+                    text-anchor="middle"
+                    style="pointer-events: none; drop-shadow: 0px 0px 2px rgba(0,0,0,0.5);"
+                  >?</text>
                 </svg>`;
 
               } else {
@@ -256,29 +276,31 @@ function setupCytoscape() {
   });
 
   cy.on('tap', 'node', function (evt) {
-    const node = evt.target;
-    //const targetInput = document.getElementById('targetId');
-    //if (targetInput) targetInput.value = node.id();
-    const m = MIKAN.find(x => x.id === parseInt(node.id()));
+    if (!isAnimate) {
+      const node = evt.target;
+      //const targetInput = document.getElementById('targetId');
+      //if (targetInput) targetInput.value = node.id();
+      const m = MIKAN.find(x => x.id === parseInt(node.id()));
 
-    // IDをセット
-    const targetInput = document.getElementById('targetId');
-    if (targetInput) targetInput.value = node.id();
+      // IDをセット
+      const targetInput = document.getElementById('targetId');
+      if (targetInput) targetInput.value = node.id();
 
-    // 【追記】検索ボックスの表示名も更新
-    const searchInput = document.getElementById('mikanSearch');
-    if (searchInput) searchInput.value = m.names[0];
-    drawGraph();
+      // 【追記】検索ボックスの表示名も更新
+      const searchInput = document.getElementById('mikanSearch');
+      if (searchInput) searchInput.value = m.names[0];
+      drawGraph();
 
-    const p1 = MIKAN.find(x => x.id === m.p1);
-    const p2 = MIKAN.find(x => x.id === m.p2);
-    const info = document.getElementById('info-panel');
-    if (info) {
-      info.innerHTML = `
+      const p1 = MIKAN.find(x => x.id === m.p1);
+      const p2 = MIKAN.find(x => x.id === m.p2);
+      const info = document.getElementById('info-panel');
+      if (info) {
+        info.innerHTML = `
         <h3 style="border-bottom: 3px solid ${m.color};">${m.names[0]}</h3>${m.names.length > 1 ? `<span class="other-names">(${m.names.slice(1).join(',')})</span>` : ""}<br>
         <div class="origin">${p1 ? (p2 ? ` 親 :${p1.names[0]}×${p2.names[0]}` : `親:${p1.names[0]}`) : ''}</div>
         <div class="note">${m.note}</div>
       `;
+      }
     }
   });
   // setupCytoscape 内に追記
@@ -430,8 +452,8 @@ function drawGraph() {
     equidistant: false,          // 密度を調整
     padding: 80,
     animate: true,
-    animationDuration: 800,
-    fit: true
+    animationDuration: 600,
+    fit: false
   });
   // レイアウトが終わったら、中心ノードにズームインする
   layout.promiseOn('layoutstop').then(() => {
@@ -439,15 +461,18 @@ function drawGraph() {
     if (centerNode.length > 0) {
       cy.animate({
         center: { eles: centerNode },
-        zoom: window.innerWidth < 600 ? 0.8 : 0.8, // スマホは1.2倍(拡大)、PCは0.8倍(少し引く)
-        duration: 800,
+        zoom: window.innerWidth < 600 ? 0.8 : 0.7,
+        duration: 400,
         easing: 'ease-out-quint'
       });
     }
-  }); layout.run();
+    isAnimate = false;
+  });
+  isAnimate = true;
+  layout.run();
   addedEles.filter('.new-node, .new-edge').animate({
     style: { 'opacity': 1 },
-    duration: 500
+    duration: 400
   });
 
 }

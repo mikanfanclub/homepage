@@ -1,7 +1,7 @@
 [
   { "id": 0, "names": ["温州みかん"], "p1": 7, "p2": 8, "group": "root", "color":"#ff9800","shape":"normal","note":"日本の冬の代名詞。400年以上前に鹿児島で誕生"},
   { "id": 1, "names": ["ｽｲｰﾄｵﾚﾝｼﾞ(分類)"], "p1": -1, "p2": -1, "group": "root" , "color":"#fc7f03","shape":"round","note":"一般のオレンジ、ブラッドオレンジ、ネーブルオレンジなどを包含したグループ"},
-  { "id": 2, "names": ["ダイダイ", "ビターオレンジ"], "p1": -1, "p2": -1, "group": "root" ,"color":"#fc7f03","shape":"round","note":""},
+  { "id": 2, "names": ["ダイダイ", "ビターオレンジ"], "p1": -1, "p2": -1, "group": "root" ,"color":"#fc7f03","shape":"round","note":"お正月の縁起物にもなる歴史ある香酸柑橘。酸味と苦味が強くポン酢やマーマレードの加工品や精油として活用する"},
   { "id": 3, "names": ["ﾏﾝﾀﾞﾘﾝﾝ(分類)"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"normal","note":""},
   { "id": 4, "names": ["文旦", "ポメロ"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"normal","note":""},
   { "id": 5, "names": ["カラタチ"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"normal","note":""},

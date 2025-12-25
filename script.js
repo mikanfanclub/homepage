@@ -56,8 +56,8 @@ async function init() {
       const found = MIKAN.find(m => m.names.includes(selectedName));
       if (found) {
         targetInput.value = found.id;
-        drawGraph();
-
+        //drawGraph();
+        redraw();
       }
     }); setupCytoscape();
 
@@ -455,6 +455,31 @@ function drawGraph() {
     duration: 400
   });
 
+  return centerId;
+}
+function redraw() {
+  // 1. グラフを描画し、中心となったIDを取得
+  const centerId = drawGraph(); 
+  
+  // 2. そのIDに該当するデータをMIKANから探す
+  const m = MIKAN.find(x => x.id === parseInt(centerId));
+  if (!m) return;
+
+  // 3. 親の情報を取得
+  const p1 = MIKAN.find(x => x.id === m.p1);
+  const p2 = MIKAN.find(x => x.id === m.p2);
+
+  // 4. パネルを更新
+  const info = document.getElementById('info-panel');
+  if (info) {
+    info.innerHTML = `
+        <h3 style="border-bottom: 3px solid ${m.color || '#ff9800'};">${m.names[0]}</h3>
+        ${m.names.length > 1 ? `<span class="other-names">(${m.names.slice(1).join(',')})</span>` : ""}
+        <br>
+        <div class="origin">${p1 ? (p2 ? ` 親 :${p1.names[0]}×${p2.names[0]}` : `親:${p1.names[0]}`) : ''}</div>
+        <div class="note">${m.note || ''}</div>
+    `;
+  }
 }
 
 let resizeTimer;

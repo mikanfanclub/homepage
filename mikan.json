@@ -32,7 +32,7 @@
 
   { "id": 60, "names": ["マーコットオレンジ", "マーコット"], "p1": 3, "p2": 1, "group": "tangor" ,"color":"#ff9800","shape":"normal","note":""},
   { "id": 61, "names": ["清見", "清見タンゴール"], "p1": 100, "p2": 41, "group": "tangor" ,"color":"#ff9800","shape":"normal","note":"オレンジとみかんの間の『タンゴール』代表種。現代の高級柑橘の多くはここから生まれる"},
-  { "id": 62, "names": ["No.21"], "p1": 40, "p2": 101, "group": "tangor" ,"color":"#ff9800","shape":"normal","note":""},
+  { "id": 62, "names": ["EnOwNo.21"], "p1": 40, "p2": 101, "group": "tangor" ,"color":"#ff9800","shape":"normal","note":""},
 
   { "id": 80, "names": ["大橘", "サザンイエロー"], "p1": 4, "p2": -1, "group": "pomelo" ,"color":"#ffe01d","shape":"round","note":""},
   { "id": 81, "names": ["はっさく"], "p1": 4, "p2": 8, "group": "pomelo" ,"color":"#ffe01d","shape":"round","note":""},
@@ -88,7 +88,7 @@
   { "id": 303, "names": ["天草"], "p1": 207, "p2": 42, "group": "premium" ,"color":"#ff9800","shape":"normal","note":""},
   { "id": 304, "names": ["湘南ゴールド"], "p1": 212, "p2":106 , "group": "kiyomi_mix" ,"color":"#ffe01d","shape":"round","note":""},
   { "id": 305, "names": ["はれひめ"], "p1": 214, "p2": 100, "group": "premium" ,"color":"#ff9800","shape":"normal","note":""},
-  { "id": 306, "names": ["No.1408"], "p1": 10010, "p2": -1, "group": "middle" ,"color":"#ff9800","shape":"normal","note":"外観の美しく味も良いという中間母本品種。ルーツわからなかった..."},
+  { "id": 306, "names": ["No.1408"], "p1": 215, "p2": 62, "group": "middle" ,"color":"#ff9800","shape":"normal","note":"外観の美しく味も良いという中間母本品種。ルーツわからなかった..."},
   { "id": 307, "names": ["大将季"], "p1": 200, "p2": -1, "group": "premium" ,"color":"#fc9003","shape":"deko","note":""},
   { "id": 308, "names": ["あすき"], "p1": 201, "p2": 83, "group": "premium" ,"color":"#fc9003","shape":"normal","note":""},
   { "id": 309, "names": ["パイン柑"], "p1": 212, "p2": 134, "group": "premium" ,"color":"#ffe01d","shape":"round","note":""},

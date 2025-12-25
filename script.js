@@ -36,28 +36,30 @@ async function init() {
     const datalist = document.getElementById('mikanList');
     const searchInput = document.getElementById('mikanSearch');
     const targetInput = document.getElementById('targetId');
-
     // 検索候補（datalist）を作成
     MIKAN.forEach(m => {
       if (m.id < 10000) {
-        const option = document.createElement('option');
-        option.value = m.names[0]; // ユーザーに見える名前
-        option.dataset.id = m.id;  // 内部的なIDを保持
-        datalist.appendChild(option);
+        // すべての名前（names配列）をループしてoptionを作る
+        m.names.forEach(name => {
+          const option = document.createElement('option');
+          option.value = name; // 別名もすべて候補に出る
+          option.dataset.id = m.id;
+          datalist.appendChild(option);
+        });
       }
     });
 
     // 入力されたときにIDに変換するイベント
     searchInput.addEventListener('change', function () {
       const selectedName = this.value;
+      // names配列のどこかに一致するものがあれば見つける
       const found = MIKAN.find(m => m.names.includes(selectedName));
       if (found) {
         targetInput.value = found.id;
-        drawGraph(); // 選択したら即座に描画更新
-      }
-    });
+        drawGraph();
 
-    setupCytoscape();
+      }
+    }); setupCytoscape();
 
     const info = document.getElementById('info-panel');
     //if (info) info.innerText = `${MIKAN.length} 件読み込み完了`;

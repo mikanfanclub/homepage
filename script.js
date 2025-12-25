@@ -82,7 +82,7 @@ function setupCytoscape() {
           'text-valign': 'bottom',
           'text-margin-y': '-5px',
           'color': '#5a3e1b',
-          'font-size': '13px',
+          'font-size': '15px',
 
           // --- 枠組みだけ大きく、中身は透明にする ---
           'width': '80px',  // 葉っぱ分を見越して大きめに確保
@@ -175,31 +175,11 @@ function setupCytoscape() {
           'overlay-opacity': 0,
         }
       },
-      // 中心ノード（自分）だけ少し大きくする
-      {
-        selector: 'node[level = 0]',
-        style: {
-          'font-size': '12px'
-        }
-      },
-      {
-        selector: 'node[level=1]',
-        style: {
-        }
-      },
-
-      {
-        selector: 'node[level=2]',
-        style: {
-        }
-      },
 
       // --- 1. 祖先直系のスタイル ---
       {
         selector: 'node[?isDirect][dir = 1]',
         style: {
-          'background-color': '#d90', // 明るい赤
-          'border-color': '#fff',
           'color': '#fff',
           'text-outline-color': '#aaa',
           'text-outline-width': 2
@@ -209,8 +189,6 @@ function setupCytoscape() {
       {
         selector: 'node[?isDirect][dir = 2]',
         style: {
-          'background-color': '#', // 明るい青
-          'border-color': '#0059b3',
           'color': '#fff',
           'text-outline-color': '#aaa',
           'text-outline-width': 2
@@ -222,7 +200,7 @@ function setupCytoscape() {
         style: {
           'background-color': '#e92',
           'color': '#fff',
-          'font-size': '12px',
+          'font-size': '16px',
           'text-outline-color': '#aaa',
           'text-outline-width': 2
         }

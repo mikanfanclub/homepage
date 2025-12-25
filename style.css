@@ -259,6 +259,13 @@ header {
 .drawer-content #how-to-use li::before {
   content: '-';
 }
+.drawer-content a{
+  appearance: none;
+  color: #fc7f04;
+}
+.drawer-content #reference li::before{
+  content:'-';
+}
 
 /* --- Cytoscapeの表示範囲 --- */
 #cy {

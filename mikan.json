@@ -32,7 +32,7 @@
 
   { "id": 60, "names": ["マーコットオレンジ", "マーコット"], "p1": 3, "p2": 1, "group": "tangor" ,"color":"#ff9800","shape":"normal","note":""},
   { "id": 61, "names": ["清見", "清見タンゴール"], "p1": 100, "p2": 41, "group": "tangor" ,"color":"#ff9800","shape":"normal","note":"オレンジとみかんの間の『タンゴール』代表種。現代の高級柑橘の多くはここから生まれる"},
-  { "id": 62, "names": ["EnOw21"], "p1": 40, "p2": 100, "group": "tangor" ,"color":"#ff9800","shape":"normal","note":""},
+  { "id": 62, "names": ["No.21"], "p1": 40, "p2": 101, "group": "tangor" ,"color":"#ff9800","shape":"normal","note":""},
 
   { "id": 80, "names": ["大橘", "サザンイエロー"], "p1": 4, "p2": -1, "group": "pomelo" ,"color":"#ffe01d","shape":"round","note":""},
   { "id": 81, "names": ["はっさく"], "p1": 4, "p2": 8, "group": "pomelo" ,"color":"#ffe01d","shape":"round","note":""},
@@ -70,9 +70,9 @@
   { "id": 202, "names": ["はるき"], "p1": 61, "p2": 20, "group": "kiyomi_mix" ,"color":"#ff9800","shape":"normal","note":""},
   { "id": 203, "names": ["陽香"], "p1": 61, "p2": 132, "group": "kiyomi_mix" ,"color":"#ff9800","shape":"normal","note":""},
   { "id": 204, "names": ["せとみ", "ゆめほっぺ"], "p1": 61, "p2": 131, "group": "kiyomi_mix" ,"color":"#ff9800","shape":"normal","note":""},
-  { "id": 205, "names": ["KyEn4"], "p1": 61, "p2": 40, "group": "kiyomi_mix" ,"color":"#ff9800","shape":"normal","note":""},
+  { "id": 205, "names": ["口之津37号"], "p1": 61, "p2": 40, "group": "kiyomi_mix" ,"color":"#ff9800","shape":"normal","note":""},
   { "id": 206, "names": ["西之香"], "p1": 61, "p2": 41, "group": "kiyomi_mix" ,"color":"#ff9800","shape":"normal","note":""},
-  { "id": 207, "names": ["KyEn14"], "p1": 61, "p2": 101, "group": "kiyomi_mix" ,"color":"#ff9800","shape":"normal","note":""},
+  { "id": 207, "names": ["T-378"], "p1": 61, "p2": 101, "group": "kiyomi_mix" ,"color":"#ff9800","shape":"normal","note":""},
   { "id": 208, "names": ["津之望"], "p1": 61, "p2": 101, "group": "kiyomi_mix" ,"color":"#ff9800","shape":"normal","note":""},
   { "id": 209, "names": ["たまみ"], "p1": 61, "p2": 43, "group": "kiyomi_mix" ,"color":"#ff9800","shape":"normal","note":""},
   { "id": 210, "names": ["媛小春"], "p1": 61, "p2": 212, "group": "kiyomi_mix" ,"color":"#ffe01d","shape":"round","note":"ジューシーな甘さと程よい酸味に黄金柑に似る香気。名前も可愛らしい小粒の黄色い柑橘"},
@@ -88,14 +88,15 @@
   { "id": 303, "names": ["天草"], "p1": 207, "p2": 42, "group": "premium" ,"color":"#ff9800","shape":"normal","note":""},
   { "id": 304, "names": ["湘南ゴールド"], "p1": 212, "p2":106 , "group": "kiyomi_mix" ,"color":"#ffe01d","shape":"round","note":""},
   { "id": 305, "names": ["はれひめ"], "p1": 214, "p2": 100, "group": "premium" ,"color":"#ff9800","shape":"normal","note":""},
-  { "id": 306, "names": ["No.1408"], "p1": 215, "p2": 62, "group": "premium" ,"color":"#ff9800","shape":"normal","note":""},
+  { "id": 306, "names": ["No.1408"], "p1": 10010, "p2": -1, "group": "middle" ,"color":"#ff9800","shape":"normal","note":"外観の美しく味も良いという中間母本品種。ルーツわからなかった..."},
   { "id": 307, "names": ["大将季"], "p1": 200, "p2": -1, "group": "premium" ,"color":"#fc9003","shape":"deko","note":""},
   { "id": 308, "names": ["あすき"], "p1": 201, "p2": 83, "group": "premium" ,"color":"#fc9003","shape":"normal","note":""},
   { "id": 309, "names": ["パイン柑"], "p1": 212, "p2": 134, "group": "premium" ,"color":"#ffe01d","shape":"round","note":""},
+  { "id": 310, "names": ["西南のひかり"], "p1": 62, "p2": 203, "group": "premium" ,"color":"#fc7f03","shape":"normal","note":"糖度が高く酸度の低い高級柑橘。β-クリプトキサンチンの含有量が多く免疫昨日のサポートとしても優秀"},
 
   { "id": 400, "names": ["愛媛果試28号", "紅まどんな", "愛媛28号"], "p1": 303, "p2": 45, "group": "premium" ,"color":"#ff9800","shape":"normal","note":"ゼリーのようなぷるぷる食感、高貴な芳香と濃厚な甘味の高級柑橘"},
   { "id": 401, "names": ["みはや"], "p1": 208, "p2": 306, "group": "premium" ,"color":"#ff9800","shape":"normal","note":""},
-  { "id": 402, "names": ["大分果研4号", "ゼリーオレンジ", "サンセレブ"], "p1": 303, "p2": 107, "group": "premium" ,"color":"#ff9800","shape":"normal","note":""},
+  { "id": 402, "names": ["大分果研4号", "ゼリーオレンジ", "サンセレブ"], "p1": 303, "p2": 107, "group": "premium" ,"color":"#ff9800","shape":"normal","note":"果汁の多く果肉の柔らかいのが特徴の高級柑橘。減酸が早く年内収穫ができる"},
 
 
   { "id": 500, "names": ["愛媛果試48号", "紅プリンセス"], "p1": 400, "p2": 301, "group": "premium" ,"color":"#ff9800","shape":"normal","note":""},
@@ -114,11 +115,12 @@
   {"id":10000, "names":["不明親"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"unknown","note":""},
   {"id":10001, "names":["不明親"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"unknown","note":""},
   {"id":10002, "names":["不明親(文旦系)"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"unknown","note":""},
-  {"id":10003, "names":["不明親(起源不明)"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"unknown"},
-  {"id":10004, "names":["不明親(文旦系)"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"unknown"},
-  {"id":10005, "names":["不明親(コウジ系)"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"unknown"},
-  {"id":10006, "names":["不明親(文旦系)"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"unknown"},
-  {"id":10007, "names":["不明親(系統不明)"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"unknown"},
-  {"id":10008, "names":["不明親(文旦系)"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"unknown"},
-  {"id":10009, "names":["不明親(系統不明)"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"unknown"}
+  {"id":10003, "names":["不明親(起源不明)"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"unknown","note":""},
+  {"id":10004, "names":["不明親(文旦系)"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"unknown","note":""},
+  {"id":10005, "names":["不明親(コウジ系)"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"unknown","note":""},
+  {"id":10006, "names":["不明親(文旦系)"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"unknown","note":""},
+  {"id":10007, "names":["不明親(系統不明)"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"unknown","note":""},
+  {"id":10008, "names":["不明親(文旦系)"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"unknown","note":""},
+  {"id":10009, "names":["不明親(系統不明)"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"unknown","note":""},
+  {"id":10010, "names":["不明親(私の力不足)"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"unknown","note":""}
 ]

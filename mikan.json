@@ -32,9 +32,9 @@
 
   { "id": 60, "names": ["マーコットオレンジ", "マーコット"], "p1": 3, "p2": 1, "group": "tangor" ,"color":"#ff9800","shape":"normal","note":""},
   { "id": 61, "names": ["清見", "清見タンゴール"], "p1": 100, "p2": 41, "group": "tangor" ,"color":"#ff9800","shape":"normal","note":"オレンジとみかんの間の『タンゴール』代表種。現代の高級柑橘の多くはここから生まれる"},
-  { "id": 62, "names": ["EnOwNo.21"], "p1": 40, "p2": 101, "group": "tangor" ,"color":"#ff9800","shape":"normal","note":""},
+  { "id": 62, "names": ["EnOwNo.21"], "p1": 40, "p2": 101, "group": "tangor" ,"color":"#ff9800","shape":"normal","note":"アンコール(ENcore)と興津早生(Okitsu-Wase)から生まれた中間母本"},
 
-  { "id": 80, "names": ["大橘", "サザンイエロー"], "p1": 4, "p2": -1, "group": "pomelo" ,"color":"#ffe01d","shape":"round","note":""},
+  { "id": 80, "names": ["大橘", "サワーポメロ"], "p1": 4, "p2": -1, "group": "pomelo" ,"color":"#ffe01d","shape":"round","note":""},
   { "id": 81, "names": ["はっさく"], "p1": 4, "p2": 8, "group": "pomelo" ,"color":"#ffe01d","shape":"round","note":""},
   { "id": 82, "names": ["スイートスプリング"], "p1": 81, "p2": 108, "group": "tangelo" ,"color":"#ff9800","shape":"round","note":""},
   { "id": 83, "names": ["興津46号"], "p1": 82, "p2": 41, "group": "tangelo" ,"color":"#ff9800","shape":"round","note":""},
@@ -48,7 +48,7 @@
 
   { "id": 100, "names": ["宮川早生"], "p1": 0, "p2": -1, "group": "unshu" ,"color":"#ff9800","shape":"normal","note":""},
   { "id": 101, "names": ["興津早生"], "p1": 100, "p2": -1, "group": "unshu" ,"color":"#ff9800","shape":"normal","note":""},
-  { "id": 102, "names": ["ゆら早生"], "p1": 100, "p2": -1, "group": "unshu" ,"color":"#ff9800","shape":"normal","note":""},
+  { "id": 102, "names": ["ゆら早生"], "p1": 100, "p2": -1, "group": "unshu" ,"color":"#ff9800","shape":"normal","note":"好き"},
   { "id": 103, "names": ["小原紅早生"], "p1": 100, "p2": -1, "group": "unshu" ,"color":"#e65100","shape":"normal","note":"日本一赤いと言われる温州みかん。濃厚な甘味が特徴"},
   { "id": 104, "names": ["山下紅早生"], "p1": 100, "p2": -1, "group": "unshu" ,"color":"#e65100","shape":"normal","note":""},
   { "id": 105, "names": ["三保早生"], "p1": 100, "p2": -1, "group":"unshu" ,"color":"#ff9800","shape":"normal","note":""},
@@ -65,7 +65,7 @@
   { "id": 135, "names": ["南津海","なつみ"], "p1": 20, "p2":25 , "group": "ponkan_family" ,"color":"#ff9800","shape":"normal","note":"温州に似るが初夏でも美味しく食べられるみかん"},
 
 
-  { "id": 200, "names": ["不知火", "デコポン"], "p1": 61, "p2": 20, "group": "kiyomi_mix" ,"color":"#ff9800","shape":"deko","note":"清見とポンカンから生まれ、甘味と酸味のバランスと凸型の見た目が人気の果実"},
+  { "id": 200, "names": ["不知火", "デコポン"], "p1": 61, "p2": 20, "group": "kiyomi_mix" ,"color":"#ff9800","shape":"deko","note":"清見とポンカンから生まれ、甘味と酸味のバランスに凸型の見た目が人気の果実"},
   { "id": 201, "names": ["はるみ"], "p1": 61, "p2": 20, "group": "kiyomi_mix" ,"color":"#ff9800","shape":"normal","note":""},
   { "id": 202, "names": ["はるき"], "p1": 61, "p2": 20, "group": "kiyomi_mix" ,"color":"#ff9800","shape":"normal","note":""},
   { "id": 203, "names": ["陽香"], "p1": 61, "p2": 132, "group": "kiyomi_mix" ,"color":"#ff9800","shape":"normal","note":""},
@@ -86,10 +86,10 @@
   { "id": 301, "names": ["甘平"], "p1": 206, "p2": 20, "group": "premium" ,"color":"#ff9800","shape":"flat","note":"シャキシャキとした粒感と高い糖度、扁平な見た目の愛媛が誇る高級柑橘"},
   { "id": 302, "names": ["佐賀果試35号", "にじゅうまる"], "p1": 206, "p2": 130, "group": "premium" ,"color":"#ff9800","shape":"normal","note":""},
   { "id": 303, "names": ["天草"], "p1": 207, "p2": 42, "group": "premium" ,"color":"#ff9800","shape":"normal","note":""},
-  { "id": 304, "names": ["湘南ゴールド"], "p1": 212, "p2":106 , "group": "kiyomi_mix" ,"color":"#ffe01d","shape":"round","note":""},
+  { "id": 304, "names": ["湘南ゴールド"], "p1": 212, "p2":106 , "group": "kiyomi_mix" ,"color":"#ffe01d","shape":"round","note":"神奈川県で生まれた小粒で黄色い柑橘。爽やかで果汁香り共に豊かな品種"},
   { "id": 305, "names": ["はれひめ"], "p1": 214, "p2": 100, "group": "premium" ,"color":"#ff9800","shape":"normal","note":""},
-  { "id": 306, "names": ["No.1408"], "p1": 215, "p2": 62, "group": "middle" ,"color":"#ff9800","shape":"normal","note":"外観の美しく味も良いという中間母本品種。ルーツわからなかった..."},
-  { "id": 307, "names": ["大将季"], "p1": 200, "p2": -1, "group": "premium" ,"color":"#fc9003","shape":"deko","note":""},
+  { "id": 306, "names": ["No.1408"], "p1": 215, "p2": 62, "group": "middle" ,"color":"#ff9800","shape":"normal","note":"外観の美しく味も良いという中間母本品種。みはやの親Sにあたる"},
+  { "id": 307, "names": ["大将季"], "p1": 200, "p2": -1, "group": "premium" ,"color":"#fc9003","shape":"deko","note":"不知火に似るが赤色が濃く、濃厚な甘味と程よい酸味の高級柑橘。鹿児島県で生まれ発見者の大野さんとその息子さんの将季さんから名付けられた。"},
   { "id": 308, "names": ["あすき"], "p1": 201, "p2": 83, "group": "premium" ,"color":"#fc9003","shape":"normal","note":""},
   { "id": 309, "names": ["パイン柑"], "p1": 212, "p2": 134, "group": "premium" ,"color":"#ffe01d","shape":"round","note":""},
   { "id": 310, "names": ["西南のひかり"], "p1": 62, "p2": 203, "group": "premium" ,"color":"#fc7f03","shape":"normal","note":"糖度が高く酸度の低い高級柑橘。β-クリプトキサンチンの含有量が多く免疫昨日のサポートとしても優秀"},
@@ -99,18 +99,17 @@
   { "id": 402, "names": ["大分果研4号", "ゼリーオレンジ", "サンセレブ"], "p1": 303, "p2": 107, "group": "premium" ,"color":"#ff9800","shape":"normal","note":"果汁の多く果肉の柔らかいのが特徴の高級柑橘。減酸が早く年内収穫ができる"},
 
 
-  { "id": 500, "names": ["愛媛果試48号", "紅プリンセス"], "p1": 400, "p2": 301, "group": "premium" ,"color":"#ff9800","shape":"normal","note":""},
-  { "id": 501, "names": ["マコポン"], "p1": 402, "p2": 200, "group": "premium" ,"note":""},
+  { "id": 500, "names": ["愛媛果試48号", "紅プリンセス"], "p1": 400, "p2": 301, "group": "premium" ,"color":"#ff9800","shape":"normal","note":"紅まどんなの滑らかな食感と甘平の濃厚な甘さを引き継いだ高級柑橘。2005年から20年の月日を経て2025年3月に本格的な販売が始まった"},
+  { "id": 501, "names": ["マコポン"], "p1": 402, "p2": 200, "group": "premium" ,"color":"#ff9800","shape":"deko","note":""},
 
 
-  { "id": 600, "names": ["甘夏"], "p1": 9, "p2": -1, "group": "premium" ,"note":""},
-  { "id": 601, "names": ["紅甘夏"], "p1":600, "p2": -1, "group": "premium" ,"note":""},
-  { "id": 602, "names": ["新甘夏", "サンフルーツ"], "p1": 600, "p2": -1, "group": "premium" ,"note":""},
+  { "id": 600, "names": ["甘夏"], "p1": 9, "p2": -1, "group": "premium" ,"color":"#ff9800","shape":"normal","note":""},
+  { "id": 601, "names": ["紅甘夏"], "p1":600, "p2": -1, "group": "premium" ,"color":"#ff9800","shape":"normal","note":""},
+  { "id": 602, "names": ["新甘夏", "サンフルーツ"], "p1": 600, "p2": -1, "group": "premium" ,"color":"#ff9800","shape":"noraml","note":""},
 
-  { "id": 700, "names": ["じゃばら"], "p1":8 , "p2": 11, "group": "yuzu" ,"note":"『邪気を払う』が名の由来。和歌山県北山村の希少種。花粉症対策でも注目される"},
-  { "id": 701, "names": ["カボス"], "p1":8 , "p2": 11, "group": "yuzu" ,"note":""},
-  { "id": 702, "names": ["ザボン"], "p1":11 , "p2": 10004, "group": "yuzu" ,"note":""},
-  { "id": 703, "names": ["スダチ"], "p1":11 , "p2": 10005, "group": "yuzu" ,"note":""},
+  { "id": 700, "names": ["じゃばら"], "p1":8 , "p2": 11, "group": "yuzu" ,"color":"#509143","shape":"round","note":"『邪気を払う』が名の由来。和歌山県北山村の希少種。花粉症対策でも注目される"},
+  { "id": 701, "names": ["カボス"], "p1":8 , "p2": 11, "group": "yuzu" ,"color":"#509143","shape":"round","note":""},
+  { "id": 702, "names": ["スダチ"], "p1":11 , "p2": 10005, "group": "yuzu" ,"color":"#509143","shape":"round","note":""},
 
   {"id":10000, "names":["不明親"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"unknown","note":""},
   {"id":10001, "names":["不明親"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"unknown","note":""},

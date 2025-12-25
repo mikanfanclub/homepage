@@ -6,11 +6,12 @@ body {
   display: flex;
   flex-direction: column;
   height: 100dvh;
-  height: -webkit-fill-available; 
+  height: -webkit-fill-available;
   width: 100vw;
   -webkit-text-size-adjust: 100%;
-  touch-action: none; 
-  position: fixed; /* 画面を固定してスクロールを物理的に防ぐ */ 
+  touch-action: none;
+  position: fixed;
+  /* 画面を固定してスクロールを物理的に防ぐ */
 }
 
 html {
@@ -268,17 +269,26 @@ header {
 .drawer-content #how-to-use li::before {
   content: '-';
 }
-.drawer-content a{
+
+.drawer-content a {
   appearance: none;
   color: #fc7f04;
 }
-.drawer-content #reference li::before{
-  content:'-';
+
+.drawer-content #reference li::before {
+  content: '-';
 }
+
+
+#copyright {
+  font-size: 0.5rem;
+}
+
 
 /* --- Cytoscapeの表示範囲 --- */
 #cy {
-  position: absolute; /* headerの下に潜り込ませる場合はabsolute */
+  position: absolute;
+  /* headerの下に潜り込ませる場合はabsolute */
   top: 0;
   left: 0;
   width: 100%;
@@ -291,7 +301,7 @@ header {
 
 /* --- みかんの詳細表示ウィンドウ ---*/
 .info-panel {
-  position: absolute;
+  position: fixed;
   bottom: 20px;
   left: 20px;
   max-width: 35vw;

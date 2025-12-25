@@ -121,6 +121,5 @@
   {"id":10006, "names":["不明親(文旦系)"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"unknown","note":""},
   {"id":10007, "names":["不明親(系統不明)"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"unknown","note":""},
   {"id":10008, "names":["不明親(文旦系)"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"unknown","note":""},
-  {"id":10009, "names":["不明親(系統不明)"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"unknown","note":""},
-  {"id":10010, "names":["不明親(私の力不足)"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"unknown","note":""}
+  {"id":10009, "names":["不明親(系統不明)"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"unknown","note":""}
 ]

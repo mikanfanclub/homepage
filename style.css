@@ -104,7 +104,7 @@ header {
   min-width: 200px;
   padding: 8px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 100px;
   text-align: center;
 }
 
@@ -244,6 +244,62 @@ header {
   text-align: center;
 }
 
+/* スイッチ本体の枠組み */
+.mikan-switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+/* デフォルトのチェックボックスを隠す */
+.mikan-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* スライダーの背景 */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+/* スライダー内の丸（みかんイメージ） */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+/* ONの時の背景色（みかんオレンジ） */
+input:checked + .slider {
+  background-color: #ff9800;
+}
+
+/* ONの時の丸の移動 */
+input:checked + .slider:before {
+  transform: translateX(20px);
+  background-color: #fff; /* 白、または濃いオレンジでもOK */
+}
+
+/* ホバー時の微調整 */
+.mikan-switch:hover .slider {
+  box-shadow: 0 0 1px #ff9800;
+}
+
+
 .drawer-content button {
   appearance: none;
   background-color: #ff9800;
@@ -282,6 +338,14 @@ header {
 
 #copyright {
   font-size: 0.5rem;
+}
+
+.drawer-content #presets-list .preset {
+  font-size: 0.8rem;
+  background-color: #fffaf0;
+  border: 2px solid #ff9800;
+  padding: 6px;
+  border-radius: 1000px;
 }
 
 

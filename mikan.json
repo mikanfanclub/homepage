@@ -1,8 +1,8 @@
 [
   { "id": 0, "names": ["温州みかん"], "p1": 7, "p2": 8, "group": "root", "color":"#ff9800","shape":"normal","note":"日本の冬の代名詞。400年以上前に鹿児島で誕生"},
-  { "id": 1, "names": ["ｽｲｰﾄｵﾚﾝｼﾞ(分類)"], "p1": -1, "p2": -1, "group": "root" , "color":"#fc7f03","shape":"round","note":"一般のオレンジ、ブラッドオレンジ、ネーブルオレンジなどを包含したグループ"},
+  { "id": 1, "names": ["スイートオレンジ"], "p1": -1, "p2": -1, "group": "root" , "color":"#fc7f03","shape":"round","note":"【分類】一般のオレンジ、ブラッドオレンジ、ネーブルオレンジなどを包含したグループ"},
   { "id": 2, "names": ["ダイダイ", "ビターオレンジ"], "p1": -1, "p2": -1, "group": "root" ,"color":"#fc7f03","shape":"round","note":"お正月の縁起物にもなる歴史ある香酸柑橘。酸味と苦味が強くポン酢やマーマレードの加工品や精油として活用する"},
-  { "id": 3, "names": ["ﾏﾝﾀﾞﾘﾝﾝ(分類)"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"normal","note":""},
+  { "id": 3, "names": ["マンダリン"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"normal","note":"【分類】インド原産のいわゆる「みかん」。タンジェリンはマンダリンがモロッコ等を経由しつつアメリカに渡ったもので、より赤みの強い果実"},
   { "id": 4, "names": ["文旦", "ポメロ"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"normal","note":"主に高知県で栽培される甘酸っぱい大型柑橘。土佐文旦、水晶文旦、サワーポメロなどの総称"},
   { "id": 5, "names": ["カラタチ"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"normal","note":"鋭い棘が特徴的。果実は酸味が強く食用に向かないが多くの柑橘を「接ぎ木」する土台として有用"},
   { "id": 6, "names": ["橘"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"normal","note":"日本固有の柑橘で、平安時代から常緑樹で縁起がいいとされた。現在は絶滅危惧種"},
@@ -11,28 +11,32 @@
   { "id": 9, "names": ["ナツミカン", "ナツダイダイ"], "p1": 7, "p2": 10000, "group": "root" ,"color":"#ff9800","shape":"normal","note":"酸味が強く苦味のある春~初夏の柑橘。甘夏の登場によりだんだんと数を減らしている"},
   { "id": 10, "names": ["コウジ","柑子"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"normal","note":"酸味の強い在来のみかん。柑子色（こうじいろ）という色の名前にもなっている"},
   { "id": 11, "names": ["ユズ"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ffe01d","shape":"round","note":"言わずと知れた酸っぱい果実で、日本料理の香りづけに用いる。小さい果実は花柚というユズ（ホンユズ）とは別の果実"},
-  { "id": 12, "names": ["ダンシー", "大紅みかん"], "p1": -1, "p2":-1 , "group": "root" ,"color":"#e65100","shape":"round","note":"インド原産の古い柑橘。鮮やかな紅色をしている。"},
+  { "id": 12, "names": ["ダンシー", "大紅みかん"], "p1": 13, "p2":-1 , "group": "root" ,"color":"#e65100","shape":"round","note":"インド原産の古い柑橘。鮮やかな紅色をしている。"},
+  { "id": 13, "names": ["タンジェリン"], "p1": 3, "p2":-1 , "group": "root" ,"color":"#fc7f03","shape":"round","note":"【分類】マンダリンがモロッコ等を経由し欧米方面に広がったもの。枝変わりなどで一般に東南のマンダリンに比べ色が濃い"},
 
   { "id": 20, "names": ["ポンカン"], "p1": 12, "p2": 10009, "group": "mandarin" ,"color":"#ff9800","shape":"round","note":"独特の芳醇な香りと、サクサクとした食感。不知火（デコポン）やはるみの親としても優秀"},
-  { "id": 21, "names": ["キングマンダリン"], "p1": -1, "p2": -1, "group": "mandarin" ,"color":"#ff9800","shape":"normal","note":""},
+  { "id": 21, "names": ["キングマンダリン"], "p1": 3, "p2": -1, "group": "mandarin" ,"color":"#ff9800","shape":"normal","note":"アメリカで自然発生したマンダリンの一種"},
   { "id": 22, "names": ["地中海マンダリン", "ウィローリーフ"], "p1": -1, "p2": -1, "group": "mandarin" ,"color":"#ff9800","shape":"normal","note":""},
-  { "id": 23, "names": ["クレメンティン", "クレメンティヌ"], "p1": -1, "p2": -1, "group": "mandarin" ,"color":"#ff9800","shape":"normal","note":""},
+  { "id": 23, "names": ["クレメンティン", "クレメンタイン"], "p1": -1, "p2": -1, "group": "mandarin" ,"color":"#ff9800","shape":"normal","note":""},
   { "id": 24, "names": ["伊予柑"], "p1": 90, "p2": 12, "group": "tangor" ,"color":"#ff9800","shape":"round","note":""},
   { "id": 25, "names": ["カラマンダリン"], "p1": 0, "p2": 21, "group": "mandarin" ,"color":"#ff9800","shape":"round","note":""},
 
-  { "id": 40, "names": ["アンコールオレンジ", "アンコール"], "p1": 22, "p2": 21, "group": "orange" ,"color":"#fc6203","shape":"normal","note":"濃厚な甘みと香りが特徴。せとか等の親となり高級な食味を子へ伝えた"},
+  { "id": 40, "names": ["アンコール", "アンコールオレンジ"], "p1": 22, "p2": 21, "group": "orange" ,"color":"#fc6203","shape":"normal","note":"濃厚な甘みと香りが特徴。せとか等の親となり高級な食味を子へ伝えた"},
   { "id": 41, "names": ["トロビタオレンジ"], "p1": 1, "p2": -1, "group": "orange" ,"color":"#fc7f03","shape":"round","note":""},
   { "id": 42, "names": ["ページオレンジ", "ページ"], "p1": 23, "p2": 44, "group": "orange" , "color":"#fc7f03","shape":"round","note":""},
   { "id": 43, "names": ["ウィルキング"], "p1": 21, "p2": 22, "group": "orange" ,"color":"#fc7f03","shape":"normal","note":""},
-  { "id": 44, "names": ["オセオラオレンジ", "オセオラ"], "p1": 3, "p2": 1, "group": "orange" ,"color":"#fc7f03","shape":"round","note":""},
+  { "id": 44, "names": ["オセオラオレンジ", "オセオラ"], "p1": 23, "p2": 63, "group": "orange" ,"color":"#fc7f03","shape":"round","note":""},
   { "id": 45, "names": ["南香"], "p1": 41, "p2": 20, "group": "orange" ,"color":"#fc7f03","shape":"round","note":""},
-  { "id": 46, "names": ["ﾌﾞﾗｯﾄﾞｵﾚﾝｼﾞ(分類)"], "p1": 1, "p2": -1, "group": "orange" ,"color":"#e65100","shape":"round","note":"アントシアニンが多く身の赤いオレンジの総称"},
+  { "id": 46, "names": ["ブラッドオレンジ"], "p1": 1, "p2": -1, "group": "orange" ,"color":"#e65100","shape":"round","note":"【分類】アントシアニンが多く身の赤いオレンジの総称"},
   { "id": 47, "names": ["モロ"], "p1": 46, "p2": -1, "group": "orange" ,"color":"#e65100","shape":"round","note":"果皮まで紅く染まる"},
   { "id": 48, "names": ["タロッコ"], "p1": 46, "p2": -1, "group": "orange" ,"color":"#fc7f03","shape":"round","note":"果皮はオレンジ色。甘味が強い"},
 
-  { "id": 60, "names": ["マーコットオレンジ", "マーコット"], "p1": 3, "p2": 1, "group": "tangor" ,"color":"#ff9800","shape":"normal","note":""},
+  { "id": 60, "names": ["マーコットオレンジ", "マーコット"], "p1": 10010, "p2": 10011, "group": "tangor" ,"color":"#ff9800","shape":"normal","note":""},
   { "id": 61, "names": ["清見", "清見タンゴール"], "p1": 100, "p2": 41, "group": "tangor" ,"color":"#ff9800","shape":"normal","note":"オレンジとみかんの間の『タンゴール』代表種。現代の高級柑橘の多くはここから生まれる"},
   { "id": 62, "names": ["EnOwNo.21"], "p1": 40, "p2": 101, "group": "tangor" ,"color":"#ff9800","shape":"normal","note":"アンコール(ENcore)と興津早生(Okitsu-Wase)から生まれた中間母本"},
+  { "id": 63, "names": ["オーランド"], "p1": 12, "p2": 801, "group": "tangelo" ,"color":"#fc7f03","shape":"round","note":""},
+  { "id": 64, "names": ["ミネオラオレンジ"], "p1": 12, "p2": 801, "group": "tangelo" ,"color":"#e35207","shape":"deko","note":"フロリダ州ミネオラで生まれたタンジェロの一種。赤みがかっており凸状突起をもつ"},
+  { "id": 65, "names": ["セミノール"], "p1": 12, "p2": 801, "group": "tangelo" ,"color":"#e35207","shape":"deko","note":"オレンジの芳香にバランスの良く濃厚な甘味と酸味を持つ、アメリカ生まれの高級タンジェロ"},
 
   { "id": 80, "names": ["大橘", "サワーポメロ"], "p1": 4, "p2": -1, "group": "pomelo" ,"color":"#ffe01d","shape":"round","note":""},
   { "id": 81, "names": ["はっさく"], "p1": 4, "p2": 8, "group": "pomelo" ,"color":"#ffe01d","shape":"round","note":""},
@@ -41,7 +45,7 @@
   { "id": 84, "names": ["河内晩柑"], "p1": 85, "p2": 10003, "group": "pomelo" ,"color":"#ffe01d","shape":"round","note":"和製グレープフルーツとも呼ばれるジューシーでさっぱりとした柑橘"},
   { "id": 85, "names": ["弓削瓢柑"], "p1": 89, "p2": 10006, "group": "pomelo" ,"color":"#ffe01d","shape":"egg","note":"ひょうたんのような形をした文旦系柑橘。爽やかな香りと酸味、ほろ苦さが特徴"},
   { "id": 86, "names": ["瑞希"], "p1": 84, "p2": 87, "group": "pomelo" ,"color":"#ffe01d","shape":"deko","note":""},
-  { "id": 87, "names": ["サザンイエロー"], "p1":4 , "p2":7 , "group": "pomelo" ,"color":"#ffe01d","shape":"deko","note":"正確には無核紀州と谷川文旦"},
+  { "id": 87, "names": ["サザンイエロー"], "p1":4 , "p2":110 , "group": "pomelo" ,"color":"#ffe01d","shape":"deko","note":"正確には無核紀州と谷川文旦"},
   { "id": 88, "names": ["瓢柑"], "p1": 8, "p2": 10002, "group": "pomelo" ,"color":"#ffe01d","shape":"egg","note":"現代で瓢柑といえば弓削瓢柑を指すが、遺伝学の上では別柑橘としている。"},
   { "id": 89, "names": ["鳴門オレンジ", "鳴門"], "p1": 7, "p2": 10007, "group": "pomelo" ,"color":"#ffe01d","shape":"round","note":""},
   { "id": 90, "names": ["カイコウカン","海紅柑"], "p1": 8, "p2": 10008, "group": "pomelo" ,"color":"#ffe01d","shape":"round","note":""},
@@ -56,11 +60,12 @@
   { "id": 107, "names": ["大津８号", "大分果研４号"], "p1": 0, "p2": -1, "group": "unshu" ,"color":"#ff9800","shape":"normal","note":""},
   { "id": 108, "names": ["上田温州"], "p1": 0, "p2": -1, "group": "unshu" ,"color":"#ff9800","shape":"normal","note":""},
   { "id": 109, "names": ["青島温州"], "p1": 0, "p2": -1, "group": "unshu" ,"color":"#ff9800","shape":"normal","note":"静岡県で発見された晩生温州。スーパーなどでもよく見かける代表品種"},
+  { "id": 110, "names": ["無核紀州"], "p1": 7, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"normal","note":"紀州みかんから種がほとんどできないように品種改良された小みかん"},
 
   { "id": 130, "names": ["太田ポンカン"], "p1": 20, "p2": -1, "group": "mandarin_mutant" ,"color":"#ff9800","shape":"round","note":""},
   { "id": 131, "names": ["吉浦ポンカン"], "p1": 20, "p2": -1, "group": "mandarin_mutant" ,"color":"#ff9800","shape":"round","note":""},
   { "id": 132, "names": ["中野３号ポンカン"], "p1": 20, "p2": -1, "group": "mandarin_mutant" ,"color":"#ff9800","shape":"round","note":""},
-  { "id": 133, "names": ["日向夏"], "p1": 6, "p2": 10001, "group": "mandarin_mutant" ,"color":"#ffe01d","shape":"round","note":"アルベドにも甘味のある宮崎の柑橘。爽やかな甘味と香り"},
+  { "id": 133, "names": ["日向夏", "ニューサマーオレンジ", "小夏"], "p1": 6, "p2": 10001, "group": "mandarin_mutant" ,"color":"#ffe01d","shape":"round","note":"アルベドにも甘味のある宮崎の柑橘。爽やかな甘味と香り"},
   { "id": 134, "names": ["はるか"], "p1": 133, "p2":9 , "group": "mandarin_mutant" ,"color":"#ffe01d","shape":"deko","note":"見た目はレモン色だが酸味が皆無で優しい甘さの『奇跡の柑橘』"},
   { "id": 135, "names": ["南津海","なつみ"], "p1": 20, "p2":25 , "group": "ponkan_family" ,"color":"#ff9800","shape":"normal","note":"温州に似るが初夏でも美味しく食べられるみかん"},
 
@@ -111,6 +116,12 @@
   { "id": 701, "names": ["カボス"], "p1":8 , "p2": 11, "group": "yuzu" ,"color":"#509143","shape":"round","note":""},
   { "id": 702, "names": ["スダチ"], "p1":11 , "p2": 10005, "group": "yuzu" ,"color":"#509143","shape":"round","note":""},
 
+
+  { "id": 800, "names": ["グレープフルーツ"], "p1":-1 , "p2": -1, "group": "grapefruit" ,"color":"#ffe01d","shape":"round","note":""},
+  { "id": 801, "names": ["ダンカン"], "p1":800 , "p2": -1, "group": "grapefruit" ,"color":"#ffe01d","shape":"round","note":"グレープフルーツの1品種"},
+
+  { "id": 900, "names": ["農6", "カンキツ中間母本農6号"], "p1": 21, "p2": 110, "group": "mandarin" ,"color":"#ff9800","shape":"normal","note":"興津の果樹試験場にて生まれた品種。貯蔵性が高く、ゆっくり減酸させることで本来のポテンシャルである高い糖度を楽しめる"},
+
   {"id":10000, "names":["不明親"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"unknown","note":""},
   {"id":10001, "names":["不明親"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"unknown","note":""},
   {"id":10002, "names":["不明親(文旦系)"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"unknown","note":""},
@@ -120,5 +131,7 @@
   {"id":10006, "names":["不明親(文旦系)"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"unknown","note":""},
   {"id":10007, "names":["不明親(系統不明)"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"unknown","note":""},
   {"id":10008, "names":["不明親(文旦系)"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"unknown","note":""},
-  {"id":10009, "names":["不明親(系統不明)"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"unknown","note":""}
+  {"id":10009, "names":["不明親(系統不明)"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"unknown","note":""},
+  {"id":10010, "names":["不明親(マンダリン系統)"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"unknown","note":""},
+  {"id":10011, "names":["不明親(スイートオレンジ系統)"], "p1": -1, "p2": -1, "group": "root" ,"color":"#ff9800","shape":"unknown","note":""}
 ]

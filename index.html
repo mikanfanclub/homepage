@@ -65,12 +65,40 @@
       </div>
       <ul id="filters">
         <li>
+          <label class="mikan-switch">
+            <input type="checkbox" id="directOnlyCheck" onchange="redraw()">
+            <span class="slider"></span>
+          </label>
+            <span>直系のみ表示</span>
+        </li>
+        <li>
 
           <label>表示範囲:
             <input type="number" id="hops" value="3" min="1" max="5" style="width: 45px; padding: 5px;"> 親等まで
           </label>
         </li>
         <li> <button onclick="redraw()">再描画</button>
+        </li>
+        <li>
+          <h4>プリセット</h4>
+          <div id="presets-list">
+            <span class="preset">温州みかん</span>
+          </div>
+          <div id="presets-list">
+            <span class="preset">清見</span>
+          </div>
+          <div id="presets-list">
+            <span class="preset">宮川早生</span>
+          </div>
+          <div id="presets-list">
+            <span class="preset">クネンボ</span>
+          </div>
+          <div id="presets-list">
+            <span class="preset">文旦</span>
+          </div>
+          <div id="presets-list">
+            <span class="preset">オレンジ</span>
+          </div>
         </li>
 
       </ul>
@@ -118,7 +146,7 @@
 
   </div>
   <div id="cy"></div>
-  <div id="info-panel" class="info-panel"></div> 
+  <div id="info-panel" class="info-panel"></div>
   <script src="script.js">
   </script>
 </body>

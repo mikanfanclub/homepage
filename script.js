@@ -256,32 +256,17 @@ function setupCytoscape() {
   });
 
   cy.on('tap', 'node', function (evt) {
-    if (!isAnimate) {
-      const node = evt.target;
-      //const targetInput = document.getElementById('targetId');
-      //if (targetInput) targetInput.value = node.id();
-      const m = MIKAN.find(x => x.id === parseInt(node.id()));
+    const node = evt.target;
+    const m = MIKAN.find(x => x.id === parseInt(node.id()));
 
-      // IDをセット
-      const targetInput = document.getElementById('targetId');
-      if (targetInput) targetInput.value = node.id();
+    const targetInput = document.getElementById('targetId');
+    if (targetInput) targetInput.value = node.id();
 
-      // 【追記】検索ボックスの表示名も更新
-      const searchInput = document.getElementById('mikanSearch');
-      if (searchInput) searchInput.value = m.names[0];
-      drawGraph();
+    const searchInput = document.getElementById('mikanSearch');
+    if (searchInput) searchInput.value = m.names[0];
 
-      const p1 = MIKAN.find(x => x.id === m.p1);
-      const p2 = MIKAN.find(x => x.id === m.p2);
-      const info = document.getElementById('info-panel');
-      if (info) {
-        info.innerHTML = `
-        <h3 style="border-bottom: 3px solid ${m.color};">${m.names[0]}</h3>${m.names.length > 1 ? `<span class="other-names">(${m.names.slice(1).join(',')})</span>` : ""}<br>
-        <div class="origin">${p1 ? (p2 ? ` 親 :${p1.names[0]}×${p2.names[0]}` : `親:${p1.names[0]}`) : ''}</div>
-        <div class="note">${m.note}</div>
-      `;
-      }
-    }
+    // drawGraphを直接呼ばず、パネル更新も兼ねているredrawを呼ぶのがスムーズです
+    redraw();
   });
   // setupCytoscape 内に追記
   cy.on('mouseover', 'node', function (e) {
@@ -298,7 +283,19 @@ function setupCytoscape() {
   })
 }
 
-function drawGraph() {
+function drawGraph(options = {}) {
+  // 引数で指定がない場合は、HTMLのチェックボックスの状態を直接見に行く
+  const checkEl = document.getElementById('directOnlyCheck');
+
+  if (isAnimate) {
+    checkEl.checked = !checkEl.checked;
+    return;
+  }
+
+  const isOnlyDirect = (options.isOnlyDirect !== undefined)
+    ? options.isOnlyDirect
+    : (checkEl ? checkEl.checked : false);
+
   const targetEl = document.getElementById('targetId');
   const hopsEl = document.getElementById('hops');
   const centerId = targetEl ? targetEl.value.toString() : "1";
@@ -312,6 +309,8 @@ function drawGraph() {
 
   function collectIds(currentId, hops, level, direction, isDirectLine) {
     if (hops < 0 || currentId === -1 || currentId === undefined) return;
+
+    if (isOnlyDirect && !isDirectLine) return;
 
     const prev = nodesWithLevels.get(currentId);
     if (!prev) {
@@ -457,10 +456,24 @@ function drawGraph() {
 
   return centerId;
 }
-function redraw() {
-  // 1. グラフを描画し、中心となったIDを取得
-  const centerId = drawGraph(); 
-  
+
+
+function redraw(options = {}) {
+  // チェックボックスの状態を取得
+  const checkEl = document.getElementById('directOnlyCheck');
+
+  if (isAnimate) {
+    checkEl.checked = !checkEl.checked;
+    return;
+  }
+  const isOnlyDirect = checkEl ? checkEl.checked : false;
+
+  // optionsオブジェクトに値をセット（標準的な書き方）
+  options.isOnlyDirect = isOnlyDirect;
+
+  // 1. グラフを描画
+  const centerId = drawGraph(options);
+
   // 2. そのIDに該当するデータをMIKANから探す
   const m = MIKAN.find(x => x.id === parseInt(centerId));
   if (!m) return;

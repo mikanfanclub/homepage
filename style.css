@@ -6,7 +6,6 @@ body {
   display: flex;
   flex-direction: column;
   height: 100dvh;
-  height: -webkit-fill-available;
   width: 100vw;
   -webkit-text-size-adjust: 100%;
   touch-action: none;
@@ -340,15 +339,30 @@ input:checked + .slider:before {
   font-size: 0.5rem;
 }
 
-.drawer-content #presets-list .preset {
-  font-size: 0.8rem;
-  background-color: #fffaf0;
-  border: 2px solid #ff9800;
-  padding: 6px;
-  border-radius: 1000px;
+.preset-container {
+  display: flex;
+  flex-wrap: wrap; /* これで重ならずに折り返される */
+  gap: 8px;        /* ボタン同士の隙間 */
+  padding: 5px;
 }
 
+/* ボタン単体のスタイル */
+.drawer-content #filters .preset-container .preset-btn {
+  background-color: #fffaf0; /* 薄いオレンジ背景 */
+  border: 2px solid #ff9800; /* オレンジの枠線 */
+  color: #ff9800;
+  border-radius: 20px;       /* 角を丸くしてカプセル型に */
+  padding: 6px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;       /* ボタン内で改行させない */
+}
 
+.preset-btn:active {
+  transform: scale(0.95);    /* 押した感を出す */
+}
 /* --- Cytoscapeの表示範囲 --- */
 #cy {
   position: absolute;

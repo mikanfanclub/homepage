@@ -69,7 +69,7 @@
             <input type="checkbox" id="directOnlyCheck" onchange="redraw()">
             <span class="slider"></span>
           </label>
-            <span>直系のみ表示</span>
+          <span>直系のみ表示</span>
         </li>
         <li>
 
@@ -81,26 +81,19 @@
         </li>
         <li>
           <h4>プリセット</h4>
-          <div id="presets-list">
-            <span class="preset">温州みかん</span>
-          </div>
-          <div id="presets-list">
-            <span class="preset">清見</span>
-          </div>
-          <div id="presets-list">
-            <span class="preset">宮川早生</span>
-          </div>
-          <div id="presets-list">
-            <span class="preset">クネンボ</span>
-          </div>
-          <div id="presets-list">
-            <span class="preset">文旦</span>
-          </div>
-          <div id="presets-list">
-            <span class="preset">オレンジ</span>
+          <div class="preset-container">
+            <button class="preset-btn" onclick="setPreset(0)">温州みかん</button>
+            <button class="preset-btn" onclick="setPreset(61)">清見</button>
+            <button class="preset-btn" onclick="setPreset(100)">宮川早生</button>
+            <button class="preset-btn" onclick="setPreset(8)">クネンボ</button>
+            <button class="preset-btn" onclick="setPreset(4)">文旦</button>
+            <button class="preset-btn" onclick="setPreset(1)">オレンジ</button>
+            <button class="preset-btn" onclick="setPreset(3)">マンダリン(分類名)</button>
+            <button class="preset-btn" onclick="setPreset(400)">紅まどんな</button>
+            <button class="preset-btn" onclick="setPreset(300)">せとか</button>
+            <button class="preset-btn" onclick="setPreset(301)">甘平</button>
           </div>
         </li>
-
       </ul>
 
       <div class="drawer-header">

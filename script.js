@@ -457,6 +457,16 @@ function drawGraph(options = {}) {
   return centerId;
 }
 
+function setPreset(id) {
+  const targetInput = document.getElementById("targetId");
+  // names配列のどこかに一致するものがあれば見つける
+  const found = MIKAN.find(m => m.id == id);
+  if (found) {
+    targetInput.value = found.id;
+    //drawGraph();
+    redraw();
+  }
+}
 
 function redraw(options = {}) {
   // チェックボックスの状態を取得

@@ -288,7 +288,6 @@ function drawGraph(options = {}) {
   const checkEl = document.getElementById('directOnlyCheck');
 
   if (isAnimate) {
-    checkEl.checked = !checkEl.checked;
     return;
   }
 
@@ -473,7 +472,6 @@ function redraw(options = {}) {
   const checkEl = document.getElementById('directOnlyCheck');
 
   if (isAnimate) {
-    checkEl.checked = !checkEl.checked;
     return;
   }
   const isOnlyDirect = checkEl ? checkEl.checked : false;

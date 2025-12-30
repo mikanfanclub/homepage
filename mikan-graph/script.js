@@ -65,6 +65,22 @@ async function init() {
     //if (info) info.innerText = `${MIKAN.length} 件読み込み完了`;
     if (info) { info.style = 'font-size:clamp(15px,2vw, 1rem)'; info.innerText = `柑橘をクリックすると詳細が見れます♪`; }
 
+    const urlParams = new URLSearchParams(window.location.search);
+    const targetMikan = urlParams.get('target');
+    console.log(targetMikan); 
+
+    if (targetMikan) {
+      // ツール内の検索関数を実行して、その品種にフォーカスを当てる
+      const found = MIKAN.find(m => m.id == targetMikan);
+      if (found) {
+        targetInput.value = found.id;
+        //drawGraph();
+      } else {
+        targetInput.value = 61; // デフォルトは清見
+      }
+
+    }
+
     drawGraph();
   } catch (e) {
     const info = document.getElementById('info-panel');

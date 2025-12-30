@@ -1075,3 +1075,74 @@ img.radius {
 .history-table tbody>tr:nth-child(even)>td {
   background-color: #f9f9f9;
 }
+#recommended-mikan {
+    background-image: url(../img/bg_paper.webp);
+}
+
+#recommended-mikan .container{
+    padding: 20px 0px;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.mikan-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  /* 優しいオレンジ系 */
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mikan-card .mikan-icon {
+  width: 20%;
+  padding: 10px 15px;
+}
+.mikan-card h3{
+  display: inline-block;
+  font-size: clamp(1.8rem, 2.5vw, 2rem);
+  margin: 0 0 10px 0;
+  border-bottom: 2px solid #ff9800;
+}
+.mikan-card a{
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 30px;
+}
+
+@media (max-width: 800px) {
+  .mikan-card {
+    flex-direction: row;
+    width: 80%;
+  }
+
+  .mikan-card .mikan-icon {
+    width: 30%;
+  }
+}
+
+@media (max-width: 600px) {
+  .mikan-card {
+    flex-direction: column;
+    width: 80%;
+  }
+
+  .mikan-card .mikan-icon {
+    width: 40%;
+  }
+}
+
+.btn-genealogy {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 15px;
+  background: #ff9800;
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: bold;
+}

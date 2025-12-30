@@ -843,7 +843,7 @@ img.radius {
 
 @media (max-width: 992px) {
   .concept-content .concept-body-wrapper img {
-    width: 65%;
+    width: 60%;
     margin: 30px auto;
     aspect-ratio: 1;
   }
@@ -851,7 +851,7 @@ img.radius {
 
 @media (max-width: 768px) {
   .concept-content .concept-body-wrapper img {
-    width: 70%;
+    width: 60%;
     margin: 30px auto;
     aspect-ratio: 1;
   }
@@ -859,7 +859,7 @@ img.radius {
 
 @media (max-width: 480px) {
   .concept-content .concept-body-wrapper img {
-    width: 85%;
+    width: 80%;
     margin: 30px auto;
     aspect-ratio: 1;
   }

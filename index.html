@@ -230,7 +230,7 @@
           </svg>
         </div>
         <div class="mikan-info">
-          <h3>推しみかん紹介：『媛小春』</h3>
+          <h3>推し柑橘紹介：『媛小春』</h3>
           <p>
             ジューシーな甘さと程よい酸味に黄金柑に似る香気。名前も可愛らしい小粒の黄色い柑橘
           </p>
@@ -339,7 +339,7 @@
           mikanIcon.innerHTML = svg;
 
         }
-        mikanInfo.getElementsByTagName('h3')[0].innerText = `推しみかん紹介：『${targetMikan.names[0]}』`;
+        mikanInfo.getElementsByTagName('h3')[0].innerText = `推し柑橘紹介：『${targetMikan.names[0]}』`;
         mikanInfo.getElementsByTagName('p')[0].innerText = targetMikan.note || '説明文がありません。';
         mikanInfo.getElementsByClassName('link-wrapper')[0].getElementsByTagName('a')[0].href = `http://mikanfan.club/mikan-graph/?target=${targetMikan.id}`;
       } catch (error) {

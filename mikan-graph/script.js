@@ -113,7 +113,7 @@ function setupCytoscape() {
             // 方向やレベルに合わせて色を変えるロジック
             let color = node.data('color') ?? '#ff9800';
             /*
-             if (node.data('isdirect')) {
+             if (node.data('isDirect')) {
               color = node.data('dir') === 1 ? '#e65100' : '#ffb300';
             }
             */
@@ -124,42 +124,42 @@ function setupCytoscape() {
                 <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60">
                   <ellipse cx="30" cy="18" rx="7" ry="7" fill="${color}" />
                   <ellipse cx="30" cy="33" rx="20" ry="18" fill="${color}" />
-                  <path d="m30 13 q35 5 45 10 q38 15 30 13" fill="green"  />
-                  <path d="m30 15 l30 11" stroke="green" stroke-width="1" />
+                  <path d="M30 13 Q35 5 45 10 Q38 15 30 13" fill="green"  />
+                  <path d="M30 15 L30 11" stroke="green" stroke-width="1" />
                 </svg>`;
 
               } else if (node.data('shape') == "flat") {
                 svg = `
                 <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60">
                   <ellipse cx="30" cy="35" rx="20" ry="15" fill="${color}"/>
-                  <path d="m30 21 q35 13 45 18 q38 23 30 21" fill="green" />
-                  <path d="m30 23 l30 17" stroke="green" stroke-width="1" />
+                  <path d="M30 21 Q35 13 45 18 Q38 23 30 21" fill="green" />
+                  <path d="M30 23 L30 17" stroke="green" stroke-width="1" />
                 </svg>`;
               } else if (node.data('shape') == "round") {
                 svg = `
                 <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60">
                   <ellipse cx="30" cy="35" rx="19" ry="19" fill="${color}"/>
-                  <path d="m30 21 q35 13 45 18 q38 23 30 21" fill="green" />
-                  <path d="m30 23 l30 17" stroke="green" stroke-width="1" />
+                  <path d="M30 21 Q35 13 45 18 Q38 23 30 21" fill="green" />
+                  <path d="M30 23 L30 17" stroke="green" stroke-width="1" />
                 </svg>`;
               } else if (node.data('shape') == "egg") {
                 svg = `
                 <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60">
                   <ellipse cx="30" cy="35" rx="17" ry="20" fill="${color}"/>
-                  <path d="m30 21 q35 13 45 18 q38 23 30 21" fill="green" />
-                  <path d="m30 23 l30 17" stroke="green" stroke-width="1" />
+                  <path d="M30 21 Q35 13 45 18 Q38 23 30 21" fill="green" />
+                  <path d="M30 23 L30 17" stroke="green" stroke-width="1" />
                 </svg>`;
 
               } else if (node.data('shape') == "unknown") {
                 svg = `
                 <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60">
                   <ellipse cx="30" cy="35" rx="20" ry="17" fill="${color}"/>
-                  <path d="m30 21 q35 13 45 18 q38 23 30 21" fill="green" />
-                  <path d="m30 23 l30 17" stroke="green" stroke-width="1" />
+                  <path d="M30 21 Q35 13 45 18 Q38 23 30 21" fill="green" />
+                  <path d="M30 23 L30 17" stroke="green" stroke-width="1" />
                   <text 
                     x="30" 
                     y="45" 
-                    font-family="arial, sans-serif" 
+                    font-family="Arial, sans-serif" 
                     font-size="22" 
                     font-weight="bold" 
                     fill="white" 
@@ -172,8 +172,8 @@ function setupCytoscape() {
                 svg = `
                 <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60">
                   <ellipse cx="30" cy="35" rx="20" ry="17" fill="${color}" />
-                  <path d="m30 21 q35 13 45 18 q38 23 30 21" fill="green"/>
-                  <path d="m30 23 l30 17" stroke="green" stroke-width="1" />
+                  <path d="M30 21 Q35 13 45 18 Q38 23 30 21" fill="green"/>
+                  <path d="M30 23 L30 17" stroke="green" stroke-width="1" />
                 </svg>`;
               }
 
@@ -181,11 +181,11 @@ function setupCytoscape() {
               svg = `
                 <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60">
                   <ellipse cx="30" cy="35" rx="20" ry="17" fill="${color}" />
-                  <path d="m30 21 q35 13 45 18 q38 23 30 21" fill="green"/>
-                  <path d="m30 23 l30 17" stroke="green" stroke-width="1" />
+                  <path d="M30 21 Q35 13 45 18 Q38 23 30 21" fill="green"/>
+                  <path d="M30 23 L30 17" stroke="green" stroke-width="1" />
                 </svg>`;
             }
-            return `data:image/svg+xml;utf8,${encodeuricomponent(svg)}`;
+            return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
 
           },
           'background-fit': 'contain',

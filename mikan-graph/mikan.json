@@ -26,7 +26,7 @@
   { "id": 42, "names": ["ページオレンジ", "ページ"], "p1": 23, "p2": 44, "group": "orange" , "color":"#fc7f03","shape":"round","note":""},
   { "id": 43, "names": ["ウィルキング"], "p1": 21, "p2": 22, "group": "orange" ,"color":"#fc7f03","shape":"normal","note":""},
   { "id": 44, "names": ["オセオラオレンジ", "オセオラ"], "p1": 23, "p2": 63, "group": "orange" ,"color":"#fc7f03","shape":"round","note":""},
-  { "id": 45, "names": ["南香"], "p1": 41, "p2": 20, "group": "orange" ,"color":"#fc7f03","shape":"round","note":""},
+  { "id": 45, "names": ["南香"], "p1": 41, "p2": 20, "group": "orange" ,"color":"#fc7f03","shape":"round","note":"高い糖度と豊かな香りが特徴のオレンジ。温州みかんのように皮が薄くむきやすい"},
   { "id": 46, "names": ["ブラッドオレンジ"], "p1": 1, "p2": -1, "group": "orange" ,"color":"#e65100","shape":"round","note":"【分類】アントシアニンが多く身の赤いオレンジの総称"},
   { "id": 47, "names": ["モロ"], "p1": 46, "p2": -1, "group": "orange" ,"color":"#e65100","shape":"round","note":"果皮まで紅く染まる"},
   { "id": 48, "names": ["タロッコ"], "p1": 46, "p2": -1, "group": "orange" ,"color":"#fc7f03","shape":"round","note":"果皮はオレンジ色。甘味が強い"},
@@ -71,8 +71,8 @@
 
 
   { "id": 200, "names": ["不知火", "デコポン"], "p1": 61, "p2": 20, "group": "kiyomi_mix" ,"color":"#ff9800","shape":"deko","note":"清見とポンカンから生まれ、甘味と酸味のバランスに凸型の見た目が人気の果実"},
-  { "id": 201, "names": ["はるみ"], "p1": 61, "p2": 20, "group": "kiyomi_mix" ,"color":"#ff9800","shape":"normal","note":""},
-  { "id": 202, "names": ["はるき"], "p1": 61, "p2": 20, "group": "kiyomi_mix" ,"color":"#ff9800","shape":"normal","note":""},
+  { "id": 201, "names": ["はるみ"], "p1": 61, "p2": 20, "group": "kiyomi_mix" ,"color":"#ff9800","shape":"normal","note":"清見とポンカンの交配種で、甘味が強く酸味が少ない食味の良い柑橘"},
+  { "id": 202, "names": ["はるき"], "p1": 61, "p2": 20, "group": "kiyomi_mix" ,"color":"#ff9800","shape":"normal","note":"清見とポンカンの交配種で、はるみよりも酸味が強く爽やかな味わい"},
   { "id": 203, "names": ["陽香"], "p1": 61, "p2": 132, "group": "kiyomi_mix" ,"color":"#ff9800","shape":"normal","note":""},
   { "id": 204, "names": ["せとみ", "ゆめほっぺ"], "p1": 61, "p2": 131, "group": "kiyomi_mix" ,"color":"#ff9800","shape":"normal","note":""},
   { "id": 205, "names": ["口之津37号"], "p1": 61, "p2": 40, "group": "kiyomi_mix" ,"color":"#ff9800","shape":"normal","note":""},
@@ -92,7 +92,7 @@
   { "id": 302, "names": ["佐賀果試35号", "にじゅうまる"], "p1": 206, "p2": 130, "group": "premium" ,"color":"#ff9800","shape":"normal","note":""},
   { "id": 303, "names": ["天草"], "p1": 207, "p2": 42, "group": "premium" ,"color":"#ff9800","shape":"normal","note":""},
   { "id": 304, "names": ["湘南ゴールド"], "p1": 212, "p2":106 , "group": "kiyomi_mix" ,"color":"#ffe01d","shape":"round","note":"神奈川県で生まれた小粒で黄色い柑橘。爽やかで果汁香り共に豊かな品種"},
-  { "id": 305, "names": ["はれひめ"], "p1": 214, "p2": 100, "group": "premium" ,"color":"#ff9800","shape":"normal","note":""},
+  { "id": 305, "names": ["はれひめ"], "p1": 214, "p2": 100, "group": "premium" ,"color":"#ff9800","shape":"normal","note":"清見と宮川早生の交配種で、甘味が強く酸味が少ない食味の良い柑橘"},
   { "id": 306, "names": ["No.1408"], "p1": 215, "p2": 62, "group": "middle" ,"color":"#ff9800","shape":"normal","note":"外観の美しく味も良いという中間母本品種。みはやの親にあたる"},
   { "id": 307, "names": ["大将季"], "p1": 200, "p2": -1, "group": "premium" ,"color":"#fc9003","shape":"deko","note":"不知火に似るが赤色が濃く、濃厚な甘味と程よい酸味の高級柑橘。鹿児島県で生まれ発見者の大野さんとその息子さんの将季さんから名付けられた。"},
   { "id": 308, "names": ["あすき"], "p1": 201, "p2": 83, "group": "premium" ,"color":"#fc9003","shape":"normal","note":""},

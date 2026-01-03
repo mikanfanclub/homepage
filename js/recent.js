@@ -35,6 +35,7 @@ function markdownToHtml(markdownText, variable) {
   if (!markdownText) return '';
 
   let html = markdownText;
+  let varIndex = 0; // 変数配列のインデックス
 
   // 1. **太字** または __太字__ を <strong>タグに変換
   html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
@@ -52,10 +53,15 @@ function markdownToHtml(markdownText, variable) {
   html = html.replace(/\+(.*?)\+/g, '<span style="color:#f69749;">$1</span>');
 
 
-  // 4. ^リンク^
-  html = html.replace(/\^(.*?)\^/g, `<a href=${variable}>$1</a>`);
+  // 5. リンク（プレースホルダ形式）
+  // replaceの第2引数に、マッチするたびに実行される関数を渡します
+  html = html.replace(/\^(.*?)\^/g, (match, p1) => {
+    const url = variable[varIndex] ? variable[varIndex].trim() : '#';
+    varIndex++; // 次のリンクへ
+    return `<a href="${url}">${p1}</a>`;
 
-  return html;
+
+  }); return html;
 }
 
 /**
@@ -90,7 +96,8 @@ async function fetchAndDisplayActivities() {
       const date = row.c[1] && row.c[1].f ? row.c[1].f : '日付なし';
       const description = row.c[2] && row.c[2].v !== null ? row.c[2].v : '説明なし';
       let photofile = row.c[3] && row.c[3].v !== null ? row.c[3].v : 'no-image.webp';
-      let variable = row.c[4] && row.c[4].v !== null ? row.c[4].v : '';
+      let raw_variable = row.c[4] && row.c[4].v !== null ? row.c[4].v : '';
+      let variable = raw_variable.split(',').map(v => v.trim());
       let raw_tag = row.c[5] && row.c[5].v !== null ? row.c[5].v : 'その他';
       let tag = raw_tag.split(',');
 

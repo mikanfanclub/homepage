@@ -110,7 +110,7 @@
           <li>
             <a href="http://mikanfanclub.blogspot.jp/">Blog</a>
           </li>
-          <li><a href="./mikan_welcome.html">Join us</a></li>
+          <li><a href="/pages/welcome">Join us</a></li>
           <li><a href="./index_en.html"> English</a></li>
         </ul>
       </div>
@@ -119,7 +119,7 @@
 
   <!-- <header id="header-site">
     <div id="header-site-inner">
-      <img id='header-site-inner-image' src='./img/mv_text.webp' alt='東大みかん愛好会'>
+      <img id='header-site-inner-image' src='/img/mv_text.webp' alt='東大みかん愛好会'>
     </div>
   </header> -->
 
@@ -131,7 +131,7 @@
           justify-content: center;
           height: 100%;
         ">
-      <img style="display: block; width: 20%" src="./img/top/mikan.webp" />
+      <img style="display: block; width: 20%" src="/img/top/mikan.webp" />
       <div class="mikan-title">東大みかん愛好会</div>
       <div class="mikan-subtitle">Mikan Fan Club</div>
     </div>
@@ -142,22 +142,22 @@
     <div id="swiper2" class="swiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <img src="./img/carousel/slide1.webp" />
+          <img src="/img/carousel/slide1.webp" />
         </div>
         <div class="swiper-slide">
-          <img src="./img/carousel/slide2.webp" />
+          <img src="/img/carousel/slide2.webp" />
         </div>
         <div class="swiper-slide">
-          <img src="./img/carousel/slide3.webp" />
+          <img src="/img/carousel/slide3.webp" />
         </div>
         <div class="swiper-slide">
-          <img src="./img/carousel/slide4.webp" />
+          <img src="/img/carousel/slide4.webp" />
         </div>
         <div class="swiper-slide">
-          <img src="./img/carousel/slide5.webp" />
+          <img src="/img/carousel/slide5.webp" />
         </div>
         <div class="swiper-slide">
-          <img src="./img/carousel/slide6.webp" />
+          <img src="/img/carousel/slide6.webp" />
         </div>
       </div>
 
@@ -176,7 +176,7 @@
       <h3 class="post-title">
         今年も秋新歓を行います。<br>
         興味がございましたら
-        <span class="text-primary"><a href="./mikan_welcome.html">こちら</a></span>
+        <span class="text-primary"><a href="/pages/welcome">こちら</a></span>
         をクリック！
       </h2>
       <p class="post-date">09/11<span>2020</span></p>
@@ -238,7 +238,7 @@
             ジューシーな甘さと程よい酸味に黄金柑に似る香気。名前も可愛らしい小粒の黄色い柑橘
           </p>
           <div class="link-wrapper">
-            <a href="http://mikanfan.club/mikan-graph/?target=400" target="_blank" class="btn-genealogy">
+            <a href="/pages/mikan-graph/?target=400" target="_blank" class="btn-genealogy">
               🔍 この子の家系図をみる
             </a>
           </div>
@@ -296,7 +296,7 @@
       const mikanId = mikanList[Math.floor(Math.random() * mikanList.length)];
 
       try {
-        const response = await fetch('mikan-graph/mikan.json');
+        const response = await fetch('/pages/mikan-graph/mikan.json');
         const MIKAN = await response.json();
         console.log(MIKAN);
         const targetMikan = MIKAN.find(mikan => mikan.id === mikanId);
@@ -344,7 +344,7 @@
         }
         mikanInfo.getElementsByTagName('h3')[0].innerText = `推し柑橘紹介：『${targetMikan.names[0]}』`;
         mikanInfo.getElementsByTagName('p')[0].innerText = targetMikan.note || '説明文がありません。';
-        mikanInfo.getElementsByClassName('link-wrapper')[0].getElementsByTagName('a')[0].href = `http://mikanfan.club/mikan-graph/?target=${targetMikan.id}`;
+        mikanInfo.getElementsByClassName('link-wrapper')[0].getElementsByTagName('a')[0].href = `/pages/mikan-graph/?target=${targetMikan.id}`;
       } catch (error) {
         console.error('Error fetching mikan data:', error);
       }
@@ -409,7 +409,7 @@
             # 話題を巻き起こす
           </h4>
           <div class="concept-body-wrapper">
-            <img src="./img/concept/concept1.webp" alt="話題を巻き起こす" />
+            <img src="/img/concept/concept1.webp" alt="話題を巻き起こす" />
             <p class="" style="
                   font-size: clamp(18px, 3vw, 24px);
                   text-align: center;
@@ -426,7 +426,7 @@
             # 楽しみながら学ぶ
           </h4>
           <div class="concept-body-wrapper">
-            <img src="./img/concept/concept2.webp" alt="話題を巻き起こす" />
+            <img src="/img/concept/concept2.webp" alt="話題を巻き起こす" />
             <p class="" style="
                   font-size: clamp(18px, 3vw, 24px);
                   text-align: center;
@@ -443,7 +443,7 @@
             # 全ての産地を応援する
           </h4>
           <div class="concept-body-wrapper">
-            <img src="./img/concept/concept3.webp" alt="話題を巻き起こす" />
+            <img src="/img/concept/concept3.webp" alt="話題を巻き起こす" />
             <p class="" style="
                   font-size: clamp(18px, 3vw, 24px);
                   text-align: center;
@@ -471,7 +471,7 @@
   <!--           
         <div class="row reveal info">
           <div class="col-sm-4 coming-photo">
-            <img src="./img/event/物販.webp" alt="みかん物販の様子" />
+            <img src="/img/event/物販.webp" alt="みかん物販の様子" />
           </div>
           <div class="col-sm-8" style="font-size: 18px">
             <p>開催日:2025/11/22~24</p>
@@ -528,7 +528,7 @@
         </ul>
         <div id="activities-list-footer"></div>
         <div class="content-center" style="display:flex; justify-content:center; margin-top:20px;margin-bottom:20px">
-          <a href="/recent" target="_blank" class="btn">
+          <a href="/pages/recent" target="_blank" class="btn">
             ▶▶活動をもっと見る🍊
           </a>
         </div>
@@ -555,7 +555,7 @@
         <!--学園祭-->
         <div class="col-md-4 col-sm-6 portfolio-item">
           <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-            <img src="img/portfolio/学園祭.webp" class="img-responsive" alt="" />
+            <img src="/img/portfolio/学園祭.webp" class="img-responsive" alt="" />
           </a>
           <div class="portfolio-caption">
             <h4>みかんで学園祭</h4>
@@ -572,7 +572,7 @@
         <!--産地訪問-->
         <div class="col-md-4 col-sm-6 portfolio-item">
           <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-            <img src="img/portfolio/産地訪問.webp" class="img-responsive" alt="" />
+            <img src="/img/portfolio/産地訪問.webp" class="img-responsive" alt="" />
           </a>
           <div class="portfolio-caption">
             <h4>みかん産地訪問</h4>
@@ -585,7 +585,7 @@
         <!--みかん大配布-->
         <div class="col-md-4 col-sm-6 portfolio-item">
           <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-            <img src="img/portfolio/みかん大配布2022.webp" class="img-responsive" alt="" />
+            <img src="/img/portfolio/みかん大配布2022.webp" class="img-responsive" alt="" />
           </a>
           <div class="portfolio-caption">
             <h4>みかん大配布</h4>
@@ -604,7 +604,7 @@
                 <i class="fa fa-search-plus fa-3x"></i>
               </div>
             </div>-->
-            <img src="img/portfolio/ボードゲーム.webp" class="img-responsive" alt="" />
+            <img src="/img/portfolio/ボードゲーム.webp" class="img-responsive" alt="" />
           </a>
           <div class="portfolio-caption">
             <h4>みかんボードゲーム販売</h4>
@@ -618,7 +618,7 @@
         <!--蛇口みかんジュース-->
         <div class="col-md-4 col-sm-6 portfolio-item">
           <a href="#portfolioModal0" class="portfolio-link" data-toggle="modal">
-            <img src="img/portfolio/みかん蛇口2017.webp" class="img-responsive" alt="" />
+            <img src="/img/portfolio/みかん蛇口2017.webp" class="img-responsive" alt="" />
           </a>
           <div class="portfolio-caption">
             <h4>蛇口からみかんジュース体験</h4>
@@ -631,7 +631,7 @@
         <!--たらみかんシンボルマーク-->
         <div class="col-md-4 col-sm-6 portfolio-item">
           <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-            <img src="img/portfolio/taramikan-logo.webp" class="img-responsive" alt="" />
+            <img src="/img/portfolio/taramikan-logo.webp" class="img-responsive" alt="" />
           </a>
           <div class="portfolio-caption">
             <h4>たらみかんシンボルマーク</h4>
@@ -648,7 +648,7 @@
                 <i class="fa fa-search-plus fa-3x"></i>
               </div>
             </div>
-            <img src="img/portfolio/みかん列車.webp" class="img-responsive" alt="">
+            <img src="/img/portfolio/みかん列車.webp" class="img-responsive" alt="">
           </a>
           <div class="portfolio-caption">
             <h4>小田原みかん列車</h4>
@@ -885,7 +885,7 @@
                 <p class="item-intro text-muted">
                   シンボルマークコンテストの運営
                 </p>
-                <img class="img-responsive img-centered" src="img/portfolio/taramikan-logo.webp" alt="" />
+                <img class="img-responsive img-centered" src="/img/portfolio/taramikan-logo.webp" alt="" />
                 <p>
                   佐賀県・太良町で育つ「たらみかん」のブランドが消滅の危機に、この状況を打開するため、熱意ある柑橘農家が集まる「太良シトラス会」と、日本一みかんを愛する「東大みかん愛好会」が協同で「たらみかん」の新たなシンボルマークを募集。
                   <strong>876</strong>点の応募を集めるに至り、最優秀賞を選定しました。
@@ -934,8 +934,8 @@
                 <p class="item-intro text-muted">
                   松山市様と連携してみかん県の都市伝説を再現みかんのPR
                 </p>
-                <img class="img-responsive img-centered" widht="400px" src="img/portfolio/みかん蛇口2017.webp" alt="" />
-                <!--<img class="img-responsive img-centered" src="img/portfolio/みきゃん五月祭.webp" alt="" />-->
+                <img class="img-responsive img-centered" widht="400px" src="/img/portfolio/みかん蛇口2017.webp" alt="" />
+                <!--<img class="img-responsive img-centered" src="/img/portfolio/みきゃん五月祭.webp" alt="" />-->
                 <p>
                   東大の学園祭「五月祭」に松山市様と連携して<strong>みかん県の都市伝説を再現した蛇口</strong>を設置させていただき、
                   毎度長蛇の列ができるほどたくさんのお客様で盛況いたします。
@@ -980,7 +980,7 @@
                 <p class="item-intro text-muted">
                   全国数々の産地に訪問、農作業体験や交流など
                 </p>
-                <img class="img-responsive img-centered" src="img/portfolio/産地訪問.webp" alt="" />
+                <img class="img-responsive img-centered" src="/img/portfolio/産地訪問.webp" alt="" />
                 <p>
                   <a href="http://designmodo.com/startup/?u=787"></a>
                   みかん愛好会では<strong>合宿</strong>や<strong>産地訪問</strong>を通して
@@ -1023,7 +1023,7 @@
                 <p class="item-intro text-muted">
                   五月祭、駒場祭、ICU祭などで出店
                 </p>
-                <img class="img-responsive img-centered" src="img/portfolio/学園祭.webp" alt="" />
+                <img class="img-responsive img-centered" src="/img/portfolio/学園祭.webp" alt="" />
                 <p>
                   <a href="http://designmodo.com/startup/?u=787"></a>
                   みかん愛好会では<strong style="gap:none"><span
@@ -1116,7 +1116,7 @@
                 <p class="item-intro text-muted">
                   列車貸切のみかんツアーをNPO法人湘南スタイル・JTBと協力し、企画・運営
                 </p>
-                <img class="img-responsive img-centered" src="img/portfolio/みかん列車.webp" alt="" />
+                <img class="img-responsive img-centered" src="/img/portfolio/みかん列車.webp" alt="" />
                 <p>
                   実は知られていない、<strong>小田原みかん</strong>。実は神奈川県で一番作られている果物は「みかん」なのです。
                   地域資源への関心向上、農家支援を目的に、東大みかん愛好会は<strong>NPO法人湘南スタイル・JTB</strong>と協力し
@@ -1164,7 +1164,7 @@
                 <p class="item-intro text-muted">
                   東京大学のキャンパスにてみかんを大量配布
                 </p>
-                <img class="img-responsive img-centered" src="img/portfolio/みかん大配布2022.webp" alt="" />
+                <img class="img-responsive img-centered" src="/img/portfolio/みかん大配布2022.webp" alt="" />
                 <p>
                   東大みかん愛好会では毎年、東京大学３キャンパス(駒場/本郷/弥生)をはじめとする複数の大学キャンパスで
                   みかんの大量配布イベントを実施しています！<br>
@@ -1204,7 +1204,7 @@
                 <p class="item-intro text-muted">
                   みかんに関する知識を遊んで覚えるゲームを作成！
                 </p>
-                <img class="img-responsive img-centered" widht="400px" src="img/portfolio/みかんウォーズ.webp" alt="" />
+                <img class="img-responsive img-centered" widht="400px" src="/img/portfolio/みかんウォーズ.webp" alt="" />
 
                 <p>
                   ボードゲームマーケット2020年秋に参加し、「第一回みかんドラフト会議」と「みかんウォーズ」の二つのゲームを販売しました。みかんドラフト会議は30種類ものみかんを取り合う中で、味や酸味、産地などの特徴を学べるゲームです。
@@ -1250,24 +1250,24 @@
     crossorigin="anonymous"></script>
 
   <!-- Contact Form JavaScript -->
-  <script src="js/jqBootstrapValidation.js"></script>
-  <script src="js/contact_me.js"></script>
+  <script src="js/vendor/jqBootstrapValidation.js"></script>
+  <script src="js/app/contact_me.js"></script>
 
   <!-- Theme JavaScript -->
-  <script src="js/agency.min.js"></script>
+  <script src="js/vendor/agency.min.js"></script>
 
   <!--  react Component-->
-  <script src="js/bundle.js"></script>
+  <script src="js/dist/bundle.js"></script>
 
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-  <script src="js/swiper_init.js"></script>
+  <script src="js/app/swiper_init.js"></script>
 
   <!-- Recent Activities Script -->
-  <script src="js/recent_home.js" type="module"></script>
+  <script src="js/app/recent_home.js" type="module"></script>
   <!--splash window-->
-  <script src="js/splash.js"></script>
+  <script src="js/app/splash.js"></script>
 </body>
 
 </html>

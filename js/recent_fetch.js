@@ -55,7 +55,7 @@ function markdownToHtml(markdownText, variable) {
  */
 export async function fetchAndDisplayActivities(listElement, start_row = 0, max_rows = 5, mode = 'replace') {
   if (mode === 'replace') {
-    listElement.innerHTML = '<li>データを取得中です...</li>'; // ロード中のメッセージ更新
+    listElement.innerHTML = '<li class="activities-list-foot-message" >データを取得中です...</li>'; // ロード中のメッセージ更新
   } else if (mode === 'append') {
     listElement.innerHTML += '<li class="activities-list-foot-message">データを取得中です...</li>'; // ロード中のメッセージ更新
   }
@@ -74,7 +74,7 @@ export async function fetchAndDisplayActivities(listElement, start_row = 0, max_
 
     if (!rows || rows.length <= 1) { // ヘッダー行のみの場合も考慮
       if (mode === 'replace') {
-        listElement.innerHTML = '<li>活動データがありません。</li>';
+        listElement.innerHTML = '<li class="activities-list-foot-message">活動データがありません。</li>';
       } else if (mode === 'append') {
         listElement.innerHTML += '<li class="activities-list-foot-message">活動は以上です(2025/11月以降)</li>';
       }

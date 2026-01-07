@@ -1234,3 +1234,29 @@ img.radius {
   border-radius: 20px;
   font-weight: bold;
 }
+
+li.activities-list-foot-message{
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #777777;
+  margin-top: 20px;
+}
+
+#load-more-button {
+  display: block;
+  margin: 30px auto;
+  padding: 10px 20px;
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 100px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#load-more-button:hover {
+  background-color: #e68a00;
+}

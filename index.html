@@ -514,15 +514,21 @@
   <!--!COMING EVENT セクションここまで-->
 
   <!--ここに関してはrecent.js参照。spreadsheetから情報持ってきてます-->
-  <section id="coming-events">
+  <section id="recent-events">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
           <h2 class="section-heading">RECENT</h2>
         </div>
-        <ul id="activities-list">
+        <ul id="activities-list" class="foot-fade">
           <li>データを読み込み中です...</li>
         </ul>
+        <div id="activities-list-footer"></div>
+        <div class="content-center" style="display:flex; justify-content:center; margin-top:20px;margin-bottom:20px">
+          <a href="http://mikanfan.club/recent" target="_blank" class="btn">
+            ▶▶活動をもっと見る🍊
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -1256,7 +1262,7 @@
   <script src="js/swiper_init.js"></script>
 
   <!-- Recent Activities Script -->
-  <script src="js/recent.js"></script>
+  <script src="js/recent_home.js" type="module"></script>
   <!--splash window-->
   <script src="js/splash.js"></script>
 </body>

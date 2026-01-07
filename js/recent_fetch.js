@@ -9,21 +9,7 @@ const SHEET_GID = '0';
 // Google Visualization APIのURLを構築
 const API_URL = `https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}/gviz/tq?gid=${SHEET_GID}&tqx=out:json`;
 
-// 表示する行数（最後から数える）
-const MAX_ROWS = 5;
 
-// HTMLの要素
-const listElement = document.getElementById('activities-list');
-
-// --- checkImage 関数はそのまま利用 ---
-function checkImage(src) {
-  return new Promise((resolve) => {
-    const img = document.createElement('img');
-    img.onload = () => resolve(true); // 読み込み成功
-    img.onerror = () => resolve(false); // 読み込み失敗（404など）
-    img.src = src;
-  });
-}
 
 
 /**
@@ -67,8 +53,12 @@ function markdownToHtml(markdownText, variable) {
 /**
  * Google Sheetsのデータを取得し、HTMLに表示する関数
  */
-async function fetchAndDisplayActivities() {
-  listElement.innerHTML = '<li>データを取得中です...</li>'; // ロード中のメッセージ更新
+export async function fetchAndDisplayActivities(listElement, start_row = 0, max_rows = 5, mode = 'replace') {
+  if (mode === 'replace') {
+    listElement.innerHTML = '<li>データを取得中です...</li>'; // ロード中のメッセージ更新
+  } else if (mode === 'append') {
+    listElement.innerHTML += '<li class="activities-list-foot-message">データを取得中です...</li>'; // ロード中のメッセージ更新
+  }
 
   try {
     const response = await fetch(API_URL);
@@ -83,12 +73,16 @@ async function fetchAndDisplayActivities() {
     const rows = data.table.rows;
 
     if (!rows || rows.length <= 1) { // ヘッダー行のみの場合も考慮
-      listElement.innerHTML = '<li>活動データがありません。</li>';
+      if (mode === 'replace') {
+        listElement.innerHTML = '<li>活動データがありません。</li>';
+      } else if (mode === 'append') {
+        listElement.innerHTML += '<li class="activities-list-foot-message">活動は以上です(2025/11月以降)</li>';
+      }
       return;
     }
 
     // 最新の5行を取得し、逆順にする（最新が上）
-    const recentRows = rows.slice(1).slice(-MAX_ROWS).reverse();
+    const recentRows = rows.slice(1).reverse().slice(start_row, start_row + max_rows);
 
     const htmlPromises = recentRows.map(async (row) => {
       // データ取得
@@ -126,20 +120,12 @@ async function fetchAndDisplayActivities() {
       const imagePath = `img/recent/${photofile}`;
 
       const htmlDescription = markdownToHtml(description, variable);
-
-      //画像が存在するか？->onerror処理を入れるのでいらなくなりました
-      //const exists = await checkImage(imagePath);
-      // 存在しなかった場合のみ、no-image.pngに更新
-      //if (!exists) {
-      //  photofile = 'no-image.webp';
-      //}
-
       // HTML文字列を返す
       return `
                 <div class="row reveal small-info">
                     <div class="coming-photo">
                         <img
-                          src="img/recent/${photofile}"
+                          src="/img/recent/${photofile}"
                           alt
                           onerror="this.onerror = null; this.src='img/recent/no-image.webp';"
                         />
@@ -162,7 +148,14 @@ async function fetchAndDisplayActivities() {
     const htmlContents = await Promise.all(htmlPromises);
 
     // リスト要素をクリア
-    listElement.innerHTML = '';
+    if (mode === 'replace') { listElement.innerHTML = ''; }
+    else if (mode === 'append') {
+      // 末尾の「データを取得中です...」メッセージを削除
+      const loadingMessage = listElement.querySelector('.activities-list-foot-message');
+      if (loadingMessage) {
+        listElement.removeChild(loadingMessage);
+      }
+    }
 
     // 全てのHTMLをDOMに追加
     htmlContents.forEach(html => {
@@ -170,26 +163,8 @@ async function fetchAndDisplayActivities() {
       listItem.innerHTML = html;
       listElement.appendChild(listItem);
     });
-    const listItem = document.createElement('li');
-    listItem.innerHTML = `
-                <div 
-                    class="row reveal" 
-                    style="
-                        font-size: clamp(1.2rem, 2vw, 2rem);
-                        text-align:center;
-                        color:#838383;"
-                        white-space: nowrap;
-                        overflow: hidden;
-                >
-                &gt&gtこの他にも多くの活動を実施しています🍊&lt&lt
-                <br>
-                &gt&gt
-                <a href="https://twitter.com/mikanclub1139">X</a>
-                や
-                <a href="https://www.instagram.com/mikanfanclub/">Instagram</a>
-                もご覧ください！&lt&lt
-                </div>`;
-    listElement.appendChild(listItem);
+
+    if (rows.length - 1 > max_rows + start_row) { return true; } else { return false; }
 
   } catch (error) {
     console.error('データの取得中にエラーが発生しました:', error);
@@ -197,4 +172,3 @@ async function fetchAndDisplayActivities() {
   }
 }
 
-fetchAndDisplayActivities();

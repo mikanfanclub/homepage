@@ -86,6 +86,7 @@
   { "id": 212, "names": ["黄金柑"], "p1": 61, "p2": 20, "group": "kiyomi_mix" ,"color":"#ffe01d","shape":"round","note":"小粒ながら香りよく甘味の濃縮した黄色い柑橘"},
   { "id": 214, "names": ["E-647"], "p1": 61, "p2":44 , "group": "kiyomi_mix" ,"color":"#ff9800","shape":"normal","note":""},
   { "id": 215, "names": ["No.2681"], "p1": 61, "p2":24 , "group": "kiyomi_mix" ,"color":"#ff9800","shape":"normal","note":""},
+  { "id": 216, "names": ["No.14"], "p1": 61, "p2":101 , "group": "kiyomi_mix" ,"color":"#ff9800","shape":"normal","note":""},
 
 
   { "id": 300, "names": ["せとか"], "p1": 205, "p2": 60, "group": "premium" ,"color":"#ff9800","shape":"normal","note":"柑橘の大トロとも言われる高級柑橘。とろりとした食感と濃厚な果汁が特徴"},
@@ -99,6 +100,8 @@
   { "id": 308, "names": ["あすき"], "p1": 201, "p2": 83, "group": "premium" ,"color":"#fc9003","shape":"normal","note":""},
   { "id": 309, "names": ["パイン柑"], "p1": 212, "p2": 134, "group": "premium" ,"color":"#ffe01d","shape":"round","note":"パイナップルのような甘い香りとジューシーな果汁が特徴の高級柑橘"},
   { "id": 310, "names": ["西南のひかり"], "p1": 62, "p2": 203, "group": "premium" ,"color":"#fc7f03","shape":"normal","note":"糖度が高く酸度の低い高級柑橘。β-クリプトキサンチンの含有量が多く免疫昨日のサポートとしても優秀"},
+  { "id": 311, "names": ["津之輝"], "p1": 216, "p2": 40, "group": "premium" ,"color":"#ff9800","shape":"normal","note":"アンコールの芳香と濃厚な甘みを持つ。β-クリプトキサンチンを多く含有する。"},
+
 
   { "id": 400, "names": ["愛媛果試28号", "紅まどんな", "愛果28号"], "p1": 303, "p2": 45, "group": "premium" ,"color":"#ff9800","shape":"normal","note":"ゼリーのようなぷるぷる食感、高貴な芳香と濃厚な甘味の高級柑橘"},
   { "id": 401, "names": ["みはや"], "p1": 208, "p2": 306, "group": "premium" ,"color":"#ff9800","shape":"normal","note":"外観の美しく味も良い高級柑橘。中間母本No.1408を親に持つ"},

@@ -22,7 +22,7 @@ async function init() {
 }
 
 function renderLoadMoreButton() {
-  listFooter.innerHTML = `<button id="load-more-button">▶▶もっと見る</button>`;
+  listFooter.innerHTML = `<button id="load-more-button"><I class="fa fa-solid fa-caret-down"></i>もっと見る</button>`;
   const loadMoreButton = document.getElementById('load-more-button');
 
   loadMoreButton.addEventListener('click', async () => {

@@ -38,6 +38,10 @@ function renderLoadMoreButton() {
       updateUrl(currentPage);
       loadMoreButton.disabled = false;
     } else {
+      currentPage++;
+      // URLを更新（再読み込みはさせない）
+      updateUrl(currentPage);
+
       listFooter.innerHTML = '';
     }
   });

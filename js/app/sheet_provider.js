@@ -45,7 +45,7 @@ export class SheetProvider {
       return [];
     }
     // 最新の行を取得し、逆順にする（最新が上）
-    const targetRows = this.rows.slice(1).reverse().slice(start_row, start_row + max_rows);
+    const targetRows = this.rows.slice(0).reverse().slice(start_row, start_row + max_rows);
     return targetRows;
   }
 

@@ -1270,3 +1270,11 @@ li.activities-list-foot-message {
 #load-more-button:hover {
   background-color: #e68a00;
 }
+.activities-month-label {
+  font-size: 2rem;
+  font-weight: bold;
+  margin:0px;
+  margin-left: 10px;
+  padding: auto;
+}
+

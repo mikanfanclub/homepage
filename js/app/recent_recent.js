@@ -20,7 +20,7 @@ async function init() {
   const initialRowsToFetch = (currentPage + 1) * maxRows;
 
 
-  const hasNext = await activitiesProvider.dispActivities(listElement, 0, initialRowsToFetch, "replace");;
+  const hasNext = await activitiesProvider.dispActivities(listElement, 0, initialRowsToFetch, "replace", true);
 
   if (hasNext) {
     renderLoadMoreButton();
@@ -36,7 +36,7 @@ async function renderLoadMoreButton() {
 
     // 現在の表示件数を開始位置にする
     const currentDisplayedCount = (currentPage + 1) * maxRows;
-    const hasNext = await activitiesProvider.dispActivities(listElement, currentDisplayedCount, maxRows, "append");
+    const hasNext = await activitiesProvider.dispActivities(listElement, currentDisplayedCount, maxRows, "append", true);
 
     if (hasNext) {
       currentPage++;

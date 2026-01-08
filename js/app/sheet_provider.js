@@ -49,11 +49,20 @@ export class SheetProvider {
     return targetRows;
   }
 
-  async dispActivities(listElement, start_row = 0, max_rows = 5, mode = 'replace') {
+  async dispActivities(listElement, start_row = 0, max_rows = 5, mode = 'replace', partition = false) {
+
+    let prevMonth = null;
+
+    if (this.rows[start_row - 1]) {
+      const prevDate = new Date(this.rows[start_row - 1].c[1].f);
+      prevMonth = prevDate.getMonth() + 1;
+    }
+
 
     const targetRows = this.getRows(start_row, max_rows);
 
-    const htmlContents = targetRows.map(async (row) => {
+
+    const htmlContents = targetRows.map(async (row, index) => {
       // データ取得
       const title = row.c[0] && row.c[0].v !== null ? row.c[0].v : 'タイトルなし';
       const date = row.c[1] && row.c[1].f ? row.c[1].f : '日付なし';
@@ -63,6 +72,31 @@ export class SheetProvider {
       let variable = raw_variable.split(',').map(v => v.trim());
       let raw_tag = row.c[5] && row.c[5].v !== null ? row.c[5].v : 'その他';
       let tag = raw_tag.split(',');
+
+      let monthLabel = '';
+      if (partition) {
+        const rowDate = new Date(row.c[1].f);
+        const rowMonth = rowDate.getMonth() + 1;
+        const rowYear = rowDate.getFullYear();
+        if (rowMonth !== prevMonth) {
+          monthLabel = `
+          <div style="display:flex;align-items:center;align-items:end;margin-top:2rem;margin-bottom:1rem;border-bottom:1px solid #ddd;padding-bottom:0.5rem;">
+            <div class="activities-year-label" style="color:#aaa;margin-bottom:5px;">${rowYear}</div> 
+            <div style="display:flex;align-items:center;justify-content:center;height:5rem;width:100%">
+              <svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" viewBox="0 0 40 40">
+                <ellipse cx="20" cy="20" rx="20" ry="18" fill="#ff9800" />
+                <path d="M20 6 Q25 0 35 3 Q28 8 20 6" fill="green" />
+                <path d="M20 8 L20 2" stroke="green" stroke-width="1" />
+                <circle cx="10" cy="10" r="1" fill="#fff" opacity="0.5" />
+              </svg>
+              <h2 class="activities-month-label">${rowMonth}月</h2>
+            </div>
+          </div>`;
+          prevMonth = rowMonth;
+        }
+      }
+
+      // タグのHTML生成
 
       let taghtml = tag.map((t) => {
         let tagBcColor = '#838383'; //デフォルト灰色
@@ -90,7 +124,7 @@ export class SheetProvider {
 
       const htmlDescription = markdownToHtml(description, variable);
       // HTML文字列を返す
-      return `
+      return `${monthLabel}
                 <div class="row reveal small-info">
                     <div class="coming-photo">
                         <img

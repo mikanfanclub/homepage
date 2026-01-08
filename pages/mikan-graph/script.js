@@ -35,7 +35,7 @@ async function init() {
 
     const datalist = document.getElementById('mikanList');
     const searchInput = document.getElementById('mikanSearch');
-    const targetInput = document.getElementById('targetId');
+    //const targetInput = document.getElementById('targetId');
     // 検索候補（datalist）を作成
     MIKAN.forEach(m => {
       if (m.id < 10000) {
@@ -55,8 +55,8 @@ async function init() {
       // names配列のどこかに一致するものがあれば見つける
       const found = MIKAN.find(m => m.names.includes(selectedName));
       if (found) {
-        targetInput.value = found.id;
-        //drawGraph();
+        //targetInput.value = found.id;
+        updateUrl(found.id);
         redraw();
       }
     }); setupCytoscape();
@@ -73,10 +73,14 @@ async function init() {
       // ツール内の検索関数を実行して、その品種にフォーカスを当てる
       const found = MIKAN.find(m => m.id == targetMikan);
       if (found) {
-        targetInput.value = found.id;
+        //targetInput.value = found.id;
+        updateUrl(found.id);
+        redraw();
         //drawGraph();
       } else {
-        targetInput.value = 61; // デフォルトは清見
+        //targetInput.value = 61; // デフォルトは清見
+        updateUrl(61);
+        redraw();
       }
 
     }
@@ -275,8 +279,10 @@ function setupCytoscape() {
     const node = evt.target;
     const m = MIKAN.find(x => x.id === parseInt(node.id()));
 
-    const targetInput = document.getElementById('targetId');
-    if (targetInput) targetInput.value = node.id();
+    //const targetInput = document.getElementById('targetId');
+    //if (targetInput) targetInput.value = node.id();
+
+    updateUrl(node.id());
 
     const searchInput = document.getElementById('mikanSearch');
     if (searchInput) searchInput.value = m.names[0];
@@ -311,9 +317,10 @@ function drawGraph(options = {}) {
     ? options.isOnlyDirect
     : (checkEl ? checkEl.checked : false);
 
-  const targetEl = document.getElementById('targetId');
+  //const targetEl = document.getElementById('targetId');
   const hopsEl = document.getElementById('hops');
-  const centerId = targetEl ? targetEl.value.toString() : "1";
+  //const centerId = targetEl ? targetEl.value.toString() : "1";
+  const centerId= new URLSearchParams(window.location.search).get('target') || "1";
   const maxHops = hopsEl ? parseInt(hopsEl.value) : 2;
 
   const centerNode = cy.getElementById(centerId);
@@ -473,11 +480,12 @@ function drawGraph(options = {}) {
 }
 
 function setPreset(id) {
-  const targetInput = document.getElementById("targetId");
+  //const targetInput = document.getElementById("targetId");
   // names配列のどこかに一致するものがあれば見つける
   const found = MIKAN.find(m => m.id == id);
   if (found) {
-    targetInput.value = found.id;
+    //targetInput.value = found.id;
+    updateUrl(found.id);
     //drawGraph();
     redraw();
   }
@@ -518,6 +526,15 @@ function redraw(options = {}) {
     `;
   }
 }
+
+// URLのパラメータだけを書き換える関数
+function updateUrl(id) {
+  const newUrl = new URL(window.location);
+  newUrl.searchParams.set('target', id);
+  // pushStateを使うと、画面遷移させずにURLだけ変えられる
+  window.history.pushState({}, '', newUrl);
+}
+
 
 let resizeTimer;
 window.addEventListener('resize', function () {

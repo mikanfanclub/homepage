@@ -58,7 +58,7 @@ function updateUrl(page) {
   const newUrl = new URL(window.location);
   newUrl.searchParams.set('page', page);
   // pushStateを使うと、画面遷移させずにURLだけ変えられる
-  window.history.pushState({}, '', newUrl);
+  window.history.replaceState({}, '', newUrl);
 }
 
 init();

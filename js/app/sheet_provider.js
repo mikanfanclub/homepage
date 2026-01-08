@@ -9,82 +9,51 @@ const SHEET_GID = '0';
 // Google Visualization APIのURLを構築
 const API_URL = `https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}/gviz/tq?gid=${SHEET_GID}&tqx=out:json`;
 
-
-
-
-/**
- * 限定的なMarkdown記法をHTMLに変換する関数
- * @param {string} markdownText - Markdown形式のテキスト
- * @returns {string} HTML形式のテキスト
- */
-function markdownToHtml(markdownText, variable) {
-  if (!markdownText) return '';
-
-  let html = markdownText;
-  let varIndex = 0; // 変数配列のインデックス
-
-  // 1. **太字** または __太字__ を <strong>タグに変換
-  html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-  html = html.replace(/__(.*?)__/g, '<strong>$1</strong>');
-
-  // 2. *斜体* または _斜体_ を <em>タグに変換
-  html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
-  html = html.replace(/_(.*?)_/g, '<em>$1</em>');
-
-  // 3. 2つ以上のスペース＋改行、または単純な改行を <br> タグに変換
-  html = html.replace(/ {2,}\n/g, '<br>'); // 行末スペース2つ以上
-  html = html.replace(/\n/g, '<br>');      // 単純な改行（これは好みに応じて削除しても良い）
-
-  // 4. +オレンジ文字+
-  html = html.replace(/\+(.*?)\+/g, '<span style="color:#f69749;">$1</span>');
-
-
-  // 5. リンク（プレースホルダ形式）
-  // replaceの第2引数に、マッチするたびに実行される関数を渡します
-  html = html.replace(/\^(.*?)\^/g, (match, p1) => {
-    const url = variable[varIndex] ? variable[varIndex].trim() : '#';
-    varIndex++; // 次のリンクへ
-    return `<a href="${url}">${p1}</a>`;
-
-
-  }); return html;
-}
-
-/**
- * Google Sheetsのデータを取得し、HTMLに表示する関数
- */
-export async function fetchAndDisplayActivities(listElement, start_row = 0, max_rows = 5, mode = 'replace') {
-  if (mode === 'replace') {
-    listElement.innerHTML = '<li class="activities-list-foot-message" >データを取得中です...</li>'; // ロード中のメッセージ更新
-  } else if (mode === 'append') {
-    listElement.innerHTML += '<li class="activities-list-foot-message">データを取得中です...</li>'; // ロード中のメッセージ更新
+export class SheetProvider {
+  constructor(spreadsheetId = SPREADSHEET_ID, sheetGid = SHEET_GID) {
+    this.spreadsheetId = spreadsheetId;
+    this.sheetGid = sheetGid;
+    this.apiUrl = `https://docs.google.com/spreadsheets/d/${this.spreadsheetId}/gviz/tq?gid=${this.sheetGid}&tqx=out:json`;
+    this.rows = null;
   }
 
-  try {
-    const response = await fetch(API_URL);
-    const text = await response.text();
+  async init(messageElement) {
 
-    // JSONP Paddingの除去
-    const jsonText = text
-      .replace(/^\s*\/\*.*?\*\/\s*google\.visualization\.Query\.setResponse\s*\(/, '')
-      .replace(/\);\s*$/, '');
+    messageElement.innerHTML = '<li class="activities-list-foot-message" >データを取得中です...</li>';
 
-    const data = JSON.parse(jsonText);
-    const rows = data.table.rows;
+    try {
+      const response = await fetch(this.apiUrl);
+      const text = await response.text();
 
-    if (!rows || rows.length <= 1) { // ヘッダー行のみの場合も考慮
-      if (mode === 'replace') {
-        listElement.innerHTML = '<li class="activities-list-foot-message">活動データがありません。</li>';
-      } else if (mode === 'append') {
-        listElement.innerHTML += '<li class="activities-list-foot-message">活動は以上です(2025/11月以降)</li>';
-      }
-      return;
+      // JSONP Paddingの除去
+      const jsonText = text
+        .replace(/^\s*\/\*.*?\*\/\s*google\.visualization\.Query\.setResponse\s*\(/, '')
+        .replace(/\);\s*$/, '');
+
+      const data = JSON.parse(jsonText);
+      this.rows = data.table.rows;
+      return this.rows;
     }
+    catch (error) {
+      console.error('データの取得中にエラーが発生しました:', error);
+      throw error;
+    }
+  }
 
-    // 最新の5行を取得し、逆順にする（最新が上）
-    const recentRows = rows.slice(1).reverse().slice(start_row, start_row + max_rows);
+  getRows(start_row = 0, max_rows = 5) {
+    if (!this.rows || this.rows.length <= 1) {
+      return [];
+    }
+    // 最新の行を取得し、逆順にする（最新が上）
+    const targetRows = this.rows.slice(1).reverse().slice(start_row, start_row + max_rows);
+    return targetRows;
+  }
 
-    const htmlPromises = recentRows.map(async (row) => {
+  async dispActivities(listElement, start_row = 0, max_rows = 5, mode = 'replace') {
+
+    const targetRows = this.getRows(start_row, max_rows);
+
+    const htmlContents = targetRows.map(async (row) => {
       // データ取得
       const title = row.c[0] && row.c[0].v !== null ? row.c[0].v : 'タイトルなし';
       const date = row.c[1] && row.c[1].f ? row.c[1].f : '日付なし';
@@ -144,8 +113,9 @@ export async function fetchAndDisplayActivities(listElement, start_row = 0, max_
                 </div>`;
     });
 
+
     // ⭐ Promise.all で全ての画像確認（とHTML生成）が完了するのを待つ
-    const htmlContents = await Promise.all(htmlPromises);
+    const htmlContentsResolved = await Promise.all(htmlContents);
 
     // リスト要素をクリア
     if (mode === 'replace') { listElement.innerHTML = ''; }
@@ -158,17 +128,53 @@ export async function fetchAndDisplayActivities(listElement, start_row = 0, max_
     }
 
     // 全てのHTMLをDOMに追加
-    htmlContents.forEach(html => {
+    htmlContentsResolved.forEach(html => {
       const listItem = document.createElement('li');
       listItem.innerHTML = html;
       listElement.appendChild(listItem);
     });
 
-    if (rows.length - 1 > max_rows + start_row) { return true; } else { return false; }
-
-  } catch (error) {
-    console.error('データの取得中にエラーが発生しました:', error);
-    listElement.innerHTML = `<li>データの読み込みに失敗しました。詳細: ${error.message}</li>`;
+    if (this.rows.length - 1 > max_rows + start_row) { return true; } else { return false; }
   }
+
+}
+
+
+/**
+ * 限定的なMarkdown記法をHTMLに変換する関数
+ * @param {string} markdownText - Markdown形式のテキスト
+ * @returns {string} HTML形式のテキスト
+ */
+function markdownToHtml(markdownText, variable) {
+  if (!markdownText) return '';
+
+  let html = markdownText;
+  let varIndex = 0; // 変数配列のインデックス
+
+  // 1. **太字** または __太字__ を <strong>タグに変換
+  html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+  html = html.replace(/__(.*?)__/g, '<strong>$1</strong>');
+
+  // 2. *斜体* または _斜体_ を <em>タグに変換
+  html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
+  html = html.replace(/_(.*?)_/g, '<em>$1</em>');
+
+  // 3. 2つ以上のスペース＋改行、または単純な改行を <br> タグに変換
+  html = html.replace(/ {2,}\n/g, '<br>'); // 行末スペース2つ以上
+  html = html.replace(/\n/g, '<br>');      // 単純な改行（これは好みに応じて削除しても良い）
+
+  // 4. +オレンジ文字+
+  html = html.replace(/\+(.*?)\+/g, '<span style="color:#f69749;">$1</span>');
+
+
+  // 5. リンク（プレースホルダ形式）
+  // replaceの第2引数に、マッチするたびに実行される関数を渡します
+  html = html.replace(/\^(.*?)\^/g, (match, p1) => {
+    const url = variable[varIndex] ? variable[varIndex].trim() : '#';
+    varIndex++; // 次のリンクへ
+    return `<a href="${url}">${p1}</a>`;
+
+
+  }); return html;
 }
 

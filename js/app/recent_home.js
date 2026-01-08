@@ -1,9 +1,12 @@
-import { fetchAndDisplayActivities } from "./recent_fetch.js";
+import { SheetProvider} from "./sheet_provider.js";
 
 // HTMLの要素
 const listElement = document.getElementById('activities-list');
 
-fetchAndDisplayActivities(listElement, 0,5);
+const activitiesProvider = new SheetProvider();
+await activitiesProvider.init(listElement);
+
+await activitiesProvider.dispActivities(listElement, 0, 4, "replace");
 
 const listFooter = document.getElementById('activities-list-footer');
 listFooter.innerHTML = `

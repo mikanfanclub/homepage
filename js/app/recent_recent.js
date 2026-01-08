@@ -1,4 +1,4 @@
-import { fetchAndDisplayActivities } from "./recent_fetch.js";
+import { SheetProvider } from "./sheet_provider.js";
 
 const listElement = document.getElementById('activities-list');
 const listFooter = document.getElementById('activities-list-footer');
@@ -7,22 +7,28 @@ const listFooter = document.getElementById('activities-list-footer');
 const urlParams = new URLSearchParams(window.location.search);
 let currentPage = parseInt(urlParams.get('page')) || 0;
 
-const maxRows = 5;
+const maxRows = 8;
+
+const activitiesProvider = new SheetProvider();
+
 
 async function init() {
+
+  await activitiesProvider.init(listElement);
+
   // ページ数に合わせて取得する件数を計算（例: 2ページ目なら 2 * 5 = 10件）
   const initialRowsToFetch = (currentPage + 1) * maxRows;
 
-  // 0行目から、現在のページ分までを一気に取得
-  let hasNext = await fetchAndDisplayActivities(listElement, 0, initialRowsToFetch);
+
+  const hasNext = await activitiesProvider.dispActivities(listElement, 0, initialRowsToFetch, "replace");;
 
   if (hasNext) {
     renderLoadMoreButton();
   }
 }
 
-function renderLoadMoreButton() {
-  listFooter.innerHTML = `<button id="load-more-button"><I class="fa fa-solid fa-caret-down"></i>もっと見る</button>`;
+async function renderLoadMoreButton() {
+  listFooter.innerHTML = `<button id="load-more-button"><I class="fa fa-solid fa-caret-down"></i>　もっと見る</button>`;
   const loadMoreButton = document.getElementById('load-more-button');
 
   loadMoreButton.addEventListener('click', async () => {
@@ -30,7 +36,7 @@ function renderLoadMoreButton() {
 
     // 現在の表示件数を開始位置にする
     const currentDisplayedCount = (currentPage + 1) * maxRows;
-    const hasNext = await fetchAndDisplayActivities(listElement, currentDisplayedCount, maxRows, 'append');
+    const hasNext = await activitiesProvider.dispActivities(listElement, currentDisplayedCount, maxRows, "append");
 
     if (hasNext) {
       currentPage++;

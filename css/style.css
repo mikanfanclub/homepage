@@ -926,6 +926,7 @@ img.radius {
   padding: 0px 40px;
   align-content: center;
 }
+
 #activities-list.foot-fade::before {
   display: inline-block;
   content: "";
@@ -935,11 +936,9 @@ img.radius {
   bottom: 0;
   left: 0;
   z-index: 100;
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    #fff
-  );
+  background: linear-gradient(to bottom,
+      transparent,
+      #fff);
   background-blend-mode: lighten;
 }
 
@@ -949,7 +948,7 @@ img.radius {
   margin-bottom: 20px;
 }
 
-#recent-events a.btn{
+a.btn {
   display: inline-block;
   margin-top: 10px;
   padding: 8px 15px;
@@ -958,6 +957,13 @@ img.radius {
   text-decoration: none;
   border-radius: 20px;
   font-weight: bold;
+  transition: 0.1s linear;
+}
+
+.btn:hover {
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0px 0px 3px #aaa;
 }
 
 #swiper2 {
@@ -1158,16 +1164,17 @@ img.radius {
 .history-table tbody>tr:nth-child(even)>td {
   background-color: #f9f9f9;
 }
+
 #recommended-mikan {
-    background-image: url(../img/bg_paper.webp);
+  background-image: url(../img/bg_paper.webp);
 }
 
-#recommended-mikan .container{
-    padding: 20px 0px;
-    flex-direction: column;
-    display: flex;
-    align-items: center;
-    width: 100%;
+#recommended-mikan .container {
+  padding: 20px 0px;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 
 .mikan-card {
@@ -1185,16 +1192,19 @@ img.radius {
   width: 20%;
   padding: 10px 15px;
 }
-.mikan-card h3{
+
+.mikan-card h3 {
   display: inline-block;
   font-size: clamp(1.8rem, 2.5vw, 2rem);
   margin: 0 0 10px 0;
   border-bottom: 2px solid #ff9800;
 }
-.mikan-card a{
+
+.mikan-card a {
   text-decoration: none;
   font-weight: bold;
 }
+
 .mikan-card .link-wrapper {
   display: flex;
   flex-direction: column;
@@ -1235,7 +1245,7 @@ img.radius {
   font-weight: bold;
 }
 
-li.activities-list-foot-message{
+li.activities-list-foot-message {
   display: block;
   width: 100%;
   text-align: center;

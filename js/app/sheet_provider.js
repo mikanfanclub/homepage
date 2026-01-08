@@ -130,7 +130,7 @@ export class SheetProvider {
                         <img
                           src="/img/recent/${photofile}"
                           alt
-                          onerror="this.onerror = null; this.src='img/recent/no-image.webp';"
+                          onerror="this.onerror = null; this.src='/img/recent/no-image.webp';"
                         />
                     </div>
                     <div class="col-sm-8" style="font-size: 18px">

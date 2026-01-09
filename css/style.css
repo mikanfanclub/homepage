@@ -1002,15 +1002,19 @@ a.btn {
   background-image: url(../img/bg_paper.webp);
 }
 
+.pf-item {
+  padding: 3%
+}
+
 .pf-item img {
   border-radius: 20px;
   z-index: 1;
   transition: 0.3s linear;
 }
 
-.pf-item a{
+.pf-item a {
   display: block;
-  transition:0.3s linear;
+  transition: 0.3s linear;
 }
 
 .pf-item a:hover {
@@ -1063,19 +1067,18 @@ a.btn {
 
 .pf-wrapper {
   display: grid;
-  gap: 20px;
   grid-template-columns: 33.3% 33.3% 33.3%;
 }
 
 @media (max-width: 768px) {
   .pf-wrapper {
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 33.3% 33.3% 33.3%;
   }
 }
 
 @media (max-width: 480px) {
   .pf-wrapper {
-    grid-template-columns: 100%;
+    grid-template-columns: 50% 50%;
   }
 }
 
@@ -1083,6 +1086,13 @@ a.btn {
 .pf-caption {
   padding-top: 20px;
   text-align: center;
+}
+
+.pf-caption h4 {
+  font-size: clamp(13px, 2vw, 18px)
+}
+.pf-caption p{
+  font-size:clamp(12px,1.7vw, 14px)
 }
 
 .portfolio-modal .modal-content h2 {

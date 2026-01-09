@@ -161,6 +161,9 @@ export class SheetProvider {
           case '学園祭':
             tagBcColor = '#ff5144';//赤
             break;
+          default:
+            tagBcColor = '#aaa';//灰
+            break;
         }
         return `<span class="small-info-tag" style="background-color:${tagBcColor};margin-right:5px;">${t}</span>`;
       }).join('');

@@ -96,10 +96,11 @@ export class SheetProvider {
 
     let prevMonth = null;
 
-    if (this.rows[start_row - 1]) {
-      const prevDate = new Date(this.rows[start_row - 1].c[1].f);
+    if (this.rows[start_row + 1]) {
+      const prevDate = new Date(this.rows[start_row + 1].c[1].f);
       prevMonth = prevDate.getMonth() + 1;
     }
+    console.log(prevMonth)
 
 
     const targetRows = this.getRowsWithQuery(start_row, max_rows, query);

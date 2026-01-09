@@ -116,7 +116,7 @@ export class SheetProvider {
       let raw_variable = row.c[4] && row.c[4].v !== null ? row.c[4].v : '';
       let variable = raw_variable.split(',').map(v => v.trim());
       let raw_tag = row.c[5] && row.c[5].v !== null ? row.c[5].v : 'その他';
-      let tag = raw_tag.split(',');
+      let tag = raw_tag.split(',').trim();;
 
       let monthLabel = '';
       if (partition) {
@@ -144,7 +144,7 @@ export class SheetProvider {
       // タグのHTML生成
 
       let taghtml = tag.map((t) => {
-        let tagBcColor = '#838383'; //デフォルト灰色
+        let tagBcColor = '#aaa'; //デフォルト灰色
         switch (t) {
           case '交流':
             tagBcColor = '#4473b7';//青

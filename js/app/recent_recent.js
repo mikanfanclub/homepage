@@ -36,7 +36,7 @@ async function renderLoadMoreButton() {
 
     // 現在の表示件数を開始位置にする
     const currentDisplayedCount = (currentPage + 1) * maxRows;
-    const hasNext = await activitiesProvider.dispActivities(listElement, currentDisplayedCount, maxRows, "append", true);
+    const hasNext = await activitiesProvider.dispActivities(listElement, currentDisplayedCount, maxRows, "append", true, null);
 
     if (hasNext) {
       currentPage++;

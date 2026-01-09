@@ -86,25 +86,26 @@ export class SheetProvider {
       }
       return true; // クエリが不明な場合は通す
     });
+
+    const reversedRows = filteredRows.reverse();
+
+    let prevMonth = null;
+
+    if (reversedRows[start_row - 1]) {
+      const prevDate = new Date(reversedRows[start_row - 1].c[1].f);
+      prevMonth = prevDate.getMonth() + 1;
+    }
+
     // 最新の行を取得し、逆順にする（最新が上）
-    const targetRows = filteredRows.slice(0).reverse().slice(start_row, start_row + max_rows);
-    return targetRows;
+    const targetRows = reversedRows.slice(start_row, start_row + max_rows);
+    return [targetRows, prevMonth];
   }
 
 
   async dispActivities(listElement, start_row = 0, max_rows = 5, mode = 'replace', partition = false, query = "not includes('tag','交流')") {
 
-    let prevMonth = null;
 
-    if (this.rows[start_row + 1]) {
-      const prevDate = new Date(this.rows[start_row + 1].c[1].f);
-      prevMonth = prevDate.getMonth() + 1;
-    }
-    console.log(prevMonth)
-
-
-    const targetRows = this.getRowsWithQuery(start_row, max_rows, query);
-
+    let [targetRows, prevMonth] = this.getRowsWithQuery(start_row, max_rows, query);
 
     const htmlContents = targetRows.map(async (row, index) => {
       // データ取得

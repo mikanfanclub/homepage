@@ -49,7 +49,50 @@ export class SheetProvider {
     return targetRows;
   }
 
-  async dispActivities(listElement, start_row = 0, max_rows = 5, mode = 'replace', partition = false) {
+  //query: includes('tag','交流'), not includes('tag','企画')など
+  getRowsWithQuery(start_row = 0, max_rows = 5, query = '') {
+    if (!this.rows || this.rows.length <= 1) {
+      return [];
+    }
+    // クエリに基づいてフィルタリング
+    // 例: includes('tag','交流'), not includes('tag','企画')など
+    const filteredRows = this.rows.filter(row => {
+      if (!query) return true; // クエリが空の場合は全て通す
+
+      const match = query.match(/(not )?includes\('(\w+?)','(.*?)'\)/);
+      if (match) {
+        const isNot = !!match[1];
+        const columnName = match[2];
+        const value = match[3];
+
+        // カラム名からインデックスを取得
+        const columnIndexMap = {
+          'title': 0,
+          'date': 1,
+          'description': 2,
+          'photofile': 3,
+          'variable': 4,
+          'tag': 5
+        };
+        const colIndex = columnIndexMap[columnName];
+        if (colIndex === undefined) return false;
+
+        const cell = row.c[colIndex];
+        const cellValue = cell && cell.v ? cell.v : '';
+
+        const includesValue = cellValue.split(',').map(v => v.trim()).includes(value);
+
+        return isNot ? !includesValue : includesValue;
+      }
+      return true; // クエリが不明な場合は通す
+    });
+    // 最新の行を取得し、逆順にする（最新が上）
+    const targetRows = filteredRows.slice(0).reverse().slice(start_row, start_row + max_rows);
+    return targetRows;
+  }
+
+
+  async dispActivities(listElement, start_row = 0, max_rows = 5, mode = 'replace', partition = false, query = "not includes('tag','交流')") {
 
     let prevMonth = null;
 
@@ -59,7 +102,7 @@ export class SheetProvider {
     }
 
 
-    const targetRows = this.getRows(start_row, max_rows);
+    const targetRows = this.getRowsWithQuery(start_row, max_rows, query);
 
 
     const htmlContents = targetRows.map(async (row, index) => {

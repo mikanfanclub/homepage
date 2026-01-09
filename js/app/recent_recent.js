@@ -20,7 +20,7 @@ async function init() {
   const initialRowsToFetch = (currentPage + 1) * maxRows;
 
 
-  const hasNext = await activitiesProvider.dispActivities(listElement, 0, initialRowsToFetch, "replace", true);
+  const hasNext = await activitiesProvider.dispActivities(listElement, 0, initialRowsToFetch, "replace", true, null);
 
   if (hasNext) {
     renderLoadMoreButton();

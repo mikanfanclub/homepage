@@ -931,7 +931,7 @@ img.radius {
   display: inline-block;
   content: "";
   width: 100%;
-  height: 15%;
+  height: 25%;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -1270,11 +1270,11 @@ li.activities-list-foot-message {
 #load-more-button:hover {
   background-color: #e68a00;
 }
+
 .activities-month-label {
   font-size: 2rem;
   font-weight: bold;
-  margin:0px;
+  margin: 0px;
   margin-left: 10px;
   padding: auto;
 }
-

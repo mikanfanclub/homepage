@@ -1002,16 +1002,22 @@ a.btn {
   background-image: url(../img/bg_paper.webp);
 }
 
-.portfolio-item img {
+.pf-item img {
   border-radius: 20px;
+  z-index: 1;
+  transition: 0.3s linear;
 }
 
-.portfolio-item a:hover {
-  transition: 0.3s linear;
+.pf-item a{
+  display: block;
+  transition:0.3s linear;
+}
+
+.pf-item a:hover {
   transform: scale(1.03);
 }
 
-.portfolio-item a::before {
+.pf-item a::before {
   content: "";
   z-index: 100;
   position: absolute;
@@ -1028,12 +1034,12 @@ a.btn {
   opacity: 0;
 }
 
-.portfolio-item a:hover::before {
+.pf-item a:hover::before {
   pointer-events: auto;
   opacity: 1.0;
 }
 
-.portfolio-item a::after {
+.pf-item a::after {
   content: "READ";
   z-index: 100;
   position: absolute;
@@ -1049,13 +1055,34 @@ a.btn {
   border: black 1px solid;
 }
 
-.portfolio-item a:hover::after {
+.pf-item a:hover::after {
   pointer-events: auto;
   clip-path: circle(200% at 0% 0%);
 }
 
-.portfolio-caption {
+
+.pf-wrapper {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 33.3% 33.3% 33.3%;
+}
+
+@media (max-width: 768px) {
+  .pf-wrapper {
+    grid-template-columns: 50% 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  .pf-wrapper {
+    grid-template-columns: 100%;
+  }
+}
+
+
+.pf-caption {
   padding-top: 20px;
+  text-align: center;
 }
 
 .portfolio-modal .modal-content h2 {

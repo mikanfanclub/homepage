@@ -1,0 +1,13 @@
+.shinkan-schedule {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.shinkan-schedule h3 {
+  display: inline-block;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ffa85b;
+}

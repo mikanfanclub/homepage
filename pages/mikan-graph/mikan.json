@@ -45,7 +45,7 @@
   { "id": 83, "names": ["興津46号"], "p1": 82, "p2": 41, "group": "tangelo" ,"color":"#ff9800","shape":"round","note":""},
   { "id": 84, "names": ["河内晩柑"], "p1": 85, "p2": 10003, "group": "pomelo" ,"color":"#ffe01d","shape":"round","note":"和製グレープフルーツとも呼ばれるジューシーでさっぱりとした柑橘"},
   { "id": 85, "names": ["弓削瓢柑"], "p1": 89, "p2": 10006, "group": "pomelo" ,"color":"#ffe01d","shape":"egg","note":"ひょうたんのような形をした文旦系柑橘。爽やかな香りと酸味、ほろ苦さが特徴"},
-  { "id": 86, "names": ["瑞希"], "p1": 84, "p2": 87, "group": "pomelo" ,"color":"#ffe01d","shape":"deko","note":"河内晩柑とサザンイエローの交配種。ジューシーで爽やかな酸味と香りが特徴"},
+  { "id": 86, "names": ["瑞季"], "p1": 84, "p2": 4, "group": "pomelo" ,"color":"#ffe01d","shape":"deko","note":"水晶文旦とサザンイエローの交配種。種が少なく甘味が強い晩生柑橘。"},
   { "id": 87, "names": ["サザンイエロー"], "p1":4 , "p2":110 , "group": "pomelo" ,"color":"#ffe01d","shape":"deko","note":"正確には無核紀州と谷川文旦"},
   { "id": 88, "names": ["瓢柑"], "p1": 8, "p2": 10002, "group": "pomelo" ,"color":"#ffe01d","shape":"egg","note":"現代で瓢柑といえば弓削瓢柑を指すが、遺伝学の上では別柑橘としている。"},
   { "id": 89, "names": ["鳴門オレンジ", "鳴門"], "p1": 7, "p2": 10007, "group": "pomelo" ,"color":"#ffe01d","shape":"round","note":"徳島県で発見された黄色い柑橘。甘味と酸味のバランスが良い。アルベドまで甘みがあるので、皮ごと食べられることもある"},

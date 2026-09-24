@@ -40,13 +40,65 @@ export class SheetProvider {
     }
   }
 
+  // 活動日が新しい順に並べる
+  // Google Visualization API の日付値 Date(2026,8,3) と
+  // 表示値 2026/09/03 の両方に対応
+  sortRowsByDateDesc(rows) {
+    const getTime = (row) => {
+      const cell = row?.c?.[1];
+
+      if (!cell) return -Infinity;
+
+      if (typeof cell.v === 'string') {
+        const match = cell.v.match(
+          /^Date\((\d+),(\d+),(\d+)(?:,(\d+),(\d+),(\d+))?\)$/
+        );
+
+        if (match) {
+          const [, year, month, day, hour = 0, minute = 0, second = 0] = match;
+
+          return new Date(
+            Number(year),
+            Number(month),
+            Number(day),
+            Number(hour),
+            Number(minute),
+            Number(second)
+          ).getTime();
+        }
+      }
+
+      if (cell.f) {
+        const [year, month, day] = cell.f.split('/').map(Number);
+
+        if (year && month && day) {
+          return new Date(year, month - 1, day).getTime();
+        }
+      }
+
+      // 日付がない行は最後
+      return -Infinity;
+    };
+
+    // 元の配列を破壊しない
+    return [...rows].sort((a, b) => getTime(b) - getTime(a));
+  }
+  /*
+    getRows(start_row = 0, max_rows = 5) {
+      if (!this.rows || this.rows.length <= 1) {
+        return [];
+      }
+      // 最新の行を取得し、逆順にする（最新が上）
+      const targetRows = this.rows.slice(0).reverse().slice(start_row, start_row + max_rows);
+      return targetRows;
+    }
+    */
   getRows(start_row = 0, max_rows = 5) {
     if (!this.rows || this.rows.length <= 1) {
       return [];
     }
-    // 最新の行を取得し、逆順にする（最新が上）
-    const targetRows = this.rows.slice(0).reverse().slice(start_row, start_row + max_rows);
-    return targetRows;
+    const sortedRows = this.sortRowsByDateDesc(this.rows);
+    return sortedRows.slice(start_row, start_row + max_rows);
   }
 
   //query: includes('tag','交流'), not includes('tag','企画')など
@@ -87,17 +139,22 @@ export class SheetProvider {
       return true; // クエリが不明な場合は通す
     });
 
-    const reversedRows = filteredRows.reverse();
+    const sortedRows = this.sortRowsByDateDesc(filteredRows);
 
     let prevMonth = null;
 
-    if (reversedRows[start_row - 1]) {
-      const prevDate = new Date(reversedRows[start_row - 1].c[1].f);
-      prevMonth = prevDate.getMonth() + 1;
+    if (sortedRows[start_row - 1]?.c?.[1]?.f) {
+      const [, month] = sortedRows[start_row - 1].c[1].f
+        .split('/')
+        .map(Number);
+
+      prevMonth = month;
     }
 
-    // 最新の行を取得し、逆順にする（最新が上）
-    const targetRows = reversedRows.slice(start_row, start_row + max_rows);
+    const targetRows = sortedRows.slice(
+      start_row,
+      start_row + max_rows
+    );
     return [targetRows, prevMonth];
   }
 
